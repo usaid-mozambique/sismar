@@ -1,0 +1,24 @@
+Package: sismar
+Title: USAID Mozambique R Utilities Package
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Joe", "Lara", , "jlara@usaid.gov", role = c("aut", "cre")),
+    person("Karishma", "Srikanth", role = c("aut"),
+    email = "ksrikanth@usaid.gov"))
+Description: This package is a set of helper functions for the USAID PEPFAR Mozambique team to optimize PEPFAR workflows in R.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+BugReports: https://github.com/usaid-mozambique/sismar/issues
+Imports:
+  dplyr,
+  magrittr,
+  tidyselect,
+  tidyr,
+  readr,
+  stringr,
+  janitor
+Depends: 
+    R (>= 2.10)
