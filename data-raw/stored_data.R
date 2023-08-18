@@ -1,5 +1,6 @@
 ## code to prepare indicator join tables that rename indicators and provide indicator features
 
+
 data_sisma_smi_cpn_map <-
 tibble::tribble(
                                                                                 ~indicator,             ~indicator_new,    ~age,        ~disaggregate,
