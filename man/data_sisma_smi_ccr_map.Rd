@@ -10,6 +10,7 @@ A list of the variables included to engineer dataset features
 \item{data_sisma_smi_ccr_map}{indicator}
 \item{data_sisma_smi_ccr_map}{indicator_new}
 \item{data_sisma_smi_ccr_map}{disaggregate}
+\item{data_sisma_smi_ccr_map}{source}
 }
 }
 \usage{

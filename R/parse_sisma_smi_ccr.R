@@ -17,7 +17,29 @@ parse_sisma_smi_ccr <- function(file) {
 
     dplyr::left_join(data_sisma_smi_ccr_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%
-    dplyr::select(starts_with("period"), snu, psnu, sitename, sisma_uid, indicator = indicator_new, disaggregate, value)
+    dplyr::mutate(period_cohort = NA,
+                  sex = NA_character_,
+                  age = NA_character_,
+                  sub_group = NA_character_,
+                  age_coarse = NA_character_,
+                  result_status = NA_character_,
+                  disaggregate_sub = NA_character_) %>%
+    dplyr::select(sisma_uid,
+                  snu,
+                  psnu,
+                  sitename,
+                  period,
+                  period_cohort,
+                  indicator = indicator_new,
+                  source,
+                  disaggregate,
+                  disaggregate_sub,
+                  sub_group,
+                  sex,
+                  age,
+                  age_coarse,
+                  result_status,
+                  value)
 
   return(df)
 

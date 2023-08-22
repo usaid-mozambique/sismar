@@ -16,7 +16,26 @@ parse_sisma_ats_auto <- function(file) {
 
     dplyr::filter(!is.na(value)) %>%
     dplyr::left_join(data_sisma_ats_autoteste_map, by = "indicator") %>%
-    dplyr::select(sisma_uid, snu, psnu, sitename, period, indicator = indicator_new, age, sex, disaggregate, value)
+    dplyr::mutate(period_cohort = NA,
+                  disaggregate_sub = NA_character_,
+                  sub_group = NA_character_,
+                  result_status = NA_character_) %>%
+    dplyr::select(sisma_uid,
+                  snu,
+                  psnu,
+                  sitename,
+                  period,
+                  period_cohort,
+                  indicator = indicator_new,
+                  source,
+                  disaggregate,
+                  disaggregate_sub,
+                  sub_group,
+                  sex,
+                  age,
+                  age_coarse,
+                  result_status,
+                  value)
 
   return(df_all)
 

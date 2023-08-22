@@ -11,8 +11,14 @@
 #' * SMI-MAT: Maternidade, Saude Materna Infantil
 #' * SMI-CCR: CCR, Saude Materna Infantil
 #' * ATS Result: ATS Resultados, Programa de HIV
-#' * ATS History: ATS Historial, Programa de HIV
-#' * ATS CI: ATS Caso Indice, Programa de HIV
+#' * ATS History: ATS Historial e Populacoes Chave, Programa de HIV
+#' * ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
+#' * ATS SAAJ: ATS Serviço Amigo Adolescente Joven
+#' * ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
+#' * ATS SMI: ATS Especifico aos Servicos SMI (outros acomopanhantes na CPN, etc.)
+#' * ATS Auto: ATS Autotestagem, Programa de HIV
+#' * ATS TARV: Tratamento Antiretroviral (TARV), Programa de HIV
+#' * ATS PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
 #'
 #' @param data Path to SISMA dataset (saved in .csv format)
 #' @param type Defines programmatic data type for processing

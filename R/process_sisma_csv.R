@@ -10,8 +10,14 @@
 #' * SMI-MAT: Maternidade, Saude Materna Infantil
 #' * SMI-CCR: CCR, Saude Materna Infantil
 #' * ATS Result: ATS Resultados, Programa de HIV
-#' * ATS History: ATS Historial, Programa de HIV
-#' * ATS CI: ATS Caso Indice, Programa de HIV
+#' * ATS History: ATS Historial e Populacoes Chave, Programa de HIV
+#' * ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
+#' * ATS SAAJ: ATS Serviço Amigo Adolescente Joven
+#' * ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
+#' * ATS SMI: ATS Especifico aos Servicos SMI (outros acomopanhantes na CPN, etc.)
+#' * ATS Auto: ATS Autotestagem, Programa de HIV
+#' * ATS TARV: Tratamento Antiretroviral (TARV), Programa de HIV
+#' * ATS PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
 #'
 #' @param file Path of sisma csv input
 #' @param type Type of sisma csv export (CPN, ATS-R, etc.)
@@ -33,13 +39,19 @@ process_sisma_csv <- function(file, type, language = "portuguese"){
   if(language == "portuguese"){
 
     df <- df %>% dplyr::rename(periodo = period,
+                               periodo_coorte = period_cohort,
                                provincia = snu,
                                distrito = psnu,
                                us = sitename,
                                indicador = indicator,
+                               fonte = source,
                                idade = age,
+                               idade_agrupada = age_coarse,
                                sexo = sex,
+                               sub_grupo = sub_group,
+                               resultado_estado = result_status,
                                disagregacao = disaggregate,
+                               disagregacao_sub = disaggregate_sub,
                                valor = value)
 
     return(df)

@@ -9,7 +9,9 @@
 #'   \item{data_sisma_smi_cpn_map}{indicator}
 #'   \item{data_sisma_smi_cpn_map}{indicator_new}
 #'   \item{data_sisma_smi_cpn_map}{age}
+#'   \item{data_sisma_smi_cpn_map}{age_coarse}
 #'   \item{data_sisma_smi_cpn_map}{disaggregate}
+#'   \item{data_sisma_smi_cpn_map}{source}
 #' }
 "data_sisma_smi_cpn_map"
 
@@ -118,8 +120,10 @@
 #'   \item{data_sisma_ats_autoteste_map}{indicator}
 #'   \item{data_sisma_ats_autoteste_map}{indicator_new}
 #'   \item{data_sisma_ats_autoteste_map}{age}
+#'   \item{data_sisma_ats_autoteste_map}{age_coarse}
 #'   \item{data_sisma_ats_autoteste_map}{sex}
 #'   \item{data_sisma_ats_autoteste_map}{disaggregate}
+#'   \item{data_sisma_ats_autoteste_map}{source}
 #' }
 "data_sisma_ats_autoteste_map"
 
@@ -156,8 +160,10 @@
 #'   \item{data_sisma_hiv_tarv_map}{indicator}
 #'   \item{data_sisma_hiv_tarv_map}{indicator_new}
 #'   \item{data_sisma_hiv_tarv_map}{age}
+#'   \item{data_sisma_hiv_tarv_map}{age_coarse}
 #'   \item{data_sisma_hiv_tarv_map}{sex}
 #'   \item{data_sisma_hiv_tarv_map}{disaggregate}
+#'   \item{data_sisma_hiv_tarv_map}{source}
 #' }
 "data_sisma_hiv_tarv_map"
 
@@ -174,6 +180,7 @@
 #'   \item{data_sisma_smi_mat_map}{indicator_new}
 #'   \item{data_sisma_smi_mat_map}{disaggregate}
 #'   \item{data_sisma_smi_mat_map}{disaggregate_sub}
+#'   \item{data_sisma_smi_mat_map}{source}
 #' }
 "data_sisma_smi_mat_map"
 
@@ -189,6 +196,7 @@
 #'   \item{data_sisma_smi_ccr_map}{indicator}
 #'   \item{data_sisma_smi_ccr_map}{indicator_new}
 #'   \item{data_sisma_smi_ccr_map}{disaggregate}
+#'   \item{data_sisma_smi_ccr_map}{source}
 #' }
 "data_sisma_smi_ccr_map"
 
@@ -205,8 +213,10 @@
 #'   \item{data_sisma_hiv_prep_map}{indicator}
 #'   \item{data_sisma_hiv_prep_map}{indicator_new}
 #'   \item{data_sisma_hiv_prep_map}{age}
+#'   \item{data_sisma_hiv_prep_map}{age_coarse}
 #'   \item{data_sisma_hiv_prep_map}{sex}
 #'   \item{data_sisma_hiv_prep_map}{disaggregate}
+#'   \item{data_sisma_hiv_prep_map}{source}
 #' }
 "data_sisma_hiv_prep_map"
 
@@ -222,7 +232,9 @@
 #'   \item{data_sisma_hiv_apss_map}{indicator}
 #'   \item{data_sisma_hiv_apss_map}{indicator_new}
 #'   \item{data_sisma_hiv_apss_map}{age}
+#'   \item{data_sisma_hiv_apss_map}{age_coarse}
 #'   \item{data_sisma_hiv_apss_map}{sex}
+#'   \item{data_sisma_hiv_apss_map}{source}
 #' }
 "data_sisma_hiv_apss_map"
 
@@ -238,10 +250,12 @@
 #'   \item{data_sisma_hiv_its_map}{indicator}
 #'   \item{data_sisma_hiv_its_map}{indicator_new}
 #'   \item{data_sisma_hiv_its_map}{age}
+#'   \item{data_sisma_hiv_its_map}{age_coarse}
 #'   \item{data_sisma_hiv_its_map}{sex}
 #'   \item{data_sisma_hiv_its_map}{sub_group}
 #'   \item{data_sisma_hiv_its_map}{result_status}
 #'   \item{data_sisma_hiv_its_map}{disaggregate}
+#'   \item{data_sisma_hiv_its_map}{source}
 
 #' }
 "data_sisma_hiv_its_map"

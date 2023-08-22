@@ -28,10 +28,26 @@ parse_sisma_ats_results <- function(file) {
 
   df_pos <- df_all %>%
     dplyr::filter(result_status == "Positivo") %>%
-    dplyr::mutate(indicator = dplyr::case_when(indicator == "ATS_TST" ~ "ATS_TST_POS"))
+    dplyr::mutate(indicator = dplyr::case_when(indicator == "ATS_TST" ~ "ATS_TST_POS"),
+                  period_cohort = NA)
 
   df_parse <- dplyr::bind_rows(df_all, df_pos) %>%
-    dplyr::select(sisma_uid, snu, psnu, sitename, period, indicator, source, disaggregate, disaggregate_sub, sub_group, sex, age_coarse, age, result_status, value)
+    dplyr::select(sisma_uid,
+                  snu,
+                  psnu,
+                  sitename,
+                  period,
+                  period_cohort,
+                  indicator,
+                  source,
+                  disaggregate,
+                  disaggregate_sub,
+                  sub_group,
+                  sex,
+                  age_coarse,
+                  age,
+                  result_status,
+                  value)
 
   return(df_parse)
 

@@ -10,8 +10,10 @@ A list of the variables included to engineer dataset features
 \item{data_sisma_hiv_prep_map}{indicator}
 \item{data_sisma_hiv_prep_map}{indicator_new}
 \item{data_sisma_hiv_prep_map}{age}
+\item{data_sisma_hiv_prep_map}{age_coarse}
 \item{data_sisma_hiv_prep_map}{sex}
 \item{data_sisma_hiv_prep_map}{disaggregate}
+\item{data_sisma_hiv_prep_map}{source}
 }
 }
 \usage{

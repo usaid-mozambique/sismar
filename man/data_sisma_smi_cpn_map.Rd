@@ -10,7 +10,9 @@ A list of the variables included to engineer dataset features
 \item{data_sisma_smi_cpn_map}{indicator}
 \item{data_sisma_smi_cpn_map}{indicator_new}
 \item{data_sisma_smi_cpn_map}{age}
+\item{data_sisma_smi_cpn_map}{age_coarse}
 \item{data_sisma_smi_cpn_map}{disaggregate}
+\item{data_sisma_smi_cpn_map}{source}
 }
 }
 \usage{

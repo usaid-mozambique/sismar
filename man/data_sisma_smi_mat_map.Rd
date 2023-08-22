@@ -11,6 +11,7 @@ A list of the variables included to engineer dataset features
 \item{data_sisma_smi_mat_map}{indicator_new}
 \item{data_sisma_smi_mat_map}{disaggregate}
 \item{data_sisma_smi_mat_map}{disaggregate_sub}
+\item{data_sisma_smi_mat_map}{source}
 }
 }
 \usage{
