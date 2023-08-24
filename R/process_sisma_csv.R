@@ -14,13 +14,14 @@
 #' * ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
 #' * ATS SAAJ: ATS Serviço Amigo Adolescente Joven
 #' * ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
-#' * ATS SMI: ATS Especifico aos Servicos SMI (outros acomopanhantes na CPN, etc.)
+#' * ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)
 #' * ATS Auto: ATS Autotestagem, Programa de HIV
-#' * ATS TARV: Tratamento Antiretroviral (TARV), Programa de HIV
-#' * ATS PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
+#' * HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
+#' * HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
+#' * HIV APSS: Apoio Psicossocial (APSS), Programa de HIV
 #'
 #' @param file Path of sisma csv input
-#' @param type Type of sisma csv export (CPN, ATS-R, etc.)
+#' @param type Type of sisma csv export (SMI-CPN, ATS-Result, etc.)
 #' @param language Language of variable names (Portuguese or English)
 #'
 #' @return A tidy data frame of sisma program results

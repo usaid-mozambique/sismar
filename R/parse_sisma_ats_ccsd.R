@@ -17,6 +17,7 @@ parse_sisma_ats_ccsd <- function(file) {
     dplyr::left_join(data_sisma_ats_ccsd_map, by = "indicator") %>%
     dplyr::filter(!is.na(indicator_new)) %>%
     dplyr::mutate(
+      period_cohort = NA_character_,
       source = "LdR SMI",
       sub_group = NA_character_,
       age = NA_character_,
@@ -28,7 +29,21 @@ parse_sisma_ats_ccsd <- function(file) {
 
 
   df_parse <- dplyr::bind_rows(df_all, df_pos) %>%
-    dplyr::select(sisma_uid, snu, psnu, sitename, period, indicator = indicator_new, source, disaggregate, disaggregate_sub, sub_group, sex, age_coarse, age, result_status, value)
+    dplyr::select(sisma_uid,
+                  snu, psnu,
+                  sitename,
+                  period,
+                  period_cohort,
+                  indicator = indicator_new,
+                  source,
+                  disaggregate,
+                  disaggregate_sub,
+                  sub_group,
+                  sex,
+                  age_coarse,
+                  age,
+                  result_status,
+                  value)
 
 
   return(df_parse)

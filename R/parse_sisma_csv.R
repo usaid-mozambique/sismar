@@ -15,10 +15,11 @@
 #' * ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
 #' * ATS SAAJ: ATS Serviço Amigo Adolescente Joven
 #' * ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
-#' * ATS SMI: ATS Especifico aos Servicos SMI (outros acomopanhantes na CPN, etc.)
+#' * ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)
 #' * ATS Auto: ATS Autotestagem, Programa de HIV
-#' * ATS TARV: Tratamento Antiretroviral (TARV), Programa de HIV
-#' * ATS PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
+#' * HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
+#' * HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
+#' * HIV APSS: Apoio Psicossocial (APSS), Programa de HIV
 #'
 #' @param data Path to SISMA dataset (saved in .csv format)
 #' @param type Defines programmatic data type for processing
