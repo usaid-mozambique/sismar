@@ -43,7 +43,8 @@ parse_sisma_ats_smi <- function(file) {
                         names_to = "indicator",
                         values_to = "value") %>%
 
-    dplyr::mutate(disaggregate = dplyr::case_when(stringr::str_detect(indicator, "smi_cpn") ~ "SMI-CPN",
+    dplyr::mutate(period_cohort = NA_character_,
+                  disaggregate = dplyr::case_when(stringr::str_detect(indicator, "smi_cpn") ~ "SMI-CPN",
                                                   stringr::str_detect(indicator, "smi_mat") ~ "SMI-MAT",
                                                   stringr::str_detect(indicator, "smi_ccr") ~ "SMI-CCR",
                                                   stringr::str_detect(indicator, "smi_cpp") ~ "SMI-CPP",
@@ -82,7 +83,22 @@ parse_sisma_ats_smi <- function(file) {
     dplyr::mutate(indicator = dplyr::case_when(indicator == "ATS_TST" ~ "ATS_TST_POS"))
 
   df_parse <- dplyr::bind_rows(df_all, df_pos) %>%
-    dplyr::select(sisma_uid, snu, psnu, sitename, period, indicator, source, disaggregate, disaggregate_sub, sub_group, sex, age_coarse, age, result_status, value)
+    dplyr::select(sisma_uid,
+                  snu,
+                  psnu,
+                  sitename,
+                  period,
+                  period_cohort,
+                  indicator,
+                  source,
+                  disaggregate,
+                  disaggregate_sub,
+                  sub_group,
+                  sex,
+                  age_coarse,
+                  age,
+                  result_status,
+                  value)
 
 
   return(df_parse)

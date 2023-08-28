@@ -57,7 +57,8 @@ parse_sisma_ats_saaj_cm <- function(file) {
 
     dplyr::filter(!value == 0) %>%
 
-    dplyr::mutate(age = dplyr::case_when(stringr::str_detect(indicator, "_10_an")    ~ "<10", # saaj ages
+    dplyr::mutate(period_cohort = NA_character_,
+                  age = dplyr::case_when(stringr::str_detect(indicator, "_10_an")    ~ "<10", # saaj ages
                                          stringr::str_detect(indicator, "10_14")     ~ "10-14",
                                          stringr::str_detect(indicator, "15_19")     ~ "15-19",
                                          stringr::str_detect(indicator, "20_24")     ~ "20-24",
@@ -104,7 +105,22 @@ parse_sisma_ats_saaj_cm <- function(file) {
 
 
   df_parse <- dplyr::bind_rows(df_all, df_pos) %>%
-    dplyr::select(sisma_uid, snu, psnu, sitename, period, indicator, source, disaggregate, disaggregate_sub, sub_group, sex, age_coarse, age, result_status, value)
+    dplyr::select(sisma_uid,
+                  snu,
+                  psnu,
+                  sitename,
+                  period,
+                  period_cohort,
+                  indicator,
+                  source,
+                  disaggregate,
+                  disaggregate_sub,
+                  sub_group,
+                  sex,
+                  age_coarse,
+                  age,
+                  result_status,
+                  value)
 
 
   return(df_parse)

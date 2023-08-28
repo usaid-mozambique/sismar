@@ -1,6 +1,9 @@
 ---
-title: "tidy_sop"
-output: rmarkdown::html_vignette
+title: "Using sismar R package to tidy SISMA tabular program data"
+output:
+  rmarkdown::html_vignette:
+    toc: true
+    toc_depth: 2
 vignette: >
   %\VignetteIndexEntry{tidy_sop}
   %\VignetteEngine{knitr::rmarkdown}
@@ -10,10 +13,37 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  warning = FALSE,
   comment = "#>"
 )
 ```
 
-```{r setup}
+## Open RStudio and Load Core Packages
+
+Let's begin by opening a new RStudio work session.  Once a session is open, create a new R script (File -> New File -> R script) and load the core R packages needed for tidying SISMA .csv exports. The Tidyverse is a collection of open-source packages designed for general data science use. Sismar is a package designed for the specific purpose of cleaning, reshaping and feature engineering provided standard SISMA DHIS2 tabular exports. Finally, the Glue packages provides interpreted string literals that allow us to combine and use string values within code.
+
+```{r, eval = FALSE, echo = TRUE}
+library(tidyverse)
 library(sismar)
+library(glue)
 ```
+
+## Define Global Variables for 'Year' and File Path
+
+We'll begin our adventure by coding three values into our global environment for later use - 1) the calendar year for which data was downloaded from SISMA; 2) the path to the SISMA .csv export on our local machine; and 3) the path and filename where our processed dataset will be saved. Note that best practice is to store data and scripts in specific pre-created R project folder strutures.  This facilitates reproducibility and collaboration across users.   
+
+```{r}
+year <- "2023"
+path_ats_auto <- glue::glue("~/GitHub/SISMA/Data/ats_autoteste_{year}.csv")
+output_ats_auto <- glue::glue("~/GitHub/SISMA/Dataout/ats_autoteste_{year}.csv")
+
+path_ats_auto
+output_ats_auto
+```
+
+
+## Tidy Programmatic Dataset
+```{r}
+
+```
+
