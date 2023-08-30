@@ -22,7 +22,7 @@
 #'
 #' @param file Path of sisma csv input
 #' @param type Type of sisma csv export (SMI-CPN, ATS-Result, etc.)
-#' @param language Language of variable names (Portuguese or English)
+#' @param language Language of variable names (portuguese or english)
 #'
 #' @return A tidy data frame of sisma program results
 #' @export
