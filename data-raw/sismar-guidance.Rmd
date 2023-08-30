@@ -1,0 +1,25 @@
+---
+title: "SISMA tabular program data processing"
+author: "Joe Lara"
+date: "8/30/2023"
+output: 
+  md_document:
+    variant: markdown
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, knitr.kable.NA = '')
+```
+
+```{r libraries, echo=F, warning=F, message=F}
+library(tidyverse)
+```
+### Purpose of SISMAr
+
+This R package was created for the Mozambique Ministry of Health (MISAU) to automate data processing and support analysis of SISMA programmatic data. This package is designed for the specific purpose of cleaning, reshaping and feature engineering provided standard SISMA DHIS2 tabular exports.
+
+
+
+
+
