@@ -1,0 +1,13 @@
+
+{
+  "languages": ["en", "pt"],
+  "translation":[
+    {"en": "SISMA Data Processing App", "pt":"Aplicativo de Processamento de Dados SISMA"},
+    {"en": "Choose a CSV file", "pt":"Escolha ficheiro CSV"},
+    {"en": "Select Export Type", "pt":"Escolha Tipo de Ficheiro"},
+    {"en": "Select Language", "pt":"Escolha Lingua"},
+    {"en": "Process Data", "pt":"Processar Dados"},
+    {"en": "Download Processed Data", "pt":"Descarregar Dados Processados"}
+  ],
+   "cultural_date_format": "%d-%m-%Y"
+}

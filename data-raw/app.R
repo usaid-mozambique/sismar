@@ -19,39 +19,55 @@ library(sismar)
 library(googledrive)
 library(googlesheets4)
 library(glue)
+library(jsonlite)
 
 
 # Global Options ----
+load_secrets()
+i18n <- Translator$new(translation_json_path = "translations.json")
+i18n$set_translation_language("pt")
 
 
 # Define UI
 ui <- fluidPage(
+  usei18n(i18n),
+ # p(i18n$t("Hello")),
+  actionButton("en_trans", "Translate to English"),
+ actionButton("port_trans", "Translate to Portuguese"),
   navbarPage(
     useShinyjs(),
     id = "mainMenu",
     fluid = TRUE,
     collapsible = TRUE,
-    title = "TEST",
+    title = "MISAU SISMA Processamento de Dados (SISMA Data Processing)",
     position = "fixed-top",
     theme = shinytheme("flatly"),#cerulean, spacelab, yeti, sandstone
     #footer = titlePanel(title = app_title),
     tags$style(type="text/css",
                "body {padding-top: 70px;}
         .navbar-nav {float: right;}")),
-  titlePanel("SISMA Data Processing App"),
-  fileInput("file", "Choose a CSV file"),
-  selectInput("type", "Select Export Type", choices = c("SMI-CPN", "SMI-MAT", "SMI-CCR", "ATS Result", "ATS History",
+  titlePanel(i18n$t("SISMA Data Processing App")),
+  fileInput("file", i18n$t("Choose a CSV file")),
+  selectInput("type", i18n$t("Select Export Type"), choices = c("SMI-CPN", "SMI-MAT", "SMI-CCR", "ATS Result", "ATS History",
                                                         "ATS CI", "ATS SAAJ", "ATS CCSD", "ATS SMI", "ATS Auto", "HIV TARV",
                                                         "HIV PREP", "HIV APSS")),
-  selectInput("language", "Select Language", choices = c("Portuguese", "English")),
-  actionButton("processBtn", "Process Data"),
-  downloadButton("downloadBtn", "Download Processed Data"),
+  selectInput("language", i18n$t("Select Language"), choices = c("Portuguese", "English")),
+  actionButton("processBtn", i18n$t("Process Data")),
+  downloadButton("downloadBtn", i18n$t("Download Processed Data")),
   dataTableOutput("previewTable")  # Adding a table to show data preview
 
 )
 
 # Define Server Logic
-server <- function(input, output) {
+server <- function(input, output, session) {
+
+  observeEvent(input$en_trans,{
+    update_lang("en", session)
+  })
+
+  observeEvent(input$port_trans,{
+    update_lang("pt", session)
+  })
 
 
   processed_data <- reactiveVal(NULL)
