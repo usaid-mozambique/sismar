@@ -15,7 +15,7 @@ parse_sisma_ats_saaj_cm <- function(file) {
   df_all <- file %>%
     tidyr::pivot_wider(names_from = indicator, values_from = value) %>%
 
-    mutate(across(starts_with("mz_saaj_"), ~ replace_na(.x, 0))) %>%
+    dplyr::mutate(dplyr::across(tidyselect::starts_with("mz_saaj_"), ~ replace_na(.x, 0))) %>%
 
     dplyr::mutate(
 
@@ -53,7 +53,7 @@ parse_sisma_ats_saaj_cm <- function(file) {
       mz_saaj_testagem_para_hiv_numero_de_parceiros_testados_negativo_25_anos_masculino = mz_saaj_testagem_para_hiv_numero_parceiros_testados_25_anos_masculino - mz_saaj_testagem_para_hiv_numero_de_parceiros_testados_positivos_25_anos_masculino) %>%
 
 
-    tidyr::pivot_longer(cols = starts_with("mz_"), names_to = "indicator", values_to = "value") %>%
+    tidyr::pivot_longer(cols = tidyselect::starts_with("mz_"), names_to = "indicator", values_to = "value") %>%
 
     dplyr::filter(!value == 0) %>%
 

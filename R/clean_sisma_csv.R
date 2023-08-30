@@ -45,8 +45,8 @@ clean_sisma_csv <- function(file) {
                                                           "Q3" = "09",
                                                           "Q4" = "12")),
                   periodcode = paste0(periodcode, "01"),
-                  periodcode = ymd(periodcode),
-                  across(c(orgunitlevel2, orgunitlevel3), ~ str_to_title(.))) %>%
+                  periodcode = lubridate::ymd(periodcode),
+                  dplyr::across(c(orgunitlevel2, orgunitlevel3), ~ stringr::str_to_title(.))) %>%
 
     dplyr::select(period = periodcode,
                   snu = orgunitlevel2,
