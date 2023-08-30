@@ -31,7 +31,6 @@ i18n$set_translation_language("pt")
 # Define UI
 ui <- fluidPage(
   usei18n(i18n),
- # p(i18n$t("Hello")),
   actionButton("en_trans", "Translate to English"),
  actionButton("port_trans", "Translate to Portuguese"),
   navbarPage(
@@ -46,7 +45,14 @@ ui <- fluidPage(
     tags$style(type="text/css",
                "body {padding-top: 70px;}
         .navbar-nav {float: right;}")),
-  titlePanel(i18n$t("SISMA Data Processing App")),
+ tabPanel(
+   id = "menuHome",
+   title = "Home",
+   titlePanel(i18n$t("SISMA Data Processing App")),
+   mainPanel(
+     htmltools::includeMarkdown("sismar-guidance.md"),
+   )),
+ # titlePanel(i18n$t("SISMA Data Processing App")),
   fileInput("file", i18n$t("Choose a CSV file")),
   selectInput("type", i18n$t("Select Export Type"), choices = c("SMI-CPN", "SMI-MAT", "SMI-CCR", "ATS Result", "ATS History",
                                                         "ATS CI", "ATS SAAJ", "ATS CCSD", "ATS SMI", "ATS Auto", "HIV TARV",
