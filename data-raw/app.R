@@ -51,7 +51,7 @@ ui <- fluidPage(
   selectInput("type", i18n$t("Select Export Type"), choices = c("SMI-CPN", "SMI-MAT", "SMI-CCR", "ATS Result", "ATS History",
                                                         "ATS CI", "ATS SAAJ", "ATS CCSD", "ATS SMI", "ATS Auto", "HIV TARV",
                                                         "HIV PREP", "HIV APSS")),
-  selectInput("language", i18n$t("Select Language"), choices = c("Portuguese", "English")),
+  selectInput("language", i18n$t("Select Language"), choices = c("portuguese", "english")),
   actionButton("processBtn", i18n$t("Process Data")),
   downloadButton("downloadBtn", i18n$t("Download Processed Data")),
   dataTableOutput("previewTable")  # Adding a table to show data preview
