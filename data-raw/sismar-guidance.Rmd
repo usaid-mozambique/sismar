@@ -1,0 +1,30 @@
+---
+title: "SISMA tabular program data processing"
+author: "Joe Lara"
+date: "8/30/2023"
+output: 
+  md_document:
+    variant: markdown
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, knitr.kable.NA = '')
+```
+
+```{r libraries, echo=F, warning=F, message=F}
+library(tidyverse)
+```
+### Objectivo do SISMAr
+
+Este pacote R, criado para o Ministério da Saúde de Moçambique (MISAU), automatiza o processamento, transformação e análise de dados programáticos do SISMA.
+
+
+
+
+
+
+
+
+
+

@@ -39,7 +39,7 @@ parse_sisma_ats_smi <- function(file) {
                      smi_pf_hiv_utentes_testadas_na_consulta_de_saude_reprodutiva,
                      smi_ug_total_testadas_para_hiv_nas_urgencias_de_ginecologia)) %>%
 
-    tidyr::pivot_longer(cols = where(is.numeric),
+    tidyr::pivot_longer(cols = tidyselect::where(is.numeric),
                         names_to = "indicator",
                         values_to = "value") %>%
 

@@ -19,7 +19,8 @@ Imports:
   tidyr,
   readr,
   stringr,
-  janitor
+  janitor,
+  lubridate
 Depends: 
     R (>= 2.10)
 Suggests: 

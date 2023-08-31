@@ -1,0 +1,14 @@
+
+{
+  "languages": ["en", "pt"],
+  "translation":[
+    {"en": "SISMA Data Processing App", "pt":"Aplicativo de Processamento de Dados SISMA"},
+    {"en": "Choose a CSV file", "pt":"Escolha ficheiro CSV"},
+    {"en": "Select Export Type", "pt":"Escolha Tipo de Ficheiro"},
+    {"en": "Select Language", "pt":"Escolha Lingua"},
+    {"en": "Process Data", "pt":"Processar Dados"},
+    {"en": "Download Processed Data", "pt":"Descarregar Dados Processados"},
+    {"en": "This R package was created for the Mozambique Ministry of Health (MISAU) to automate data processing and support analysis of SISMA programmatic data. This package is designed for the specific purpose of cleaning, reshaping and feature engineering provided standard SISMA DHIS2 tabular exports.","pt":"Este pacote R, criado para o Ministério da Saúde de Moçambique (MISAU), automatiza o processamento, transformação e análise de dados programáticos do SISMA."}
+  ],
+   "cultural_date_format": "%d-%m-%Y"
+}
