@@ -35,7 +35,8 @@
 process_sisma_csv <- function(file, type, language = "portuguese"){
 
   df <- clean_sisma_csv(file) %>%
-    parse_sisma_csv(type)
+    parse_sisma_csv(type) %>%
+    dplyr::mutate_if(is.character, ~tidyr::replace_na(., ""))
 
   if(language == "portuguese"){
 
