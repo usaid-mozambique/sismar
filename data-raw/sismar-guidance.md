@@ -1,7 +1,5 @@
-### Purpose of SISMAr
+### Objectivo do SISMAr
 
-This R package was created for the Mozambique Ministry of Health (MISAU)
-to automate data processing and support analysis of SISMA programmatic
-data. This package is designed for the specific purpose of cleaning,
-reshaping and feature engineering provided standard SISMA DHIS2 tabular
-exports.
+Este pacote R, criado para o Ministério da Saúde de Moçambique (MISAU),
+automatiza o processamento, transformação e análise de dados
+programáticos do SISMA.
