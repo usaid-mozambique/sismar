@@ -8,6 +8,7 @@
 #
 
 #install.packages("shiny.i18n")
+#install.packages("googleLanguageR")
 library(shiny.i18n)
 library(shiny)
 library(shinyjs)
@@ -32,7 +33,7 @@ i18n$set_translation_language("pt")
 ui <- fluidPage(
   usei18n(i18n),
   actionButton("en_trans", "Translate to English"),
- actionButton("port_trans", "Translate to Portuguese"),
+ actionButton("port_trans", "Traduzir a Portuguese"),
   navbarPage(
     useShinyjs(),
     id = "mainMenu",
@@ -50,9 +51,14 @@ ui <- fluidPage(
    title = "Home",
    titlePanel(i18n$t("SISMA Data Processing App")),
    mainPanel(
-     htmltools::includeMarkdown("sismar-guidance.md"),
-   )),
- # titlePanel(i18n$t("SISMA Data Processing App")),
+     p(i18n$t("This R package was created for the Mozambique Ministry of Health (MISAU) to automate data processing and support analysis of SISMA programmatic data. This package is designed for the specific purpose of cleaning, reshaping and feature engineering provided standard SISMA DHIS2 tabular exports.")
+   ))
+ )
+   ,
+   # mainPanel(
+   #   htmltools::includeMarkdown("sismar-guidance.md"),
+   # )),
+ #titlePanel(i18n$t("SISMA Data Processing App")),
   fileInput("file", i18n$t("Choose a CSV file")),
   selectInput("type", i18n$t("Select Export Type"), choices = c("SMI-CPN", "SMI-MAT", "SMI-CCR", "ATS Result", "ATS History",
                                                         "ATS CI", "ATS SAAJ", "ATS CCSD", "ATS SMI", "ATS Auto", "HIV TARV",
@@ -97,7 +103,7 @@ server <- function(input, output, session) {
       paste("processed_data_",input$type, "_", Sys.Date(), ".csv", sep = "")
     },
     content = function(file) {
-      write.csv(processed_data(), file)
+      write_csv(processed_data(), file)
     }
   )
 
