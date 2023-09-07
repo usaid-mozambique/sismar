@@ -6,7 +6,7 @@
 #
 #    http://shiny.rstudio.com/
 #
-
+#install.packages("jsonlite")
 #install.packages("shiny.i18n")
 #install.packages("googleLanguageR")
 library(shiny.i18n)
@@ -15,7 +15,6 @@ library(shinyjs)
 library(shinythemes)
 library(tidyverse)
 library(glamr)
-library(glitr)
 library(sismar)
 library(googledrive)
 library(googlesheets4)
