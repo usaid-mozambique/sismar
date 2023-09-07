@@ -11,7 +11,7 @@ process_sisma_csv(file, type, language = "portuguese")
 
 \item{type}{Type of sisma csv export (SMI-CPN, ATS-Result, etc.)}
 
-\item{language}{Language of variable names (Portuguese or English)}
+\item{language}{Language of variable names (portuguese or english)}
 }
 \value{
 A tidy data frame of sisma program results

@@ -39,7 +39,7 @@ ui <- fluidPage(
     id = "mainMenu",
     fluid = TRUE,
     collapsible = TRUE,
-    title = "MISAU SISMA Processamento de Dados (SISMA Data Processing)",
+    title = "MISAU: Processamento de Dados SISMA",
     position = "fixed-top",
     theme = shinytheme("flatly"),#cerulean, spacelab, yeti, sandstone
     #footer = titlePanel(title = app_title),
