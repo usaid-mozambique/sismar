@@ -2,6 +2,7 @@
 
 export("%>%")
 export(clean_sisma_csv)
+export(create_report)
 export(parse_sisma_ats_auto)
 export(parse_sisma_ats_ccsd)
 export(parse_sisma_ats_history)
@@ -17,4 +18,5 @@ export(parse_sisma_smi_ccr)
 export(parse_sisma_smi_cpn)
 export(parse_sisma_smi_mat)
 export(process_sisma_csv)
+export(write_report)
 importFrom(magrittr,"%>%")
