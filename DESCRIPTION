@@ -22,7 +22,8 @@ Imports:
   janitor,
   lubridate,
   openxlsx,
-  scales
+  scales,
+  mozR
 Depends: 
     R (>= 2.10)
 Suggests: 
