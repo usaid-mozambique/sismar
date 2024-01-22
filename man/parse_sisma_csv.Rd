@@ -35,6 +35,7 @@ in R/PowerBI/Tableau.
 \item HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 \item HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
 \item HIV APSS: Apoio Psicossocial (APSS), Programa de HIV
+\item HIV ITS: Infecções de Transmissão Sexual (ITS), Programa de HIV
 }
 }
 }

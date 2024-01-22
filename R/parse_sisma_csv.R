@@ -20,6 +20,7 @@
 #' * HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 #' * HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
 #' * HIV APSS: Apoio Psicossocial (APSS), Programa de HIV
+#' * HIV ITS: Infecções de Transmissão Sexual (ITS), Programa de HIV
 #'
 #' @param data Path to SISMA dataset (saved in .csv format)
 #' @param type Defines programmatic data type for processing
@@ -46,7 +47,8 @@ parse_sisma_csv <- function(data, type){
          "ATS Auto" = parse_sisma_ats_auto(data),
          "HIV TARV" = parse_sisma_hiv_tarv(data),
          "HIV PREP" = parse_sisma_hiv_prep(data),
-         "HIV APSS" = parse_sisma_hiv_apss(data)
+         "HIV APSS" = parse_sisma_hiv_apss(data),
+         "HIV ITS" = parse_sisma_hiv_its(data),
   )
 
 }

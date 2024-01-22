@@ -224,7 +224,7 @@
 
 #' SISMA APSS Map for Feature Engineering
 #'
-#' List of indicators
+#' List of indicatorsdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
 #'
 #' @usage data(data_sisma_hiv_apss_map)
 #'
