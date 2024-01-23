@@ -37,6 +37,14 @@ parse_sisma_hiv_tarv <- function(file) {
                   result_status,
                   value)
 
+  df_activos_prev <- df %>%
+    dplyr::filter(indicator == "TX_ACTIVO") %>%
+    dplyr::mutate(indicator = "TX_ACTIVO_PREV") %>%
+    dplyr::mutate(period = period + months(1))
+
+
+  df <- dplyr::bind_rows(df, df_activos_prev)
+
   return(df)
 
 }
