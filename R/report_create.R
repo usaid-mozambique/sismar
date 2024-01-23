@@ -1,18 +1,19 @@
 #' Create a dataset for completeness check
 #'
 #' @param data Data received from all sites
-#' @param report_type sites that should deliver data
+#' @param report_type project required e.g. tarv
+#' @param period_selected select period to show
 #'
 #' @return a tibble with expected vs actual data submitted at a site level
 #' @export
 #'
 #' @examples
 #'  \dontrun{
-#'    report_create(data_delivered, sites)
+#'    report_create(data, report_type, period_selected)
 #'  }
 #'
 
-report_create <- function(data, report_type){
+report_create <- function(data, report_type, period_selected){
 
   reporting_index <- mozR::pull_sitemap(sheetname = "list_sisma_reporting") %>%
     janitor::clean_names() %>%
@@ -25,26 +26,17 @@ report_create <- function(data, report_type){
     dplyr::mutate(type = report_type) %>%
     tidyr::drop_na(sisma_uid) #remove if the SISMA_UID is missing
 
-  val_period <- df_tarv %>%
-    select(periodo) %>%
-    filter(periodo == max(periodo)) %>%
-    mutate(periodo == as.character(periodo))
-
-  val_period <- unique(val_period$periodo)
-
-  val_period <- as.character(val_period)
-
   data <- data %>%
     janitor::clean_names() %>%
-    dplyr::select(sisma_uid, periodo) %>%
-    dplyr::filter(periodo == max(periodo)) %>% # new code but consider converting to argument
+    dplyr::select(sisma_uid, period) %>%
+    dplyr::filter(period == period_selected) %>% # new code but consider converting to argument
     dplyr::mutate("delivered" = 1) %>%
     dplyr::distinct(sisma_uid, delivered)
 
   report <- reporting_index %>%
     dplyr::left_join(data, by = "sisma_uid") %>%
     tidyr::replace_na(list("expected" = 0, "delivered" = 0)) %>%
-    dplyr::mutate(period = val_period) %>%
+    dplyr::mutate(period = period_selected) %>%
     dplyr::select(sisma_uid,
                   provincia = snu1,
                   distrito = psnu,
