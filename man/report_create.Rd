@@ -2,24 +2,28 @@
 % Please edit documentation in R/report_create.R
 \name{report_create}
 \alias{report_create}
-\title{Create a dataset for completeness check}
+\title{Create a dataset for completeness check
+Options: tarv, apss_pp, ptv, ccr, prep}
 \usage{
-report_create(data, report_type)
+report_create(data, report_type, period_selected)
 }
 \arguments{
 \item{data}{Data received from all sites}
 
-\item{report_type}{sites that should deliver data}
+\item{report_type}{project required e.g. tarv}
+
+\item{period_selected}{select period to show}
 }
 \value{
 a tibble with expected vs actual data submitted at a site level
 }
 \description{
 Create a dataset for completeness check
+Options: tarv, apss_pp, ptv, ccr, prep
 }
 \examples{
  \dontrun{
-   report_create(data_delivered, sites)
+   report_create(data, report_type, period_selected)
  }
 
 }
