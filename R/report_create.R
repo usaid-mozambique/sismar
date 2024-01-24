@@ -1,4 +1,5 @@
 #' Create a dataset for completeness check
+#' Options: tarv, apss_pp, ptv, ccr, prep
 #'
 #' @param data Data received from all sites
 #' @param report_type project required e.g. tarv
@@ -14,6 +15,9 @@
 #'
 
 report_create <- function(data, report_type, period_selected){
+
+  #convert to a date
+  period_selected <- lubridate::ym(period_selected)
 
   reporting_index <- mozR::pull_sitemap(sheetname = "list_sisma_reporting") %>%
     janitor::clean_names() %>%
@@ -36,7 +40,16 @@ report_create <- function(data, report_type, period_selected){
   report <- reporting_index %>%
     dplyr::left_join(data, by = "sisma_uid") %>%
     tidyr::replace_na(list("expected" = 0, "delivered" = 0)) %>%
-    dplyr::mutate(period = period_selected) %>%
+    dplyr::mutate(period = period_selected,
+                  type = dplyr::case_when(type == "tarv" ~ "HIV TARV",
+                                   type == "apss_pp" ~ "HIV APSS",
+                                   type == "prep" ~ "HIV PREP",
+                                   type == "ccr" ~ "SMI_CCR",
+                                   type == "ptv" ~ "SMI_CPN",
+                                   .default = NULL
+                                          )
+                  ) %>%
+
     dplyr::select(sisma_uid,
                   provincia = snu1,
                   distrito = psnu,
