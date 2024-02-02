@@ -21,6 +21,7 @@
 #' * HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
 #' * HIV APSS: Apoio Psicossocial (APSS), Programa de HIV
 #' * HIV ITS: Infecções de Transmissão Sexual (ITS), Programa de HIV
+#' * HIV AJMHCMM: Adolescent Joven Mentor, Homen Campeao, Maes Mentora
 #'
 #' @param data Path to SISMA dataset (saved in .csv format)
 #' @param type Defines programmatic data type for processing
@@ -49,6 +50,7 @@ parse_sisma_csv <- function(data, type){
          "HIV PREP" = parse_sisma_hiv_prep(data),
          "HIV APSS" = parse_sisma_hiv_apss(data),
          "HIV ITS" = parse_sisma_hiv_its(data),
+         "HIV AJMHCMM" = parse_sisma_hiv_ajm_hc_mm(data),
   )
 
 }
