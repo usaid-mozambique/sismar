@@ -19,6 +19,6 @@ A list of the variables included to engineer dataset features
 data(data_sisma_hiv_apss_map)
 }
 \description{
-List of indicatorsdata:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
+List of indicators
 }
 \keyword{datasets}
