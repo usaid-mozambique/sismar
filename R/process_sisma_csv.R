@@ -19,6 +19,9 @@
 #' * HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 #' * HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
 #' * HIV APSS: Apoio Psicossocial (APSS), Programa de HIV
+#' * HIV ITS: Infecções de Transmissão Sexual (ITS), Programa de HIV
+#' * HIV AJMHCMM: Adolescent Joven Mentor, Homen Campeao, Maes Mentora
+#' * HIV DAH: Doenca Avancada do HIV
 #'
 #' @param file Path of sisma csv input
 #' @param type Type of sisma csv export (SMI-CPN, ATS-Result, etc.)

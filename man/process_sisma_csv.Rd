@@ -36,6 +36,9 @@ in R/PowerBI/Tableau.
 \item HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 \item HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
 \item HIV APSS: Apoio Psicossocial (APSS), Programa de HIV
+\item HIV ITS: Infecções de Transmissão Sexual (ITS), Programa de HIV
+\item HIV AJMHCMM: Adolescent Joven Mentor, Homen Campeao, Maes Mentora
+\item HIV DAH: Doenca Avancada do HIV
 }
 }
 }
