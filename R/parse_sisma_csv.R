@@ -46,7 +46,7 @@ parse_sisma_csv <- function(data, type){
          "ATS SAAJ" = parse_sisma_ats_saaj_cm(data), # SISMA search terms "MZ SAAJ - Testagem para HIV -" & "MZ C.MASC - Testados"
          "ATS CCSD" = parse_sisma_ats_ccsd(data),
          "ATS SMI" = parse_sisma_ats_smi(data),
-         "ATS Auto" = parse_sisma_ats_auto(data),
+         "ATS Auto" = parse_sisma_ats_auto(data), # SISMA search term "MZ HIV-AUTOTESTE"
          "HIV TARV" = parse_sisma_hiv_tarv(data), # SISMA search term "MZ HIV SIDA - "
          "HIV PREP" = parse_sisma_hiv_prep(data), # SISMA search term "MZ PREP"
          "HIV APSS" = parse_sisma_hiv_apss(data), # SISMA search term "MZ APSS PP"
