@@ -13,12 +13,12 @@ parse_sisma_csv(data, type)
 \item{type}{Defines programmatic data type for processing}
 }
 \value{
-A tidy dataframe with monthly sisma results
+A tidy SISMA programmatic dataframe
 }
 \description{
 parse_sisma_csv cleans and transforms programmatic
 data sets exported from SISMA into tidy data frames. Such
-structured data sets are key to facilitating subsequent analysis
+structured data sets are key to facilitating indicator analysis
 in R/PowerBI/Tableau.
 \subsection{Overview of programmatic data type options}{
 \itemize{
