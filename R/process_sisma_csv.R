@@ -9,6 +9,8 @@
 #' * SMI-CPN: CPN, Saude Materna Infantil
 #' * SMI-MAT: Maternidade, Saude Materna Infantil
 #' * SMI-CCR: CCR, Saude Materna Infantil
+#' * SMI-CPP: CCP, Saude Materna Infantil
+#' * SMI-PAV: PAV, Saude Materna Infantil
 #' * ATS Result: ATS Resultados, Programa de HIV
 #' * ATS History: ATS Historial e Populacoes Chave, Programa de HIV
 #' * ATS CI: ATS Caso Indice e Ligacao, Programa de HIV

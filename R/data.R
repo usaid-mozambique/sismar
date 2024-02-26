@@ -302,7 +302,6 @@
 "data_sisma_hiv_dah_map"
 
 
-
 #' SISMA Consulta Post-Parto Map for Feature Engineering
 #'
 #' List of indicators
@@ -323,7 +322,6 @@
 #'   \item{data_sisma_smi_cpp_map}{source}
 #' }
 "data_sisma_smi_cpp_map"
-
 
 
 #' SISMA PAV Map for Feature Engineering
