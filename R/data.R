@@ -323,3 +323,23 @@
 #'   \item{data_sisma_smi_cpp_map}{source}
 #' }
 "data_sisma_smi_cpp_map"
+
+
+
+#' SISMA PAV Map for Feature Engineering
+#'
+#' List of indicators
+#'
+#' @usage data(data_sisma_smi_pav_map)
+#'
+#' @format A list of the variables included to engineer dataset features
+#' \describe{
+#'   \item{data_sisma_smi_pav_map}{indicator}
+#'   \item{data_sisma_smi_pav_map}{indicator_new}
+#'   \item{data_sisma_smi_pav_map}{sex}
+#'   \item{data_sisma_smi_pav_map}{age}
+#'   \item{data_sisma_smi_pav_map}{age_coarse}
+#'   \item{data_sisma_smi_pav_map}{disaggregate}
+#'   \item{data_sisma_smi_pav_map}{source}
+#' }
+"data_sisma_smi_pav_map"
