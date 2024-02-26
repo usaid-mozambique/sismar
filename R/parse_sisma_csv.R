@@ -40,6 +40,7 @@ parse_sisma_csv <- function(data, type){
          "SMI-CPN" = parse_sisma_smi_cpn(data), # SISMA search term "SMI-CPN"
          "SMI-MAT" = parse_sisma_smi_mat(data), # SISMA search term "SMI-MAT"
          "SMI-CCR" = parse_sisma_smi_ccr(data), # SISMA search term "SMI - CCR - "
+         "SMI-CPP" = parse_sisma_smi_cpp(data), # SISMA search term "SMI-CPP"
          "ATS Result" = parse_sisma_ats_results(data), # SISMA search term "ano" within Grupo de Elemento de Dados "ATS - Resumo Mensal (Nova)"
          "ATS History" = parse_sisma_ats_history(data), # SISMA search terms "Historial" & "chave" within Grupo de Elemento de Dados "ATS - Resumo Mensal (Nova)"
          "ATS CI" = parse_sisma_ats_index(data),  # SISMA search terms "diagonsticados" & "indice" within Grupo de Elemento de Dados "ATS - Resumo Mensal (Nova)"
