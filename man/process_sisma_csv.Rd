@@ -27,6 +27,7 @@ in R/PowerBI/Tableau.
 \item SMI-MAT: Maternidade, Saude Materna Infantil
 \item SMI-CCR: CCR, Saude Materna Infantil
 \item SMI-CPP: CCP, Saude Materna Infantil
+\item SMI-CCD: CCD, Saude Materna Infantil
 \item SMI-PAV: PAV, Saude Materna Infantil
 \item ATS Result: ATS Resultados, Programa de HIV
 \item ATS History: ATS Historial e Populacoes Chave, Programa de HIV
