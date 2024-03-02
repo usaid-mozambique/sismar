@@ -15,7 +15,7 @@ parse_sisma_smi_ccd <- function(file) {
 
   df <- file %>%
 
-    dplyr::mutate(period_cohort = NA_character_,
+    dplyr::mutate(period_cohort = NA,
                   sub_group = NA_character_) %>%
     dplyr::left_join(data_sisma_smi_ccd_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%

@@ -17,7 +17,7 @@ parse_sisma_smi_pav <- function(file) {
 
     dplyr::filter(!is.na(value)) %>%
     dplyr::left_join(data_sisma_smi_pav_map, by = "indicator") %>%
-    dplyr::mutate(period_cohort = NA_character_,
+    dplyr::mutate(period_cohort = NA,
                   disaggregate_sub = NA_character_,
                   sub_group = NA_character_,
                   result_status = NA_character_) %>%
