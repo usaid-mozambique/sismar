@@ -4,7 +4,7 @@
 \alias{attach_meta_coord}
 \title{Retreive and attach health facility geocoordinates metadata}
 \usage{
-attach_meta_coord(df, sheetname = "lista_us_sisma")
+attach_meta_coord(df, sheetname = "map_us_coord")
 }
 \arguments{
 \item{df}{Dataframe cleaned via reshape_sisma}

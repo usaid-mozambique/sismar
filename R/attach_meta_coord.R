@@ -15,7 +15,7 @@
 #'  df <- attach_meta_uid(df)}
 
 
-attach_meta_coord <- function(df, sheetname = "lista_us_sisma") {
+attach_meta_coord <- function(df, sheetname = "map_us_coord") {
 
   #save google id
   path_meta <- googlesheets4::as_sheets_id("1cs8dC6OIFsjIJPIew3puPd1NkjGVeijz4jRnk3yiMR4")
