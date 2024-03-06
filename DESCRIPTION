@@ -15,6 +15,7 @@ BugReports: https://github.com/usaid-mozambique/sismar/issues
 Imports:
   dplyr,
   magrittr,
+  googlesheets4,
   tidyselect,
   tidyr,
   readr,
