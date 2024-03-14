@@ -22,8 +22,7 @@ parse_sisma_smi_mat <- function(file) {
                   age = NA_character_,
                   sub_group = NA_character_,
                   age_coarse = NA_character_,
-                  result_status = NA_character_,
-                  disaggregate_sub = NA_character_) %>%
+                  result_status = NA_character_) %>%
     dplyr::select(sisma_uid,
                   snu,
                   psnu,
