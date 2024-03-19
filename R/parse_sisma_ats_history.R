@@ -23,11 +23,13 @@ parse_sisma_ats_history <- function(file) {
       age = NA_character_,
       sex = NA_character_)
 
-  df_pos <- df_all %>%
-    dplyr::filter(result_status == "Positivo") %>%
-    dplyr::mutate(indicator = dplyr::case_when(indicator == "ATS_KP" ~ "ATS_KP_POS"))
+  # commented code should be reviewed if there is a desire to include separate ATS_KP_POS indicator
 
-  df_parse <- dplyr::bind_rows(df_all, df_pos) %>%
+  # df_pos <- df_all %>%
+  #   dplyr::filter(result_status == "Positivo") %>%
+  #   dplyr::mutate(indicator = dplyr::case_when(indicator == "ATS_KP" ~ "ATS_KP_POS"))
+
+  df_parse <- df_all |>
     dplyr::select(sisma_uid,
                   snu,
                   psnu,

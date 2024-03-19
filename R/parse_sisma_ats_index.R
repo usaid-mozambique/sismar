@@ -23,11 +23,13 @@ parse_sisma_ats_index <- function(file) {
       age = NA_character_,
       sex = NA_character_)
 
-  df_pos <- df_all %>%
-    dplyr::filter(result_status == "Positivo") %>%
-    dplyr::mutate(indicator = dplyr::case_when(indicator == "ATS_CI_TST" ~ "ATS_CI_TST_POS"))
+  # commented code should be reviewed if there is a desire to include separate ATS_CI_TST_POS indicator
 
-  df_parse <- dplyr::bind_rows(df_all, df_pos) %>%
+  # df_pos <- df_all %>%
+  #   dplyr::filter(result_status == "Positivo") %>%
+  #   dplyr::mutate(indicator = dplyr::case_when(indicator == "ATS_CI_TST" ~ "ATS_CI_TST_POS"))
+
+  df_parse <- df_all |>
     dplyr::select(sisma_uid,
                   snu,
                   psnu,
@@ -44,6 +46,25 @@ parse_sisma_ats_index <- function(file) {
                   age,
                   result_status,
                   value)
+
+
+  # df_parse <- dplyr::bind_rows(df_all, df_pos) %>%
+  #   dplyr::select(sisma_uid,
+  #                 snu,
+  #                 psnu,
+  #                 sitename,
+  #                 period,
+  #                 period_cohort,
+  #                 indicator = indicator_new,
+  #                 source,
+  #                 disaggregate,
+  #                 disaggregate_sub,
+  #                 sub_group,
+  #                 sex,
+  #                 age_coarse,
+  #                 age,
+  #                 result_status,
+  #                 value)
 
   return(df_parse)
 
