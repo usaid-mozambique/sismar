@@ -1,8 +1,8 @@
-#' A general function for cleaning a CSV export from SISMA
+#' Helper function for cleaning a .csv pivot table export from SISMA
 #'
-#' @param file CSV input pile from SISMA
+#' @param file A .csv file downloaded from SISMA with data element or indicator results running wide
 #'
-#' @return A long format of original CSV export from SISMA
+#' @return An object with 7 variables (period, snu, psnu, sitename, sisma_uid, indicator, value)
 #' @export
 #'
 #' @examples

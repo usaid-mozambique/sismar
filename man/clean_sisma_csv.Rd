@@ -2,18 +2,18 @@
 % Please edit documentation in R/clean_sisma_csv.R
 \name{clean_sisma_csv}
 \alias{clean_sisma_csv}
-\title{A general function for cleaning a CSV export from SISMA}
+\title{Helper function for cleaning a .csv pivot table export from SISMA}
 \usage{
 clean_sisma_csv(file)
 }
 \arguments{
-\item{file}{CSV input pile from SISMA}
+\item{file}{A .csv file downloaded from SISMA with data element or indicator results running wide}
 }
 \value{
-A long format of original CSV export from SISMA
+A data frame object in long format with 7 variables (period, snu, psnu, sitename, sisma_uid, indicator, value)
 }
 \description{
-A general function for cleaning a CSV export from SISMA
+Helper function for cleaning a .csv pivot table export from SISMA
 }
 \examples{
  \dontrun{
