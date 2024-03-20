@@ -2,21 +2,25 @@
 % Please edit documentation in R/clean_sisma_csv.R
 \name{clean_sisma_csv}
 \alias{clean_sisma_csv}
-\title{Helper function for cleaning a .csv pivot table export from SISMA}
+\title{Clean SISMA .csv exports}
 \usage{
 clean_sisma_csv(file)
 }
 \arguments{
-\item{file}{A .csv file downloaded from SISMA with data element or indicator results running wide}
+\item{file}{The path to a .csv file exported from SISMA that contains data
+element or indicator variables running wide}
 }
 \value{
-A data frame object in long format with 7 variables (period, snu, psnu, sitename, sisma_uid, indicator, value)
+\code{clean_sisma_csv()} returns an object with 7 columns (period, snu,
+psnu, sitename, sisma_uid, indicator, value). Unnecessary and duplicate
+columns from the input file have been removed, a period column coded from
+the original periodcode, and all remaining numeric columns pivoted long.
 }
 \description{
-Helper function for cleaning a .csv pivot table export from SISMA
+\code{clean_sisma_csv()} is a helper function for cleaning a .csv pivot table
+exported from SISMA
 }
 \examples{
  \dontrun{
-
  df <- clean_sisma_csv()}
 }

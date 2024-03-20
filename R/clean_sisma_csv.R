@@ -1,13 +1,19 @@
-#' Helper function for cleaning a .csv pivot table export from SISMA
+#' Clean SISMA .csv exports
 #'
-#' @param file A .csv file downloaded from SISMA with data element or indicator results running wide
+#' `clean_sisma_csv()` is a helper function for cleaning a .csv pivot table
+#' exported from SISMA
 #'
-#' @return An object with 7 variables (period, snu, psnu, sitename, sisma_uid, indicator, value)
+#' @param file The path to a .csv file exported from SISMA that contains
+#'   data element or indicator variables running wide
+#'
+#' @return `clean_sisma_csv()` returns an object with 7 columns (period, snu,
+#'   psnu, sitename, sisma_uid, indicator, value). Unnecessary and duplicate
+#'   columns from the input file have been removed, a period column coded from
+#'   the original periodcode, and all remaining numeric columns pivoted long
 #' @export
 #'
 #' @examples
 #'  \dontrun{
-#'
 #'  df <- clean_sisma_csv()}
 
 
