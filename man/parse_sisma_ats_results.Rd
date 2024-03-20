@@ -2,18 +2,21 @@
 % Please edit documentation in R/parse_sisma_ats_results.R
 \name{parse_sisma_ats_results}
 \alias{parse_sisma_ats_results}
-\title{A helper function for parsing a cleaned CSV export of ATS Results from SISMA}
+\title{Create tidy dataframes for HIV testing recorded in ATS Register}
 \usage{
-parse_sisma_ats_results(file)
+parse_sisma_ats_results(df)
 }
 \arguments{
-\item{file}{Dataframe cleaned via reshape_sisma}
+\item{df}{A dataframe object output from \code{clean_sisma_csv}}
 }
 \value{
-A tidy dataframe of SISMA ATS Results
+\code{parse_sisma_ats_results} returns a tidy object with 16 columns of
+site metadata, indicator features and results
 }
 \description{
-A helper function for parsing a cleaned CSV export of ATS Results from SISMA
+\code{parse_sisma_ats_results} produces a tidy dataframe from an object passed in by
+\code{sisma_clean_csv}. It engineers useful data features such as sex, age,
+indicator disaggregation, sub-group type, etc.
 }
 \examples{
  \dontrun{

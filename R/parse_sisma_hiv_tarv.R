@@ -1,8 +1,13 @@
-#' A specific helper function for parsing a cleaned CSV export from SISMA
+#' Create tidy dataframes for ART Services
 #'
-#' @param file Dataframe cleaned via reshape_sisma
+#' `parse_sisma_hiv_tarv` produces a tidy dataframe from an object passed in by
+#' `sisma_clean_csv`. It engineers useful data features such as sex, age,
+#' indicator disaggregation, sub-group type, etc.
 #'
-#' @return A tidy format of SISMA dataframe
+#' @inheritParams parse_sisma_ats_auto
+#'
+#' @return `parse_sisma_hiv_tarv` returns a tidy object with 16 columns of
+#'   site metadata, indicator features and results
 #' @export
 #'
 #' @examples
@@ -10,9 +15,9 @@
 #'
 #'  df <- parse_sisma_hiv_tarv()}
 
-parse_sisma_hiv_tarv <- function(file) {
+parse_sisma_hiv_tarv <- function(df) {
 
-  df <- file %>%
+  df <- df %>%
 
     dplyr::left_join(data_sisma_hiv_tarv_map, by = "indicator") %>%
     tidyr::drop_na(tidyselect::any_of(c("indicator_new", "source", "value"))) %>%

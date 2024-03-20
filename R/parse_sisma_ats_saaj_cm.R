@@ -1,8 +1,13 @@
-#' A specific helper function for parsing a cleaned CSV export from SISMA
+#' Create tidy dataframes for Youth-Friendly HIV testing
 #'
-#' @param file Dataframe cleaned via reshape_sisma
+#' `parse_sisma_ats_saaj_cm` produces a tidy dataframe from an object passed in by
+#' `sisma_clean_csv`. It engineers useful data features such as sex, age,
+#' indicator disaggregation, sub-group type, etc.
 #'
-#' @return A tidy format of SISMA dataframe
+#' @inheritParams parse_sisma_ats_auto
+#'
+#' @return `parse_sisma_ats_saaj_cm` returns a tidy object with 16 columns of
+#'   site metadata, indicator features and results
 #' @export
 #'
 #' @examples
@@ -10,9 +15,9 @@
 #'
 #'  df <- parse_sisma_ats_saaj_cm()}
 
-parse_sisma_ats_saaj_cm <- function(file) {
+parse_sisma_ats_saaj_cm <- function(df) {
 
-  df_all <- file %>%
+  df_all <- df %>%
     tidyr::pivot_wider(names_from = indicator, values_from = value) %>%
 
     dplyr::mutate(dplyr::across(tidyselect::starts_with("mz_saaj_"), ~ replace_na(.x, 0))) %>%

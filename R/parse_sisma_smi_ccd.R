@@ -1,8 +1,13 @@
-#' A specific helper function for parsing a cleaned CSV export from SISMA
+#' Create tidy dataframes for CCD services
 #'
-#' @param file Dataframe cleaned via reshape_sisma
+#' `parse_sisma_smi_cpp` produces a tidy dataframe from an object passed in by
+#' `sisma_clean_csv`. It engineers useful data features such as sex, age,
+#' indicator disaggregation, sub-group type, etc.
 #'
-#' @return A tidy format of SISMA cpp dataframe
+#' @inheritParams parse_sisma_ats_auto
+#'
+#' @return `parse_sisma_smi_ccd` returns a tidy object with 16 columns of
+#'   site metadata, indicator features and results
 #' @export
 #'
 #' @examples
@@ -11,9 +16,9 @@
 #'  df <- parse_sisma_smi_cpp()}
 
 
-parse_sisma_smi_ccd <- function(file) {
+parse_sisma_smi_ccd <- function(df) {
 
-  df <- file %>%
+  df <- df %>%
 
     dplyr::mutate(period_cohort = NA,
                   sub_group = NA_character_) %>%

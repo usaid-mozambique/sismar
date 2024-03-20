@@ -1,8 +1,13 @@
-#' A helper function for parsing a cleaned CSV export of ATS Results from SISMA
+#' Create tidy dataframes for HIV testing recorded in ATS Register
 #'
-#' @param file Dataframe cleaned via reshape_sisma
+#' `parse_sisma_ats_results` produces a tidy dataframe from an object passed in by
+#' `sisma_clean_csv`. It engineers useful data features such as sex, age,
+#' indicator disaggregation, sub-group type, etc.
 #'
-#' @return A tidy dataframe of SISMA ATS Results
+#' @inheritParams parse_sisma_ats_auto
+#'
+#' @return `parse_sisma_ats_results` returns a tidy object with 16 columns of
+#'   site metadata, indicator features and results
 #' @export
 #'
 #' @examples
@@ -10,9 +15,9 @@
 #'
 #'  df <- parse_sisma_ats_results()}
 
-parse_sisma_ats_results <- function(file) {
+parse_sisma_ats_results <- function(df) {
 
-  df_all <- file %>%
+  df_all <- df %>%
 
     dplyr::filter(!is.na(value)) %>%
     dplyr::left_join(data_sisma_ats_results_map, by = "indicator") %>%

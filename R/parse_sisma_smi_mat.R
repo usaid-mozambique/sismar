@@ -1,8 +1,13 @@
-#' A specific helper function for parsing a cleaned CSV export from SISMA
+#' Create tidy dataframes for Maternity services
 #'
-#' @param file Dataframe cleaned via reshape_sisma
+#' `parse_sisma_smi_mat` produces a tidy dataframe from an object passed in by
+#' `sisma_clean_csv`. It engineers useful data features such as sex, age,
+#' indicator disaggregation, sub-group type, etc.
 #'
-#' @return A tidy format of SISMA Maternity dataframe
+#' @inheritParams parse_sisma_ats_auto
+#'
+#' @return `parse_sisma_smi_mat` returns a tidy object with 16 columns of
+#'   site metadata, indicator features and results
 #' @export
 #'
 #' @examples
@@ -10,10 +15,9 @@
 #'
 #'  df <- parse_sisma_smi_mat()}
 
+parse_sisma_smi_mat <- function(df) {
 
-parse_sisma_smi_mat <- function(file) {
-
-  df <- file %>%
+  df <- df %>%
 
     dplyr::left_join(data_sisma_smi_mat_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%
@@ -22,7 +26,8 @@ parse_sisma_smi_mat <- function(file) {
                   age = NA_character_,
                   sub_group = NA_character_,
                   age_coarse = NA_character_,
-                  result_status = NA_character_) %>%
+                  result_status = NA_character_,
+                  disaggregate_sub = NA_character_) %>%
     dplyr::select(sisma_uid,
                   snu,
                   psnu,

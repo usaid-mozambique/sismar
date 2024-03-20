@@ -2,18 +2,21 @@
 % Please edit documentation in R/parse_sisma_hiv_dah.R
 \name{parse_sisma_hiv_dah}
 \alias{parse_sisma_hiv_dah}
-\title{A specific helper function for parsing a cleaned CSV export from SISMA}
+\title{Create tidy dataframes for AHD Services}
 \usage{
-parse_sisma_hiv_dah(file)
+parse_sisma_hiv_dah(df)
 }
 \arguments{
-\item{file}{Dataframe cleaned via reshape_sisma}
+\item{df}{A dataframe object output from \code{clean_sisma_csv}}
 }
 \value{
-A tidy format of SISMA dataframe
+\code{parse_sisma_hiv_dah} returns a tidy object with 16 columns of
+site metadata, indicator features and results
 }
 \description{
-A specific helper function for parsing a cleaned CSV export from SISMA
+\code{parse_sisma_hiv_dah} produces a tidy dataframe from an object passed in by
+\code{sisma_clean_csv}. It engineers useful data features such as sex, age,
+indicator disaggregation, sub-group type, etc.
 }
 \examples{
  \dontrun{
