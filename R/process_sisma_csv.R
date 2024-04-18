@@ -1,11 +1,10 @@
-#' Function that cleans sisma csv exports and parses them into tidy dataframes
+#' Tidy SISMA .csv files
 #'
-#' @description process_sisma_csv cleans and transforms programmatic
-#' data sets exported in CSV format from SISMA into tidy data frames.
-#' Such structured data sets are key to facilitating subsequent analysis
-#' in R/PowerBI/Tableau.
+#' @description `process_sisma_csv` takes SISMA indicator exports saved locally in
+#'   .csv format and transforms them into tidy dataframes that are more easily
+#'   analyzed in R or other analysis software
 #'
-#' ## Overview of programmatic data type options
+#'   ## Input File Types
 #' * SMI-CPN: CPN, Saude Materna Infantil
 #' * SMI-MAT: Maternidade, Saude Materna Infantil
 #' * SMI-CCR: CCR, Saude Materna Infantil

@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma_csv.R
 \name{process_sisma_csv}
 \alias{process_sisma_csv}
-\title{Function that cleans sisma csv exports and parses them into tidy dataframes}
+\title{Tidy SISMA .csv files}
 \usage{
 process_sisma_csv(file, type, language = "portuguese")
 }
@@ -17,11 +17,10 @@ process_sisma_csv(file, type, language = "portuguese")
 A tidy data frame of sisma program results
 }
 \description{
-process_sisma_csv cleans and transforms programmatic
-data sets exported in CSV format from SISMA into tidy data frames.
-Such structured data sets are key to facilitating subsequent analysis
-in R/PowerBI/Tableau.
-\subsection{Overview of programmatic data type options}{
+\code{process_sisma_csv} takes SISMA indicator exports saved locally in
+.csv format and transforms them into tidy dataframes that are more easily
+analyzed in R or other analysis software
+\subsection{Input File Types}{
 \itemize{
 \item SMI-CPN: CPN, Saude Materna Infantil
 \item SMI-MAT: Maternidade, Saude Materna Infantil
