@@ -7,17 +7,19 @@
 clean_sisma_csv(file)
 }
 \arguments{
-\item{file}{The path to a .csv file exported from SISMA that contains
-data element or indicator variables running wide}
+\item{file}{Path to a .csv file exported from SISMA that contains
+data element variables running wide and period and organizational
+units running long}
 }
 \value{
 \code{clean_sisma_csv()} returns an object with 7 columns (period, snu,
-psnu, sitename, sisma_uid, indicator, value). Unnecessary and duplicate
-columns from the input file have been removed, a period column coded from
-the original periodcode, and all remaining numeric columns pivoted long
+psnu, sitename, sisma_uid, indicator, value). Unnecessary columns from
+the input file are removed and a period column coded from the input
+variable periodcode is created. All numeric data element columns that
+represent indicator or data element values are pivoted long
 }
 \description{
-\code{clean_sisma_csv()} is a helper function for cleaning a .csv pivot table
+\code{clean_sisma_csv()} A helper function that cleans .csv pivot tables
 exported from SISMA
 }
 \examples{
