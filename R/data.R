@@ -362,3 +362,25 @@
 #'   \item{data_sisma_smi_ccd_map}{source}
 #' }
 "data_sisma_smi_ccd_map"
+
+
+#' SISMA CCS Map for Feature Engineering
+#'
+#' List of indicators
+#'
+#' @usage data(data_sisma_smi_ccs_map)
+#'
+#' @format A list of the variables included to engineer dataset features
+#' \describe{
+#'   \item{data_sisma_smi_ccd_map}{indicator}
+#'   \item{data_sisma_smi_ccd_map}{indicator_new}
+#'   \item{data_sisma_smi_ccd_map}{sex}
+#'   \item{data_sisma_smi_ccd_map}{age}
+#'   \item{data_sisma_smi_ccd_map}{age_coarse}
+#'   \item{data_sisma_smi_ccd_map}{disaggregate}
+#'   \item{data_sisma_smi_ccd_map}{disaggregate_sub}
+#'   \item{data_sisma_smi_ccd_map}{result_status}
+#'   \item{data_sisma_smi_ccd_map}{source}
+#' }
+"data_sisma_smi_ccs_map"
+
