@@ -22,7 +22,7 @@ parse_sisma_smi_ug <- function(df) {
 
     dplyr::mutate(period_cohort = NA,
                   sub_group = NA_character_) %>%
-    dplyr::left_join(data_sisma_smi_ccs_map, by = "indicator") %>%
+    dplyr::left_join(data_sisma_smi_ug_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%
     dplyr::select(sisma_uid,
                   snu,
