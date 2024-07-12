@@ -1,4 +1,4 @@
-# sismar <a href="https://usaid-mozambique.github.io/sismar/"><img src="man/figures/logo.png" align="right" height="120" alt="sismar website" /></a>
+# sismar <a href="https://usaid-mozambique.github.io/sismar/"><img src="man/figures/logo.png" align="right" height="200" alt="sismar website" /></a>
 
 Transform tabular export files from SISMA
 
@@ -9,7 +9,7 @@ Efficient analysis of SISMA data requires transformation actions applied to the 
 
 ## Installation
 
-`sismar` is not on CRAN, so users will have to install it directly from [GitHub](https://github.com/usaid-mozambique/) using the code found below..
+`sismar` is not on CRAN, so users will have to install it directly from [GitHub](https://github.com/usaid-mozambique/) using the code found below...
 
 ``` r
 
