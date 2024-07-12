@@ -68,13 +68,30 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>When using SISMA data, the OHA SI PEPFAR by and large uses the same MER Structured Datasets to answer the same analytical questions each period. This package is a sister package of <code>ICPIutilities</code> for working primiarly with data from DATIM and the MER Structured Datasets and plotting them using <code>glitr</code>. Focal users are analysts in USAID/GH/OHA who are using R to pull data from DATIM or perform the same repeated functions each quarter like creating TX_NET_NEW targets or assessing achievement.</p>
+<p>Efficient analysis of SISMA data exports requires transformation actions applied to the downloaded tabular data. This includes pivoting from a wide to long format, clean up the data frame (e.g. removal of unnecessary variables, modification of data types, etc.) and engineering of features useful in analysis. This package provides a set functions and wrappers that perform these standardized actions generating data frames that analysts can use either within the R environment or export for analysis other visualization solutions.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p><code>sismar</code> is not on CRAN, so you will have to install it directly from <a href="https://github.com/usaid-mozambique/" class="external-link">GitHub</a> using the code found below..</p>
-<p><code>{r} remotes::install_github("usaid-mozambique/sismar")</code></p>
+<p>```{r}</p>
+</div>
+<div class="section level2">
+<h2 id="setup">SETUP<a class="anchor" aria-label="anchor" href="#setup"></a>
+</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># install from GitHub using remotes</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"usaid-mozambique/sismar"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co"># load the package</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  <span class="fu">library</span>(sismar)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  </span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="list-fuctions-included-with-package">LIST FUCTIONS INCLUDED WITH PACKAGE<a class="anchor" aria-label="anchor" href="#list-fuctions-included-with-package"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">ls</span>(<span class="st">"package:sismar"</span>)</span></code></pre></div>
+<p>```</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
