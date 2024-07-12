@@ -1,11 +1,13 @@
 Package: sismar
-Title: USAID Mozambique R Utilities Package
+Title: Transform tabular export files from SISMA
 Version: 0.0.0.9000
 Authors@R: c(
     person("Joe", "Lara", , "jlara@usaid.gov", role = c("aut", "cre")),
     person("Karishma", "Srikanth", role = c("aut"),
     email = "ksrikanth@usaid.gov"))
-Description: This package is a set of helper functions for the USAID PEPFAR Mozambique team to optimize PEPFAR workflows in R.
+Description: Provides a set of functions for creating analytical datasets from SISMA CSV downloads. This 
+    includes functions that reshape files into long format, remove unnecessary variables, and engineer
+    features useful in analysis.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
