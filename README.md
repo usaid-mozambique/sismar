@@ -12,7 +12,8 @@ Efficient analysis of SISMA data exports requires transformation actions applied
 `sismar` is not on CRAN, so users will have to install it directly from [GitHub](https://github.com/usaid-mozambique/) using the code found below..
 
 ```{r}
-## SETUP
+
+    ## SETUP
 
     # install from GitHub using remotes
       install.packages("remotes")
@@ -21,6 +22,7 @@ Efficient analysis of SISMA data exports requires transformation actions applied
     # load the package
       library(sismar)
       
-## LIST FUCTIONS INCLUDED WITH PACKAGE
-    ls("package:sismar")
+    ## LIST FUCTIONS INCLUDED WITH PACKAGE
+      ls("package:sismar")
+    
 ```
