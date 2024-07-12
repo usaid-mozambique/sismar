@@ -1,4 +1,4 @@
-# sismar <a href="https://usaid-mozambique.github.io/sismar/"><img src="man/figures/logo.png" align="right" height="200" alt="sismar website" /></a>
+# sismar <a href="https://usaid-mozambique.github.io/sismar/"><img src="man/figures/logo.png" align="right" height="120" alt="sismar website" /></a>
 
 Transform tabular export files from SISMA
 
