@@ -34,5 +34,7 @@ Suggests:
     knitr,
     rmarkdown,
     glue
+Remotes:
+    usaid-mozambique/mozR
 VignetteBuilder: knitr
 URL: https://usaid-mozambique.github.io/sismar/
