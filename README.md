@@ -4,7 +4,7 @@ Transform tabular export files from SISMA
 
 ## Overview
 
-When using SISMA data, the OHA SI PEPFAR by and large uses the same MER Structured Datasets to answer the same analytical questions each period. This package is a sister package of `ICPIutilities` for working primiarly with data from DATIM and the MER Structured Datasets and plotting them using `glitr`. Focal users are analysts in USAID/GH/OHA who are using R to pull data from DATIM or perform the same repeated functions each quarter like creating TX_NET_NEW targets or assessing achievement.
+Efficient analysis of SISMA data exports requires transformation actions applied to the downloaded tabular data.  This includes pivoting from a wide to long format, clean up the data frame (e.g. removal of unnecessary variables, modification of data types, etc.) and engineering of features useful in analysis.  This package provides a set functions and wrappers that perform these standardized actions generating data frames that analysts can use either within the R environment or export for analysis other visualization solutions.  
 
 
 ## Installation
@@ -12,5 +12,18 @@ When using SISMA data, the OHA SI PEPFAR by and large uses the same MER Structur
 `sismar` is not on CRAN, so you will have to install it directly from [GitHub](https://github.com/usaid-mozambique/) using the code found below..
 
 ```{r}
-remotes::install_github("usaid-mozambique/sismar")
+
+## SETUP
+
+    # install from GitHub using remotes
+      install.packages("remotes")
+      remotes::install_github("usaid-mozambique/sismar")
+    
+    # load the package
+      library(sismar)
+      
+## LIST FUCTIONS INCLUDED WITH PACKAGE
+    ls("package:sismar")
+    
+
 ```
