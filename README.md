@@ -11,7 +11,7 @@ Efficient analysis of SISMA data requires transformation actions applied to the 
 
 `sismar` is not on CRAN, so users will have to install it directly from [GitHub](https://github.com/usaid-mozambique/) using the code found below..
 
-```{r}
+``` r
 
     ## SETUP
 
