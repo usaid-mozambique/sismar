@@ -1,8 +1,7 @@
 #' Tidy SISMA .csv files
 #'
-#' @description `process_sisma_csv` takes SISMA indicator exports saved locally in
-#'   .csv format and transforms them into tidy dataframes that are more easily
-#'   analyzed in R or other analysis software
+#' @description `process_sisma_csv` takes SISMA tabular exports saved locally in
+#'   .csv format and transforms them into tidy dataframes
 #'
 #'   ## Input File Types
 #' * SMI-CPN: CPN, Saude Materna Infantil
@@ -28,8 +27,8 @@
 #' * HIV DAH: Doenca Avancada do HIV
 #'
 #' @param file Path of sisma csv input
-#' @param type Type of sisma csv export (SMI-CPN, ATS-Result, etc.)
-#' @param language Language of variable names (portuguese or english)
+#' @param type Type of sisma csv export (SMI-CPN, ATS Result, etc.)
+#' @param language Language of output variable names (portuguese or english)
 #'
 #' @return A tidy data frame of sisma program results
 #' @export
