@@ -1,7 +1,7 @@
-#' Tidy SISMA .csv files
+#' Create tidy dataframes for user-specified SISMA .csv service areas
 #'
-#' @description `process_sisma_csv` takes SISMA tabular exports saved locally in
-#'   .csv format and transforms them into tidy dataframes
+#' @description `process_sisma_csv` is a wrapper function that cleans
+#' and transforms SISMA tabular exports saved locally in .csv format
 #'
 #'   ## Input File Types
 #' * SMI-CPN: CPN, Saude Materna Infantil
@@ -17,7 +17,7 @@
 #' * ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
 #' * ATS SAAJ: ATS Serviço Amigo Adolescente Joven
 #' * ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
-#' * ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)
+#' * ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
 #' * ATS Auto: ATS Autotestagem, Programa de HIV
 #' * HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 #' * HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
@@ -30,7 +30,7 @@
 #' @param type Type of sisma csv export (SMI-CPN, ATS Result, etc.)
 #' @param language Language of output variable names (portuguese or english)
 #'
-#' @return A tidy data frame of sisma program results
+#' @return A tidy dataframe of SISMA program results
 #' @export
 #'
 #' @examples

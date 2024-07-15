@@ -2,20 +2,20 @@
 % Please edit documentation in R/process_disa_cv.R
 \name{process_disa_cv}
 \alias{process_disa_cv}
-\title{Tidy DISA viral load extract (queried from OpenLDR)}
+\title{Tidy DISA viral load .xlsx files (extracted from OpenLDR)}
 \usage{
 process_disa_cv(file, month)
 }
 \arguments{
-\item{file}{Path of DISA viral load Excel spreadsheet}
+\item{file}{Path of DISA viral load .xlsx file}
 
 \item{month}{Month of DISA viral load extract (passed as "\%Y-\%m-\%d")}
 }
 \value{
-A tidy data frame of DISA viral load results
+A tidy dataframe of DISA viral load results
 }
 \description{
-Tidy DISA viral load extract (queried from OpenLDR)
+Tidy DISA viral load .xlsx files (extracted from OpenLDR)
 }
 \examples{
  \dontrun{

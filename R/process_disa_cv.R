@@ -1,9 +1,9 @@
-#' Tidy DISA viral load extract (queried from OpenLDR)
+#' Tidy DISA viral load .xlsx files (extracted from OpenLDR)
 #'
-#' @param file Path of DISA viral load Excel spreadsheet
+#' @param file Path of DISA viral load .xlsx file
 #' @param month Month of DISA viral load extract (passed as "%Y-%m-%d")
 #'
-#' @return A tidy data frame of DISA viral load results
+#' @return A tidy dataframe of DISA viral load results
 #' @export
 #'
 #' @examples

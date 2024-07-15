@@ -2,8 +2,7 @@
 % Please edit documentation in R/parse_sisma_csv.R
 \name{parse_sisma_csv}
 \alias{parse_sisma_csv}
-\title{Cleans and transforms SISMA programmatic data sets into a
-tidy format useful for analysis in R/PowerBI/Tableau.}
+\title{Parse dataframes for user-specified SISMA .csv service areas}
 \usage{
 parse_sisma_csv(data, type)
 }
@@ -16,11 +15,9 @@ parse_sisma_csv(data, type)
 A tidy SISMA programmatic dataframe
 }
 \description{
-parse_sisma_csv cleans and transforms programmatic
-data sets exported from SISMA into tidy data frames. Such
-structured data sets are key to facilitating indicator analysis
-in R/PowerBI/Tableau.
-\subsection{Overview of programmatic data type options}{
+\code{parse_sisma_csv} is a wrapper function that parses
+SISMA tabular exports saved locally in .csv format
+\subsection{Input File Types}{
 \itemize{
 \item SMI-CPN: CPN, Saude Materna Infantil
 \item SMI-MAT: Maternidade, Saude Materna Infantil
@@ -28,13 +25,14 @@ in R/PowerBI/Tableau.
 \item SMI-CPP: CCP, Saude Materna Infantil
 \item SMI-CCD: CCD, Saude Materna Infantil
 \item SMI-CCS: CCS, Saude Materna Infantil
+\item SMI-UG: UG, Saude Materna Infantil
 \item SMI-PAV: PAV, Saude Materna Infantil
 \item ATS Result: ATS Resultados, Programa de HIV
 \item ATS History: ATS Historial e Populacoes Chave, Programa de HIV
 \item ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
 \item ATS SAAJ: ATS Serviço Amigo Adolescente Joven
 \item ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
-\item ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)
+\item ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
 \item ATS Auto: ATS Autotestagem, Programa de HIV
 \item HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 \item HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV

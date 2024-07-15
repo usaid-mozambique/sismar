@@ -1,9 +1,9 @@
-#' Tidy DISA DPI extract (queried from OpenLDR)
+#' Tidy DISA DPI .xlsx files (extracted from OpenLDR)
 #'
-#' @param file Path of DISA DPI Excel spreadsheet
+#' @param file Path of DISA DPI .xlsx file
 #' @param month Month of DISA DPI extract (passed as "%Y-%m-%d")
 #'
-#' @return A tidy data frame of DISA DPI results
+#' @return A tidy dataframe of DISA DPI results
 #' @export
 #'
 #' @examples

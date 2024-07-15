@@ -1,26 +1,23 @@
-#' Cleans and transforms SISMA programmatic data sets into a
-#' tidy format useful for analysis in R/PowerBI/Tableau.
+#' Parse dataframes for user-specified SISMA .csv service areas
 #'
-#' @description parse_sisma_csv cleans and transforms programmatic
-#' data sets exported from SISMA into tidy data frames. Such
-#' structured data sets are key to facilitating indicator analysis
-#' in R/PowerBI/Tableau.
+#' @description `parse_sisma_csv` is a wrapper function that parses
+#' SISMA tabular exports saved locally in .csv format
 #'
-#' ## Overview of programmatic data type options
+#'   ## Input File Types
 #' * SMI-CPN: CPN, Saude Materna Infantil
 #' * SMI-MAT: Maternidade, Saude Materna Infantil
 #' * SMI-CCR: CCR, Saude Materna Infantil
 #' * SMI-CPP: CCP, Saude Materna Infantil
 #' * SMI-CCD: CCD, Saude Materna Infantil
 #' * SMI-CCS: CCS, Saude Materna Infantil
-#' * SMI-PAV: PAV, Saude Materna Infantil
 #' * SMI-UG: UG, Saude Materna Infantil
+#' * SMI-PAV: PAV, Saude Materna Infantil
 #' * ATS Result: ATS Resultados, Programa de HIV
 #' * ATS History: ATS Historial e Populacoes Chave, Programa de HIV
 #' * ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
 #' * ATS SAAJ: ATS Serviço Amigo Adolescente Joven
 #' * ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
-#' * ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)
+#' * ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
 #' * ATS Auto: ATS Autotestagem, Programa de HIV
 #' * HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 #' * HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV

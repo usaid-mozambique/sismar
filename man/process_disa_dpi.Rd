@@ -2,20 +2,20 @@
 % Please edit documentation in R/process_disa_dpi.R
 \name{process_disa_dpi}
 \alias{process_disa_dpi}
-\title{Tidy DISA DPI extract (queried from OpenLDR)}
+\title{Tidy DISA DPI .xlsx files (extracted from OpenLDR)}
 \usage{
 process_disa_dpi(file, month)
 }
 \arguments{
-\item{file}{Path of DISA DPI Excel spreadsheet}
+\item{file}{Path of DISA DPI .xlsx file}
 
 \item{month}{Month of DISA DPI extract (passed as "\%Y-\%m-\%d")}
 }
 \value{
-A tidy data frame of DISA DPI results
+A tidy dataframe of DISA DPI results
 }
 \description{
-Tidy DISA DPI extract (queried from OpenLDR)
+Tidy DISA DPI .xlsx files (extracted from OpenLDR)
 }
 \examples{
  \dontrun{

@@ -2,24 +2,23 @@
 % Please edit documentation in R/process_sisma_csv.R
 \name{process_sisma_csv}
 \alias{process_sisma_csv}
-\title{Tidy SISMA .csv files}
+\title{Create tidy dataframes for user-specified SISMA .csv service areas}
 \usage{
 process_sisma_csv(file, type, language = "portuguese")
 }
 \arguments{
 \item{file}{Path of sisma csv input}
 
-\item{type}{Type of sisma csv export (SMI-CPN, ATS-Result, etc.)}
+\item{type}{Type of sisma csv export (SMI-CPN, ATS Result, etc.)}
 
-\item{language}{Language of variable names (portuguese or english)}
+\item{language}{Language of output variable names (portuguese or english)}
 }
 \value{
-A tidy data frame of sisma program results
+A tidy dataframe of SISMA program results
 }
 \description{
-\code{process_sisma_csv} takes SISMA indicator exports saved locally in
-.csv format and transforms them into tidy dataframes that are more easily
-analyzed in R or other analysis software
+\code{process_sisma_csv} is a wrapper function that cleans
+and transforms SISMA tabular exports saved locally in .csv format
 \subsection{Input File Types}{
 \itemize{
 \item SMI-CPN: CPN, Saude Materna Infantil
@@ -28,13 +27,14 @@ analyzed in R or other analysis software
 \item SMI-CPP: CCP, Saude Materna Infantil
 \item SMI-CCD: CCD, Saude Materna Infantil
 \item SMI-CCS: CCS, Saude Materna Infantil
+\item SMI-UG: UG, Saude Materna Infantil
 \item SMI-PAV: PAV, Saude Materna Infantil
 \item ATS Result: ATS Resultados, Programa de HIV
 \item ATS History: ATS Historial e Populacoes Chave, Programa de HIV
 \item ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
 \item ATS SAAJ: ATS Serviço Amigo Adolescente Joven
 \item ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
-\item ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)
+\item ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
 \item ATS Auto: ATS Autotestagem, Programa de HIV
 \item HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 \item HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
