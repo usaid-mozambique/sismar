@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_hiv_ajmhcmm.R
 \name{parse_sisma_hiv_ajm_hc_mm}
 \alias{parse_sisma_hiv_ajm_hc_mm}
-\title{Create tidy dataframes for AJM/HC/MM Services}
+\title{Create tidy dataframes for AJM/HC/MM services}
 \usage{
 parse_sisma_hiv_ajm_hc_mm(df)
 }

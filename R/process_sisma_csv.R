@@ -1,4 +1,4 @@
-#' Create tidy dataframes for user-specified SISMA .csv service areas
+#' Create tidy dataframes for user-specified SISMA .csv services
 #'
 #' @description `process_sisma_csv` is a wrapper function that cleans
 #' and transforms SISMA tabular exports saved locally in .csv format

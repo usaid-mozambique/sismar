@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_smi_ug.R
 \name{parse_sisma_smi_ug}
 \alias{parse_sisma_smi_ug}
-\title{Create tidy dataframes for CCS services}
+\title{Create tidy dataframes for gynecology services}
 \usage{
 parse_sisma_smi_ug(df)
 }

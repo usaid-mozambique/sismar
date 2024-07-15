@@ -1,4 +1,4 @@
-#' Create tidy dataframes for client historical HIV Testing
+#' Create tidy dataframes for client historical HIV testing services
 #'
 #' `parse_sisma_ats_history` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

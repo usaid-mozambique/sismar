@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_smi_ccr.R
 \name{parse_sisma_smi_ccr}
 \alias{parse_sisma_smi_ccr}
-\title{Create tidy dataframes for Child-at-Risk Services}
+\title{Create tidy dataframes for Child-at-Risk services}
 \usage{
 parse_sisma_smi_ccr(df)
 }

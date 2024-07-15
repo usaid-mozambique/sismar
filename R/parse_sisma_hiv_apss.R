@@ -1,4 +1,4 @@
-#' Create tidy dataframes for HIV Psycho-social Services
+#' Create tidy dataframes for HIV Psycho-social services
 #'
 #' `parse_sisma_hiv_apss` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

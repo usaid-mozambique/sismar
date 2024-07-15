@@ -1,4 +1,4 @@
-#' Create tidy dataframes for AJM/HC/MM Services
+#' Create tidy dataframes for AJM/HC/MM services
 #'
 #' `parse_sisma_hiv_ajm_hc_mm` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

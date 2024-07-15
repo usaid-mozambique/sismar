@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_ats_saaj_cm.R
 \name{parse_sisma_ats_saaj_cm}
 \alias{parse_sisma_ats_saaj_cm}
-\title{Create tidy dataframes for Youth-Friendly HIV testing}
+\title{Create tidy dataframes for Youth-Friendly HIV testing services}
 \usage{
 parse_sisma_ats_saaj_cm(df)
 }

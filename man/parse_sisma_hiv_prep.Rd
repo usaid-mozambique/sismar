@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_hiv_prep.R
 \name{parse_sisma_hiv_prep}
 \alias{parse_sisma_hiv_prep}
-\title{Create tidy dataframes for PrEP Services}
+\title{Create tidy dataframes for PrEP services}
 \usage{
 parse_sisma_hiv_prep(df)
 }

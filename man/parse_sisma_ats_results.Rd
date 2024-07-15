@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_ats_results.R
 \name{parse_sisma_ats_results}
 \alias{parse_sisma_ats_results}
-\title{Create tidy dataframes for HIV testing recorded in ATS Register}
+\title{Create tidy dataframes for HIV testing services reported via ATS register}
 \usage{
 parse_sisma_ats_results(df)
 }

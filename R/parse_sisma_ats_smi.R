@@ -1,4 +1,4 @@
-#' Create tidy dataframes for MCH HIV testing
+#' Create tidy dataframes for MCH HIV testing services
 #'
 #' `parse_sisma_ats_smi` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

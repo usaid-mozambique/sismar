@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma_csv.R
 \name{process_sisma_csv}
 \alias{process_sisma_csv}
-\title{Create tidy dataframes for user-specified SISMA .csv service areas}
+\title{Create tidy dataframes for user-specified SISMA .csv services}
 \usage{
 process_sisma_csv(file, type, language = "portuguese")
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_ats_ccsd.R
 \name{parse_sisma_ats_ccsd}
 \alias{parse_sisma_ats_ccsd}
-\title{Create tidy dataframes for well and sick-child HIV testing}
+\title{Create tidy dataframes for well and sick-child HIV testing services}
 \usage{
 parse_sisma_ats_ccsd(df)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_ats_auto.R
 \name{parse_sisma_ats_auto}
 \alias{parse_sisma_ats_auto}
-\title{Create tidy dataframes for HIV self-testing}
+\title{Create tidy dataframes for HIV self-testing services}
 \usage{
 parse_sisma_ats_auto(df)
 }

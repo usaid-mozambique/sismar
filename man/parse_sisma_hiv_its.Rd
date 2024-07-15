@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_hiv_its.R
 \name{parse_sisma_hiv_its}
 \alias{parse_sisma_hiv_its}
-\title{Create tidy dataframes for STI Services}
+\title{Create tidy dataframes for STI services}
 \usage{
 parse_sisma_hiv_its(df)
 }

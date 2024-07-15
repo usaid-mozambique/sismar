@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_hiv_dah.R
 \name{parse_sisma_hiv_dah}
 \alias{parse_sisma_hiv_dah}
-\title{Create tidy dataframes for AHD Services}
+\title{Create tidy dataframes for AHD services}
 \usage{
 parse_sisma_hiv_dah(df)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_ats_smi.R
 \name{parse_sisma_ats_smi}
 \alias{parse_sisma_ats_smi}
-\title{Create tidy dataframes for MCH HIV testing}
+\title{Create tidy dataframes for MCH HIV testing services}
 \usage{
 parse_sisma_ats_smi(df)
 }

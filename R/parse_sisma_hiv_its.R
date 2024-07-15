@@ -1,4 +1,4 @@
-#' Create tidy dataframes for STI Services
+#' Create tidy dataframes for STI services
 #'
 #' `parse_sisma_hiv_its` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

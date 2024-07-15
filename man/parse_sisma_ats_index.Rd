@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_ats_index.R
 \name{parse_sisma_ats_index}
 \alias{parse_sisma_ats_index}
-\title{Create tidy dataframes for HIV Index-Case Testing services}
+\title{Create tidy dataframes for HIV Index-Case testing services}
 \usage{
 parse_sisma_ats_index(df)
 }

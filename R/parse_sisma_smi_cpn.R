@@ -1,4 +1,4 @@
-#' Create tidy dataframes for Antenatal Care
+#' Create tidy dataframes for Antenatal Care services
 #'
 #' `parse_sisma_smi_cpn` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

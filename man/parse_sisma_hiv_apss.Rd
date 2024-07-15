@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_hiv_apss.R
 \name{parse_sisma_hiv_apss}
 \alias{parse_sisma_hiv_apss}
-\title{Create tidy dataframes for HIV Psycho-social Services}
+\title{Create tidy dataframes for HIV Psycho-social services}
 \usage{
 parse_sisma_hiv_apss(df)
 }

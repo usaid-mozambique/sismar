@@ -1,4 +1,4 @@
-#' Create tidy dataframes for ART Services
+#' Create tidy dataframes for ART services
 #'
 #' `parse_sisma_hiv_tarv` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

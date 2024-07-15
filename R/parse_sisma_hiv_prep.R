@@ -1,4 +1,4 @@
-#' Create tidy dataframes for PrEP Services
+#' Create tidy dataframes for PrEP services
 #'
 #' `parse_sisma_hiv_prep` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

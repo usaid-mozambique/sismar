@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_smi_cpn.R
 \name{parse_sisma_smi_cpn}
 \alias{parse_sisma_smi_cpn}
-\title{Create tidy dataframes for Antenatal Care}
+\title{Create tidy dataframes for Antenatal Care services}
 \usage{
 parse_sisma_smi_cpn(df)
 }

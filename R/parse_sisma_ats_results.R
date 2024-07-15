@@ -1,4 +1,4 @@
-#' Create tidy dataframes for HIV testing recorded in ATS Register
+#' Create tidy dataframes for HIV testing services reported via ATS register
 #'
 #' `parse_sisma_ats_results` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

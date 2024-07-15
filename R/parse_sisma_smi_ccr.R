@@ -1,4 +1,4 @@
-#' Create tidy dataframes for Child-at-Risk Services
+#' Create tidy dataframes for Child-at-Risk services
 #'
 #' `parse_sisma_smi_ccr` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,

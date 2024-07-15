@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_sisma_ats_history.R
 \name{parse_sisma_ats_history}
 \alias{parse_sisma_ats_history}
-\title{Create tidy dataframes for client historical HIV Testing}
+\title{Create tidy dataframes for client historical HIV testing services}
 \usage{
 parse_sisma_ats_history(df)
 }

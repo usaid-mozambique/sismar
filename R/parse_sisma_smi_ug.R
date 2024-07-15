@@ -1,4 +1,4 @@
-#' Create tidy dataframes for CCS services
+#' Create tidy dataframes for gynecology services
 #'
 #' `parse_sisma_smi_ug` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,
