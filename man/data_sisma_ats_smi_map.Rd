@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_ats_smi_map}
 \alias{data_sisma_ats_smi_map}
-\title{SISMA ATS SMI Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA ATS SMI dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

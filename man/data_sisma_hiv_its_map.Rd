@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_hiv_its_map}
 \alias{data_sisma_hiv_its_map}
-\title{SISMA ITS Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA ITS dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

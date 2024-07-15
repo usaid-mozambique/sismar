@@ -1,4 +1,4 @@
-#' SISMA CPN indicator Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA CPN dataframe
 #'
 #' List of indicators
 #'
@@ -16,7 +16,7 @@
 "data_sisma_smi_cpn_map"
 
 
-#' SISMA ATS Results indicator Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA ATS Results dataframe
 #'
 #' List of indicators
 #'
@@ -35,7 +35,7 @@
 "data_sisma_ats_results_map"
 
 
-#' SISMA ATS Case Index indicator Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA ATS Case Index/Linkage dataframe
 #'
 #' List of indicators
 #'
@@ -53,7 +53,7 @@
 "data_sisma_ats_ci_map"
 
 
-#' SISMA ATS Historic Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA ATS Historical/Key Pop dataframe
 #'
 #' List of indicators
 #'
@@ -70,7 +70,7 @@
 "data_sisma_ats_hist_map"
 
 
-#' SISMA ATS SMI Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA ATS SMI dataframe
 #'
 #' List of indicators
 #'
@@ -89,7 +89,7 @@
 "data_sisma_ats_smi_map"
 
 
-#' SISMA ATS CCS and CCD Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA ATS CCS and CCD dataframe
 #'
 #' List of indicators
 #'
@@ -109,7 +109,7 @@
 "data_sisma_ats_ccsd_map"
 
 
-#' SISMA ATS Auto Teste Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA ATS Self-testing dataframe
 #'
 #' List of indicators
 #'
@@ -128,7 +128,7 @@
 "data_sisma_ats_autoteste_map"
 
 
-#' SISMA ATS SAAJ Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA ATS SAAJ dataframe
 #'
 #' List of indicators
 #'
@@ -149,7 +149,7 @@
 "data_sisma_ats_saaj_map"
 
 
-#' SISMA HIV TARV Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA TARV dataframe
 #'
 #' List of indicators
 #'
@@ -169,7 +169,7 @@
 
 
 
-#' SISMA HIV SISMA Maternity Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA SMI Maternity dataframe
 #'
 #' List of indicators
 #'
@@ -186,7 +186,7 @@
 "data_sisma_smi_mat_map"
 
 
-#' SISMA HIV SISMA CCR Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA CCR Maternity dataframe
 #'
 #' List of indicators
 #'
@@ -203,7 +203,7 @@
 
 
 
-#' SISMA PREP Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA PrEP dataframe
 #'
 #' List of indicators
 #'
@@ -222,7 +222,7 @@
 "data_sisma_hiv_prep_map"
 
 
-#' SISMA APSS Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA APSS dataframe
 #'
 #' List of indicators
 #'
@@ -240,7 +240,7 @@
 "data_sisma_hiv_apss_map"
 
 
-#' SISMA ITS Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA ITS dataframe
 #'
 #' List of indicators
 #'
@@ -262,7 +262,7 @@
 "data_sisma_hiv_its_map"
 
 
-#' SISMA AJMHCMM Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA AJM/HC/MM dataframe
 #'
 #' List of indicators
 #'
@@ -282,7 +282,7 @@
 "data_sisma_hiv_ajmhcmm_map"
 
 
-#' SISMA DAH Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA Advanced HIV Disease dataframe
 #'
 #' List of indicators
 #'
@@ -302,7 +302,7 @@
 "data_sisma_hiv_dah_map"
 
 
-#' SISMA Consulta Post-Parto Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA SMI Post-Partum Care dataframe
 #'
 #' List of indicators
 #'
@@ -324,7 +324,7 @@
 "data_sisma_smi_cpp_map"
 
 
-#' SISMA PAV Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA Vaccination dataframe
 #'
 #' List of indicators
 #'
@@ -343,7 +343,7 @@
 "data_sisma_smi_pav_map"
 
 
-#' SISMA CCD Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA SMI Sick-Child Care dataframe
 #'
 #' List of indicators
 #'
@@ -364,7 +364,7 @@
 "data_sisma_smi_ccd_map"
 
 
-#' SISMA CCS Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA SMI Well-Child Care dataframe
 #'
 #' List of indicators
 #'
@@ -385,7 +385,7 @@
 "data_sisma_smi_ccs_map"
 
 
-#' SISMA Ginecologia Map for Feature Engineering
+#' Variable map for engineering features specific to SISMA SMI Gynecology dataframe
 #'
 #' List of indicators
 #'

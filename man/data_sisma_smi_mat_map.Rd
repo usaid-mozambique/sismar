@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_smi_mat_map}
 \alias{data_sisma_smi_mat_map}
-\title{SISMA HIV SISMA Maternity Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA SMI Maternity dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

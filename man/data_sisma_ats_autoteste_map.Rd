@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_ats_autoteste_map}
 \alias{data_sisma_ats_autoteste_map}
-\title{SISMA ATS Auto Teste Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA ATS Self-testing dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

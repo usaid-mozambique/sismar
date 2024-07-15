@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_ats_ccsd_map}
 \alias{data_sisma_ats_ccsd_map}
-\title{SISMA ATS CCS and CCD Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA ATS CCS and CCD dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

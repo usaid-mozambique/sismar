@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_ats_ci_map}
 \alias{data_sisma_ats_ci_map}
-\title{SISMA ATS Case Index indicator Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA ATS Case Index/Linkage dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

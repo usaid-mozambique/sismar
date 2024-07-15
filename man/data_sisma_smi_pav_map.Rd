@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_smi_pav_map}
 \alias{data_sisma_smi_pav_map}
-\title{SISMA PAV Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA Vaccination dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

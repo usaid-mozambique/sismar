@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_hiv_apss_map}
 \alias{data_sisma_hiv_apss_map}
-\title{SISMA APSS Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA APSS dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

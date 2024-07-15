@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_hiv_dah_map}
 \alias{data_sisma_hiv_dah_map}
-\title{SISMA DAH Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA Advanced HIV Disease dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

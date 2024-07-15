@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_smi_ccd_map}
 \alias{data_sisma_smi_ccd_map}
-\title{SISMA CCD Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA SMI Sick-Child Care dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_hiv_prep_map}
 \alias{data_sisma_hiv_prep_map}
-\title{SISMA PREP Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA PrEP dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

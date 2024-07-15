@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_smi_cpn_map}
 \alias{data_sisma_smi_cpn_map}
-\title{SISMA CPN indicator Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA CPN dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{

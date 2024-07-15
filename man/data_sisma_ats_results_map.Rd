@@ -3,7 +3,7 @@
 \docType{data}
 \name{data_sisma_ats_results_map}
 \alias{data_sisma_ats_results_map}
-\title{SISMA ATS Results indicator Map for Feature Engineering}
+\title{Variable map for engineering features specific to SISMA ATS Results dataframe}
 \format{
 A list of the variables included to engineer dataset features
 \describe{
