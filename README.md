@@ -1,15 +1,15 @@
 # sismar <a href="https://usaid-mozambique.github.io/sismar/"><img src="man/figures/logo.png" align="right" height="120" alt="sismar website" /></a>
 
-Transform tabular export files from SISMA
+Create analytic datasets from MISAU tabular data
 
 ## Overview
 
-Efficient analysis of SISMA data requires transformation actions applied to the downloaded tabular dataframes.  This includes pivoting from a wide to long format, clean up the data frame (e.g. removal of unnecessary variables, modification of data types, etc.) and engineering of features useful in analysis.  This package provides a set functions and wrappers that perform these standardized actions generating data frames that analysts can use either within the R environment or export for analysis in other visualization solutions.  
+Efficient analysis of tabular data exported from MISAU health information systems requires munging actions including pivoting, removal/coercion of variables, and engineering of data features useful in analysis. To this end, the sismar package provides a set of functions and wrappers helpful in preparing analytic datasets for use within the R environment or for export and analysis in alternative visualization solutions.
 
 
 ## Installation
 
-`sismar` is not on CRAN, so users will have to install it directly from [GitHub](https://github.com/usaid-mozambique/) using the code found below...
+`sismar` is not on CRAN, so users will have to install it directly from [GitHub](https://github.com/usaid-mozambique/) using the below code.
 
 ``` r
 
