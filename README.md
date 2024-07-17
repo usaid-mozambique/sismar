@@ -9,7 +9,7 @@ Efficient analysis of tabular data exported from MISAU health information system
 
 ## Installation
 
-`sismar` is not on CRAN, so users will have to install it directly from [GitHub](https://github.com/usaid-mozambique/) using the below code.
+`sismar` is not on CRAN, so users will have to install it directly from [GitHub](https://github.com/usaid-mozambique/) using the code below.
 
 ``` r
 
