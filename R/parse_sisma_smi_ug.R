@@ -24,6 +24,12 @@ parse_sisma_smi_ug <- function(df) {
                   sub_group = NA_character_) %>%
     dplyr::left_join(data_sisma_smi_ug_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%
+    dplyr::mutate(period_cohort = NA,
+                  sex = NA_character_,
+                  age = NA_character_,
+                  age_coarse = NA_character_,
+                  sub_group = NA_character_,
+                  result_status = NA_character_) %>%
     dplyr::select(sisma_uid,
                   snu,
                   psnu,
