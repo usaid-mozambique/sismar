@@ -74,7 +74,6 @@ br<>
 `process_sisma_csv` includes one more optional argument that defines the language of the variable names in the output file.  Currently the only language options are "portuguese" and "english" with the former defined as the argument default. By defining the argument value as "english" notice the change in the names of the variable output.
 
 ```{r, eval = FALSE}
-
 df <- process_sisma_csv(file = path_hiv_tarv, 
                         type = "HIV TARV",
                         language = "english")
