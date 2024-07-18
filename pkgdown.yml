@@ -3,7 +3,7 @@ pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   tidy_sop: tidy_sop.html
-last_built: 2024-07-18T12:31Z
+last_built: 2024-07-18T19:32Z
 urls:
   reference: https://usaid-mozambique.github.io/sismar/reference
   article: https://usaid-mozambique.github.io/sismar/articles
