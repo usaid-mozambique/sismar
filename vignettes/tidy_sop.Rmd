@@ -41,24 +41,44 @@ path_hiv_tarv
 output_hiv_tarv
 ```
 
-
 ## Tidy SISMA Dataset
 
 Having defined the local path to our SISMA dataset, we can now call functions from the sismar package to generate a tidy analytical dataframe.  This can be done either by using a combination of sismar functions called in sequence or by calling a singular wrapper function and specifying the appropriate arguments.  Let's start with the first, slightly more verbose, approach.  
-<br>
+
+##### Approach 1: Using Sequential Functions
+
 We'll start by calling `clean_sisma_csv` and providing the function argument that specifies where our downloaded SISMA .csv export is saved on our local machine. Note that this function is not dependent on the type of program data contained within the .csv file. This means that clean_sisma_csv` can be used with any SISMA tabular download. In the output notice that the data frame's indicators have been pivoted to a long format, that a small number of variables have been removed, and that the names of the pivoted indicators have been modified to be more machine readable.
 
-```{r, eval= FALSE}
+```{r, eval = FALSE}
 df <- clean_sisma_csv(path_hiv_tarv)
 ```
 
 Next, we'll call a sismar function to engineer data features that are encoded in the indicator names created by `clean_sisma_csv`.  In this use case, we call `parse_sisma_hiv_tarv`. It's important to note that there are numerous types of standard programmatic data sets that can be generated through saved SISMA reports. This means that the specific sismar parsing function called for feature engineering will vary depending on type of programmatic data set provided by the user. A full list and description of each sismar parsing function is provided in the sismar [package documentation](https://usaid-mozambique.github.io/sismar/reference/index.html).
-<br>
-In the parsing function output notice that new variables have been added to the data frame and that indicator names have been encoded to be more succinct. This tidy format is perfect for analysis!
 
-
-```{r, eval= FALSE}
+```{r, eval = FALSE}
 df <- parse_sisma_hiv_tarv(df)
 ```
+In the parsing function output notice that new variables have been added to the data frame and that indicator names have been encoded to be more succinct. This tidy format is perfect for analysis!
 
+##### Approach 2: Using Wrapper Function
 
+As an alternative to approach 1, sismar also provides a wrapper function that calls both `clean_sisma_csv` and `parse_sisma_hiv_tarv` (or a similar user-specified parsing function). This reduces the amount of typing and code required for producing our final dataset. In this approach, we simply call `process_sisma_csv` and provide two required arguments - one (the "file" argument) to specify the location of the SISMA .csv export and a second (the "type" argument) to specify which programmatic data type the user would like to tidy. A full list of values that can be passed to the "type" argument can be found in the `process_sisma_csv` [documentation](https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html). 
+
+```{r, eval = FALSE}
+df <- process_sisma_csv(file = path_hiv_tarv, 
+                        type = "HIV TARV")
+```
+
+Notice the output of this singular wrapper function is identical to the data frame generated in approach 1!
+br<>
+`process_sisma_csv` includes one more optional argument that defines the language of the variable names in the output file.  Currently the only language options are "portuguese" and "english" with the former defined as the argument default. By defining the argument value as "english" notice the change in the names of the variable output.
+
+```{r, eval = FALSE}
+
+df <- process_sisma_csv(file = path_hiv_tarv, 
+                        type = "HIV TARV",
+                        language = "english")
+
+```
+
+Happy analysis of your new tidy dataset!

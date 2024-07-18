@@ -34,7 +34,7 @@ and transforms SISMA tabular exports saved locally in .csv format
 \item ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
 \item ATS SAAJ: ATS Serviço Amigo Adolescente Joven
 \item ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
-\item ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
+\item ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)
 \item ATS Auto: ATS Autotestagem, Programa de HIV
 \item HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 \item HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
