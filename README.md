@@ -4,7 +4,7 @@ Create analytic datasets from MISAU tabular data
 
 ## Overview
 
-Efficient analysis of tabular data exported from MISAU health information systems requires munging actions including pivoting, removal/coercion of variables, and engineering of data features useful in analysis. To this end, the sismar package provides a set of functions and wrappers helpful in preparing analytic datasets for use within the R environment or for export and use in alternative analysis solutions.
+Efficient analysis of tabular data exported from MISAU health information systems requires munging actions such as pivoting, removal/coercion of variables, and engineering of data features useful in analysis. To this end, the sismar package provides a set of functions helpful in preparing analytic datasets for use within the R environment or alternative analysis software.
 
 
 ## Installation
