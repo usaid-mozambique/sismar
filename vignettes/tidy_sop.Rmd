@@ -1,5 +1,5 @@
 ---
-title: "Using sismar R package to tidy SISMA tabular program data"
+title: "Tidy SISMA tabular program data"
 output:
   rmarkdown::html_vignette:
     toc: true
@@ -18,9 +18,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Open RStudio and Load Core Packages
+## Open RStudio and Load Packages
 
-Let's begin by opening a new RStudio work session.  Once a session is open, create a new R script (File -> New File -> R script) and load the core R packages needed for tidying SISMA .csv exports. The Tidyverse is a collection of open-source packages designed for general data science use. Sismar is a package designed for the specific purpose of cleaning, reshaping and feature engineering provided standard SISMA DHIS2 tabular exports. Finally, the Glue packages provides interpreted string literals that allow us to combine and use string values within code.
+Let's begin by opening a new RStudio work session.  Once a session is open, create a new R script (File -> New File -> R script) and load the core R packages needed for tidying SISMA .csv exports. The Tidyverse is a collection of open-source packages designed for general data science use. Sismar is a package designed for the specific purpose of munging and conducting feature engineering for SISMA tabular exports. Finally, the Glue packages provides functions that allow us to combine and use string values within code.
 
 ```{r, eval = FALSE, echo = TRUE}
 library(tidyverse)
@@ -28,22 +28,37 @@ library(sismar)
 library(glue)
 ```
 
-## Define Global Variables for 'Year' and File Path
+## Define Global Variables
 
-We'll begin our adventure by coding three values into our global environment for later use - 1) the calendar year for which data was downloaded from SISMA; 2) the path to the SISMA .csv export on our local machine; and 3) the path and filename where our processed dataset will be saved. Note that best practice is to store data and scripts in specific pre-created R project folder strutures.  This facilitates reproducibility and collaboration across users.   
+We'll begin our adventure by coding three values into our global environment for later use - 1) the calendar year for which data was downloaded from SISMA; 2) the path to the SISMA .csv export saved on our local machine; and 3) the path and filename where our processed dataset will be saved. Note that best practice is to store data and scripts in specific pre-created R project folder structures. This facilitates reproducibility and collaboration across users.   
 
 ```{r}
-year <- "2023"
-path_ats_auto <- glue::glue("~/GitHub/SISMA/Data/ats_autoteste_{year}.csv")
-output_ats_auto <- glue::glue("~/GitHub/SISMA/Dataout/ats_autoteste_{year}.csv")
+year <- "2024"
+path_hiv_tarv <- glue::glue("Data/tarv_{year}.csv")
+output_hiv_tarv <- glue::glue("Dataout/hiv_tarv_{year}.txt")
 
-path_ats_auto
-output_ats_auto
+path_hiv_tarv
+output_hiv_tarv
 ```
 
 
-## Tidy Programmatic Dataset
-```{r}
+## Tidy SISMA Dataset
 
+Having defined the local path to our SISMA dataset, we can now call functions from the sismar package to generate a tidy analytical dataframe.  This can be done either by using a combination of sismar functions called in sequence or by calling a singular wrapper function and specifying the appropriate arguments.  Let's start with the first, slightly more verbose, approach.  
+<br>
+We'll start by calling `clean_sisma_csv` and providing the function argument that specifies where our downloaded SISMA .csv export is saved on our local machine. Note that this function is not dependent on the type of program data contained within the .csv file. This means that clean_sisma_csv` can be used with any SISMA tabular download. In the output notice that the data frame's indicators have been pivoted to a long format, that a small number of variables have been removed, and that the names of the pivoted indicators have been modified to be more machine readable.
+
+```{r, eval= FALSE}
+df <- clean_sisma_csv(path_hiv_tarv)
 ```
+
+Next, we'll call a sismar function to engineer data features that are encoded in the indicator names created by `clean_sisma_csv`.  In this use case, we call `parse_sisma_hiv_tarv`. It's important to note that there are numerous types of standard programmatic data sets that can be generated through saved SISMA reports. This means that the specific sismar parsing function called for feature engineering will vary depending on type of programmatic data set provided by the user. A full list and description of each sismar parsing function is provided in the sismar [package documentation](https://usaid-mozambique.github.io/sismar/reference/index.html).
+<br>
+In the parsing function output notice that new variables have been added to the data frame and that indicator names have been encoded to be more succinct. This tidy format is perfect for analysis!
+
+
+```{r, eval= FALSE}
+df <- parse_sisma_hiv_tarv(df)
+```
+
 
