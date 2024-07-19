@@ -152,12 +152,11 @@ function that calls both <code>clean_sisma_csv</code> and
 <code>parse_sisma_hiv_tarv</code> (or a similar user-specified parsing
 function). This reduces the amount of typing and code required for
 producing our final dataset. In this approach, we simply call
-<code>process_sisma_csv</code> and provide two required arguments - one
-(the “file” argument) to specify the location of the SISMA .csv export
-and a second (the “type” argument) to specify which programmatic data
-type the user would like to tidy. A full list of values that can be
-passed to the “type” argument can be found in the
-<code>process_sisma_csv</code> <a href="https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html">documentation</a>.</p>
+<code>process_sisma_csv</code> and provide two required arguments: 1)
+The “file” argument that specifies the location of the SISMA .csv export
+and; 2) The “type” argument that specifies the programmatic data type
+for tidy’ing. A full list of values that can be passed to the “type”
+argument can be found in the <code>process_sisma_csv</code> <a href="https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html">documentation</a>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/process_sisma_csv.html">process_sisma_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_hiv_tarv</span>, </span>
 <span>                        type <span class="op">=</span> <span class="st">"HIV TARV"</span><span class="op">)</span></span></code></pre></div>
