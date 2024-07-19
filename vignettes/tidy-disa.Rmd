@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 ## Open RStudio and Load Packages
 
-If not already done, open a new RStudio work session.  As normal we'll begin by our work by creating a new R script (File -> New File -> R script).  We'll also load the core R packages needed for tidying DISA tabular data. Tidyverse is our trusty multipurpose "Swiss Army Knife" of data science programming in R.  The sismar package allows us tidy data exported from MISAU health information systems including DISA. The glue package will allow us to combine and use string values within code.
+If not already done, open a new RStudio work session.  As normal we'll begin our work by creating a new R script (File -> New File -> R script).  We'll also load the core R packages needed for tidying DISA tabular data. Tidyverse is our trusty multipurpose "Swiss Army Knife" of data science programming in R.  The sismar package allows us to tidy data exported from MISAU health information systems including DISA. The glue package allows us to combine and use string values within code.
 
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -27,7 +27,9 @@ library(glue)
 
 ## Define Global Variables
 
-Before we process our DISA viral load data, let's set a couple values in the global R environment so that we can pass them into arguments of our sismar function later on.  First define a value for the path to our OpenLDR DISA viral load .xlsx export saved on our local machine.  Also define the month for which the DISA viral load data was exported from the OpenLDR system.  The month date format should be set in format %Y-%m-%d ("YYYY-MM-DD"). Although there are no restrictions on defining the %d of the date string, it is best to be consistent over time.  That is to say if we're defining day as "01" in our processing of June DISA data then we should also define it as "01" in subsequent month submissions.  
+Before we process our DISA viral load data, let's set a couple values in the global R environment so that we can later pass them into arguments of our sismar function.  First define a value for the path to the OpenLDR DISA viral load .xlsx export saved on your local machine.  Also define the month for which the DISA viral load data was exported from the OpenLDR system.  
+<br>
+Note that the month date needs to be set in format %Y-%m-%d ("YYYY-MM-DD"). Although there are no restrictions on defining the exact day of the date string it is best to be consistent if tidy'ing and compiling submissions over multiple months.  For example, if we're defining day as "01" in our processing of June DISA data then we should also define it as "01" in our May processing.  
 
 
 ```{r}
@@ -41,7 +43,7 @@ month_input
 
 ## Tidy Monthly DISA Viral Load Dataset
 
-Can you believe we've already done all the hard work of processing our monthly DISA viral load data set?!  All we need to do now is write a single line of code to call the sismar `process_disa_cv` function and pass in the arguments we've already set in our global environment and WALLAH we've got our tidy viral load data ready for analysis!
+Can you believe we've already done all the hard work of processing our monthly DISA viral load data set?!  All we need to do now is write a single line of code to call the sismar `process_disa_cv` function and pass in the arguments we've already set in our global environment and we've got our tidy viral load data ready for analysis! Can it really be this easy?!
 
 ```{r, eval = FALSE}
 df <- process_disa_cv(path_disa_cv)
