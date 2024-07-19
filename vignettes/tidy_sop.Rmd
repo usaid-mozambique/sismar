@@ -62,7 +62,7 @@ In the parsing function output notice that new variables have been added to the 
 
 ##### Approach 2: Using Wrapper Function
 
-As an alternative to approach 1, sismar also provides a wrapper function that calls both `clean_sisma_csv` and `parse_sisma_hiv_tarv` (or a similar user-specified parsing function). This reduces the amount of typing and code required for producing our final dataset. In this approach, we simply call `process_sisma_csv` and provide two required arguments - one (the "file" argument) to specify the location of the SISMA .csv export and a second (the "type" argument) to specify which programmatic data type the user would like to tidy. A full list of values that can be passed to the "type" argument can be found in the `process_sisma_csv` [documentation](https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html). 
+As an alternative to approach 1, sismar also provides a wrapper function that calls both `clean_sisma_csv` and `parse_sisma_hiv_tarv` (or a similar user-specified parsing function). This reduces the amount of typing and code required for producing our final dataset. In this approach, we simply call `process_sisma_csv` and provide two required arguments: 1) The "file" argument that specifies the location of the SISMA .csv export and; 2) The "type" argument that specifies the programmatic data type for tidy'ing. A full list of values that can be passed to the "type" argument can be found in the `process_sisma_csv` [documentation](https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html). 
 
 ```{r, eval = FALSE}
 df <- process_sisma_csv(file = path_hiv_tarv, 
