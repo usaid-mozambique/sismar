@@ -1,0 +1,24 @@
+---
+title: "Tidy DISA viral load data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tidy-disa}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Open RStudio and Load Packages
+
+If not already done, open a new RStudio work session.  As is normally the case, we'll begin by creating a new R script (File -> New File -> R script).  We'll also load the core R packages needed for tidying DISA tabular data. The Tidyverse is a collection of open-source packages designed for general data science use. Sismar is a package designed for the specific purpose of munging and conducting feature engineering for MISAU tabular exports, in this case from the OpenLDR DISA platform. Finally, the Glue packages provides functions that allow us to combine and use string values within code.
+
+
+```{r setup}
+library(sismar)
+```
