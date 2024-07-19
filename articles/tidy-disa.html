@@ -73,19 +73,55 @@
 <div class="section level2">
 <h2 id="open-rstudio-and-load-packages">Open RStudio and Load Packages<a class="anchor" aria-label="anchor" href="#open-rstudio-and-load-packages"></a>
 </h2>
-<p>If not already done, open a new RStudio work session. As is normally
-the case, we’ll begin by creating a new R script (File -&gt; New File
--&gt; R script). We’ll also load the core R packages needed for tidying
-DISA tabular data. The Tidyverse is a collection of open-source packages
-designed for general data science use. Sismar is a package designed for
-the specific purpose of munging and conducting feature engineering for
-MISAU tabular exports, in this case from the OpenLDR DISA platform.
-Finally, the Glue packages provides functions that allow us to combine
-and use string values within code.</p>
+<p>If not already done, open a new RStudio work session. As normal we’ll
+begin by our work by creating a new R script (File -&gt; New File -&gt;
+R script). We’ll also load the core R packages needed for tidying DISA
+tabular data. Tidyverse is our trusty multipurpose “Swiss Army Knife” of
+data science programming in R. The sismar package allows us tidy data
+exported from MISAU health information systems including DISA. The glue
+package will allow us to combine and use string values within code.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usaid-mozambique.github.io/sismar/">sismar</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usaid-mozambique.github.io/sismar/">sismar</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://glue.tidyverse.org/" class="external-link">glue</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-  </main>
+<div class="section level2">
+<h2 id="define-global-variables">Define Global Variables<a class="anchor" aria-label="anchor" href="#define-global-variables"></a>
+</h2>
+<p>Before we process our DISA viral load data, let’s set a couple values
+in the global R environment so that we can pass them into arguments of
+our sismar function later on. First define a value for the path to our
+OpenLDR DISA viral load .xlsx export saved on our local machine. Also
+define the month for which the DISA viral load data was exported from
+the OpenLDR system. The month date format should be set in format
+%Y-%m-%d (“YYYY-MM-DD”). Although there are no restrictions on defining
+the %d of the date string, it is best to be consistent over time. That
+is to say if we’re defining day as “01” in our processing of June DISA
+data then we should also define it as “01” in subsequent month
+submissions.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">path_disa_cv</span> <span class="op">&lt;-</span> <span class="st">"Data/Relatorio Mensal de Carga Viral Junho 2024.xlsx"</span></span>
+<span><span class="va">month_input</span> <span class="op">&lt;-</span> <span class="st">"2024-06-20"</span></span>
+<span></span>
+<span><span class="va">path_disa_cv</span></span>
+<span><span class="co">#&gt; [1] "Data/Relatorio Mensal de Carga Viral Junho 2024.xlsx"</span></span>
+<span><span class="va">month_input</span></span>
+<span><span class="co">#&gt; [1] "2024-06-20"</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="tidy-monthly-disa-viral-load-dataset">Tidy Monthly DISA Viral Load Dataset<a class="anchor" aria-label="anchor" href="#tidy-monthly-disa-viral-load-dataset"></a>
+</h2>
+<p>Can you believe we’ve already done all the hard work of processing
+our monthly DISA viral load data set?! All we need to do now is write a
+single line of code to call the sismar <code>process_disa_cv</code>
+function and pass in the arguments we’ve already set in our global
+environment and WALLAH we’ve got our tidy viral load data ready for
+analysis!</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/process_disa_cv.html">process_disa_cv</a></span><span class="op">(</span><span class="va">path_disa_cv</span><span class="op">)</span></span></code></pre></div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
