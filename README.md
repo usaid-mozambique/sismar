@@ -22,7 +22,7 @@ Efficient analysis of tabular data exported from MISAU health information system
     # load the package
       library(sismar)
       
-    ## LIST FUCTIONS INCLUDED WITH PACKAGE
+    ## LIST FUNCTIONS INCLUDED WITH PACKAGE
       ls("package:sismar")
     
 ```
