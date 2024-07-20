@@ -20,8 +20,10 @@ generate_site_table <- function(file) {
     dplyr::select(sisma_uid = organisationunitid,
                   provincia = orgunitlevel2,
                   distrito = orgunitlevel3,
-                  us = orgunitlevel4
-    )
+                  us = orgunitlevel4) |>
+    dplyr::arrange(provincia,
+                   distrito,
+                   us)
 
   return(df)
 
