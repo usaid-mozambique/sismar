@@ -406,6 +406,25 @@
 "data_sisma_smi_ug_map"
 
 
+#' Variable map for engineering features specific to SISMA SMI PF dataframe
+#'
+#' List of indicators
+#'
+#' @usage data(data_sisma_smi_pf_map)
+#'
+#' @format A list of the variables included to engineer dataset features
+#' \describe{
+#'   \item{data_sisma_smi_pf_map}{indicator}
+#'   \item{data_sisma_smi_pf_map}{indicator_new}
+#'   \item{data_sisma_smi_pf_map}{sex}
+#'   \item{data_sisma_smi_pf_map}{age}
+#'   \item{data_sisma_smi_pf_map}{disaggregate}
+#'   \item{data_sisma_smi_pf_map}{disaggregate_sub}
+#'   \item{data_sisma_smi_pf_map}{source}
+#' }
+"data_sisma_smi_pf_map"
+
+
 #' Deduplicated SISMA site list
 #'
 #' List of indicators
