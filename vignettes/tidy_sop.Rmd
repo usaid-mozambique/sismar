@@ -1,5 +1,5 @@
 ---
-title: "Tidy SISMA program data"
+title: "Tidy SISMA Program Data"
 output:
   rmarkdown::html_vignette:
     toc: true

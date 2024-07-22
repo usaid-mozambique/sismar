@@ -1,5 +1,5 @@
 ---
-title: "Tidy DISA viral load data"
+title: "Tidy DISA Viral Load Data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{tidy-disa}
@@ -27,9 +27,9 @@ library(glue)
 
 ## Define Global Variables
 
-Before we process our DISA viral load data, let's set a couple values in the global R environment so that we can later pass them into arguments of our sismar function.  First define a value for the path to the OpenLDR DISA viral load .xlsx export saved on your local machine.  Also define the month for which the DISA viral load data was exported from the OpenLDR system.  
-<br>
-Note that the month date needs to be set in format %Y-%m-%d ("YYYY-MM-DD"). Although there are no restrictions on defining the exact day of the date string it is best to be consistent if tidy'ing and compiling submissions over multiple months.  For example, if we're defining day as "01" in our processing of June DISA data then we should also define it as "01" in our May processing.  
+Before we process our DISA viral load data, let's set a couple values in the global R environment so that we can later pass them into arguments of our sismar function.  First define a value for the path to the OpenLDR DISA viral load .xlsx export saved on your local machine.  Define a second value for the month of the DISA viral load export from the OpenLDR system.  
+
+Note that the month date needs to be set in format %Y-%m-%d ("YYYY-MM-DD"). Although there are no restrictions on defining the exact day of the date string it is best to be consistent if tidy'ing and compiling submissions over multiple months.  For example, if we're defining day as "01" in our processing of May DISA data then we should also define it as "01" in our JUne processing.  
 
 
 ```{r}
@@ -43,8 +43,36 @@ month_input
 
 ## Tidy Monthly DISA Viral Load Dataset
 
-Can you believe we've already done all the hard work of processing our monthly DISA viral load data set?!  All we need to do now is write a single line of code to call the sismar `process_disa_cv` function and pass in the arguments we've already set in our global environment and we've got our tidy viral load data ready for analysis! Can it really be this easy?!
+Can you believe we've already done the hard work of processing our monthly DISA viral load data set?!  All we need to do now is write a single line of code to call the sismar `process_disa_cv` function with the arguments we've already set in our global environment and we've got our tidy viral load data ready for analysis!
 
 ```{r, eval = FALSE}
 df <- process_disa_cv(path_disa_cv)
 ```
+
+## Write Monthly Dataset to Disk
+
+You'll likely want to write your processed monthly viral load dataset to disk.  This will be useful if (rather "when") you decide to analyze multiple months of DISA data together.  We can save .csv files to disk easily using function `write_csv` from the Tidyverse readr package.  All we do is call `write_csv` and pass in our "df" data object along with the file connection information (where and with what name we'll save our .csv). 
+
+It's worth noting in the below code chunk that we've also managed to apply a handy trick!  We've used the glue package to append a period suffix automatically to the name of the .csv we save to disk!  This will ensure that every month we do not overwrite previous months files and that we end up with a full set of unique monthly data files to compile together for analysis! Clever how we can use our functions together to work for us, right?!  Is it really this easy?!
+
+
+```{r, eval = FALSE}
+write_csv(df, file = glue("Data/processed/disa_vl_{month_input}")
+```
+
+## Compile Monthly Datasets
+
+Unfortunately no, it's never quite this easy.  To append our saved monthly files together we're going to up the level of difficulty by using R regular expression and by calling a Tidyverse purrr function called "map" that helps us iterate tasks (in this case the task of reading a .csv file).  At the end of the code chunk, we'll use the function "reduce" to append all our .csv's together. 
+
+Perhaps the most difficult part of the code chunk is the "list.files" line where we effectively ask R to take an inventory of the complete file names in the folder where we save our monthly processed DISA data.  With the "pattern" argument we can put some parameters around what we want to include in our inventory.  The "^" symbol followed by "disa_vl_" ensures that only files that start with "disa_vl_" will be included in our inventory.  
+
+```{r, eval = FALSE}
+df_compiled <- 
+  list.files("Data/processed/", pattern = "^disa_vl_", full.names = TRUE) %>% 
+  map(~ read_csv(.x)) %>%
+  reduce(rbind)
+```
+
+## Celebrate (and analyze) Your Work!
+
+We've done some true Data Science work here!  Take a moment to give yourself a pat on the back!  However, don't pat for too long because now the really fun job begins of interrogating the actual dataset and generating insights!  Happy analysis!
