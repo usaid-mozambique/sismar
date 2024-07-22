@@ -11,6 +11,7 @@
 #' * SMI-CCD: CCD, Saude Materna Infantil
 #' * SMI-CCS: CCS, Saude Materna Infantil
 #' * SMI-UG: UG, Saude Materna Infantil
+#' * SMI-PF: PF, Saude Materna Infantil
 #' * SMI-PAV: PAV, Saude Materna Infantil
 #' * ATS Result: ATS Resultados, Programa de HIV
 #' * ATS History: ATS Historial e Populacoes Chave, Programa de HIV
@@ -47,6 +48,7 @@ parse_sisma_csv <- function(data, type){
          "SMI-CCD" = parse_sisma_smi_ccd(data), # SISMA search term "SMI-CCD"
          "SMI-CCS" = parse_sisma_smi_ccs(data), # SISMA search term "SMI-CCS"
          "SMI-UG" = parse_sisma_smi_ug(data),   # SISMA search term "SMI-UG"
+         "SMI-PF" = parse_sisma_smi_pf(data),   # SISMA search term "SMI-PF"
          "ATS Result" = parse_sisma_ats_results(data), # SISMA search term "ano" within Grupo de Elemento de Dados "ATS - Resumo Mensal (Nova)"
          "ATS History" = parse_sisma_ats_history(data), # SISMA search terms "Historial" & "chave" within Grupo de Elemento de Dados "ATS - Resumo Mensal (Nova)"
          "ATS CI" = parse_sisma_ats_index(data),  # SISMA search terms "diagonsticados" & "indice" within Grupo de Elemento de Dados "ATS - Resumo Mensal (Nova)"

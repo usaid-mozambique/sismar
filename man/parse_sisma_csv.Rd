@@ -26,6 +26,7 @@ SISMA tabular exports saved locally in .csv format
 \item SMI-CCD: CCD, Saude Materna Infantil
 \item SMI-CCS: CCS, Saude Materna Infantil
 \item SMI-UG: UG, Saude Materna Infantil
+\item SMI-PF: PF, Saude Materna Infantil
 \item SMI-PAV: PAV, Saude Materna Infantil
 \item ATS Result: ATS Resultados, Programa de HIV
 \item ATS History: ATS Historial e Populacoes Chave, Programa de HIV
