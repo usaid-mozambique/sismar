@@ -1,5 +1,5 @@
 ---
-title: "Tidy SISMA tabular program data"
+title: "Tidy SISMA program data"
 output:
   rmarkdown::html_vignette:
     toc: true
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 ## Open RStudio and Load Packages
 
-Let's begin by opening a new RStudio work session.  Once a session is open, create a new R script (File -> New File -> R script) and load the core R packages needed for tidying SISMA .csv exports. The Tidyverse is a collection of open-source packages designed for general data science use. Sismar is a package designed for the specific purpose of munging and conducting feature engineering for SISMA tabular exports. Finally, the Glue packages provides functions that allow us to combine and use string values within code.
+Let's begin by opening a new RStudio work session.  Once a session is open, create a new R script (File -> New File -> R script) and load the core R packages needed for tidying SISMA .csv exports. The Tidyverse is a collection of open-source packages designed for general data science use. Sismar is a package designed for the specific purpose of munging and conducting feature engineering for SISMA rectangular exports. Finally, the Glue packages provides functions that allow us to combine and use string values within code.
 
 ```{r, eval = FALSE, echo = TRUE}
 library(tidyverse)
