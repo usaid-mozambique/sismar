@@ -11,6 +11,7 @@
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/attach_meta_partner.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/attach_meta_uid.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/clean_sisma_csv.html</loc></url>
+<url><loc>https://usaid-mozambique.github.io/sismar/reference/data_disa_uid_map.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_ats_autoteste_map.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_ats_ccsd_map.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_ats_ci_map.html</loc></url>
@@ -24,6 +25,7 @@
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_hiv_its_map.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_hiv_prep_map.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_hiv_tarv_map.html</loc></url>
+<url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_sitelist.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_smi_ccd_map.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_smi_ccr_map.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_smi_ccs_map.html</loc></url>
@@ -33,6 +35,7 @@
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_smi_pav_map.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/data_sisma_smi_ug_map.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/dedup_naomi.html</loc></url>
+<url><loc>https://usaid-mozambique.github.io/sismar/reference/generate_site_table.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/index.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/parse_sisma_ats_auto.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/parse_sisma_ats_ccsd.html</loc></url>
