@@ -1,10 +1,10 @@
 # sismar <a href="https://usaid-mozambique.github.io/sismar/"><img src="man/figures/logo.png" align="right" height="120" alt="sismar website" /></a>
 
-Create analytic datasets from MISAU tabular data
+Create analytic DataFrames from MISAU rectangular data
 
 ## Overview
 
-Efficient analysis of tabular data exported from MISAU health information systems requires munging actions such as pivoting, removal/coercion of variables, and engineering of data features useful in analysis. To this end, the sismar package provides a set of functions helpful in preparing analytic datasets for use within the R environment or alternative analysis software.
+Efficient analysis of rectangular data exported from MISAU health information systems requires munging actions such as pivoting, removal/coercion of variables, and engineering of data features useful in analysis. The sismar package provides a set of functions that perform such actions and prepare DataFrames for analysis in R or alternative analytic software.
 
 
 ## Installation
