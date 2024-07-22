@@ -418,6 +418,7 @@
 #'   \item{data_sisma_smi_pf_map}{indicator_new}
 #'   \item{data_sisma_smi_pf_map}{sex}
 #'   \item{data_sisma_smi_pf_map}{age}
+#'   \item{data_sisma_smi_pf_map}{age_coarse}
 #'   \item{data_sisma_smi_pf_map}{disaggregate}
 #'   \item{data_sisma_smi_pf_map}{disaggregate_sub}
 #'   \item{data_sisma_smi_pf_map}{source}
