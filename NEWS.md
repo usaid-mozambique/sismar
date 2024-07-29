@@ -1,3 +1,3 @@
-# sismar (development version)
+# sismar 0.1.0
 
 * Initial CRAN submission.
