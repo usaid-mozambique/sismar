@@ -1,3 +1,3 @@
 # sismar 0.1.0
 
-* Initial CRAN submission.
+* Prior to version 0.1.0, updates were not captured.
