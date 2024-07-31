@@ -425,6 +425,27 @@
 #' }
 "data_sisma_smi_pf_map"
 
+#' Variable map for engineering features specific to SISMA SMI PF Integrated, SAAJ, & APE dataframe
+#'
+#' List of indicators
+#'
+#' @usage data(data_sisma_smi_pf_int_saaj_ape_map)
+#'
+#' @format A list of the variables included to engineer dataset features
+#' \describe{
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{indicator}
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{indicator_new}
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{source}
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{disaggregate}
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{disaggregate_sub}
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{sub_group}
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{sex}
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{age_coarse}
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{age}
+#'   \item{data_sisma_smi_pf_int_saaj_ape_map}{result_status}
+#' }
+"data_sisma_smi_pf_int_saaj_ape_map"
+
 
 #' Deduplicated SISMA site list
 #'
