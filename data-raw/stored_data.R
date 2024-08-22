@@ -527,8 +527,7 @@ template_ats_hist <-
                                                  "mz_ats_confirmacao_autoteste_hiv_smi",
                                                   "mz_ats_confirmacao_autoteste_hiv_tb",
                                              "mz_ats_confirmacao_autoteste_hiv_triagem",
-                                                "mz_ats_confirmacao_autoteste_hiv_uats",
-                                                                                    "Ȁ"
+                                                "mz_ats_confirmacao_autoteste_hiv_uats"
     )
 usethis::use_data(template_ats_hist, overwrite = TRUE)
 
