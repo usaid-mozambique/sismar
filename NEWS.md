@@ -1,3 +1,6 @@
+# sismar 0.3.1
+* Fix to AHD (DAH) feature engineering for age_coarse.
+
 # sismar 0.3.0
 * Redesign of AHD (DAH) feature engineering for pregnant women (MG).  This population disaggregation is now removed from indicator names and is encoded in the disaggregate variable.
 
