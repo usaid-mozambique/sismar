@@ -76,3 +76,9 @@ df_compiled <-
 ## Celebrate (and analyze) Your Work!
 
 We've done some nice work here so take a moment to give yourself a pat on the back!  However, don't pat for too long because now the really fun job begins of exploring the dataset and generating insights!  Happy analysis!
+
+
+
+---
+
+*Disclaimer: The findings, interpretation, and conclusions expressed herein are those of the authors and do not necessarily reflect the views of United States Agency for International Development. All errors remain our own.*
