@@ -2312,6 +2312,7 @@ tibble::tribble(
   )
 usethis::use_data(data_sisma_smi_pf_int_saaj_ape_map, overwrite = TRUE, internal = TRUE)
 
+
 data_sisma_sitelist <-
   tibble::tribble(
         ~sisma_uid,         ~provincia,                       ~distrito,                                                          ~us,
