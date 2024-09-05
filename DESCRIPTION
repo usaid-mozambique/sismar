@@ -23,6 +23,8 @@ Imports:
   readr,
   readxl,
   stringr,
+  purrr,
+  tibble,
   janitor,
   lubridate,
   openxlsx,
