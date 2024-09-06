@@ -1,21 +1,21 @@
 #' Create tidy dataframes for AJM/HC/MM services
 #'
-#' `parse_sisma_hiv_ajm_hc_mm` produces a tidy dataframe from an object passed in by
+#' `parse_sisma_hiv_ajmhcmm` produces a tidy dataframe from an object passed in by
 #' `sisma_clean_csv`. It engineers useful data features such as sex, age,
 #' indicator disaggregation, sub-group type, etc.
 #'
 #' @inheritParams parse_sisma_ats_auto
 #'
-#' @return `parse_sisma_hiv_ajm_hc_mm` returns a tidy object with 16 columns of
+#' @return `parse_sisma_hiv_ajmhcmm` returns a tidy object with 16 columns of
 #'   site metadata, indicator features and results
 #' @export
 #'
 #' @examples
 #'  \dontrun{
 #'
-#'  df <- parse_sisma_hiv_ajm_hc_mm()}
+#'  df <- parse_sisma_hiv_ajmhcmm()}
 
-parse_sisma_hiv_ajm_hc_mm <- function(df) {
+parse_sisma_hiv_ajmhcmm <- function(df) {
 
   df <- df %>%
 
