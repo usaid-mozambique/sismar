@@ -15,21 +15,22 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 BugReports: https://github.com/usaid-mozambique/sismar/issues
 Imports:
-  dplyr,
-  magrittr,
-  googlesheets4,
-  tidyselect,
-  tidyr,
-  readr,
-  readxl,
-  stringr,
-  purrr,
-  tibble,
-  janitor,
-  lubridate,
-  openxlsx,
-  scales,
-  mozR
+    dplyr,
+    magrittr,
+    googlesheets4,
+    tidyselect,
+    tidyr,
+    readr,
+    readxl,
+    stringr,
+    purrr,
+    tibble,
+    janitor,
+    lubridate,
+    openxlsx,
+    scales,
+    mozR,
+    lifecycle
 Depends: 
     R (>= 2.10)
 Suggests: 

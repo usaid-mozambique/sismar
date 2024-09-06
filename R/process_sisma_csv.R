@@ -2,6 +2,8 @@
 #'
 #' @description `process_sisma_csv` is a wrapper function that cleans
 #' and transforms SISMA tabular exports saved locally in .csv format
+#' `r lifecycle::badge("superseded")`
+#' `process_sisma_csv` has been superseded in favor of `process_sisma_export`
 #'
 #'   ## Input File Types
 #' * SMI-CPN: CPN, Saude Materna Infantil

@@ -1,7 +1,9 @@
 #' Clean SISMA .csv exports
 #'
-#' `clean_sisma_csv()` A helper function that cleans .csv pivot tables
+#' @description `clean_sisma_csv()` A helper function that cleans .csv pivot tables
 #' exported from SISMA
+#' `r lifecycle::badge("superseded")`
+#' `clean_sisma_csv` has been superseded in favor of `clean_sisma_df`
 #'
 #' @param file Path to a .csv file exported from SISMA that contains
 #'   data element variables running wide and period and organizational

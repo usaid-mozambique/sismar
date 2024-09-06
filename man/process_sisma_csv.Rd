@@ -19,6 +19,8 @@ A tidy dataframe of SISMA program results
 \description{
 \code{process_sisma_csv} is a wrapper function that cleans
 and transforms SISMA tabular exports saved locally in .csv format
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#superseded}{\figure{lifecycle-superseded.svg}{options: alt='[Superseded]'}}}{\strong{[Superseded]}}
+\code{process_sisma_csv} has been superseded in favor of \code{process_sisma_export}
 \subsection{Input File Types}{
 \itemize{
 \item SMI-CPN: CPN, Saude Materna Infantil
