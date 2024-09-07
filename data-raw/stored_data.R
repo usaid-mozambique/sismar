@@ -18,7 +18,6 @@ names(input_templates) <- basename(files)  |>
   stringr::str_remove(".csv")
 
 
-
 data_sisma_smi_cpn_map <-
 tibble::tribble(
                                                                              ~indicator,             ~indicator_new,    ~age, ~age_coarse,        ~disaggregate,   ~source,
