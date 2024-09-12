@@ -22,7 +22,16 @@
 
 clean_sisma_csv <- function(file) {
 
-  df <- readr::read_csv(file) %>%
+  column_types <- cols(
+    .default = col_double(),  # default to double
+    periodid  = col_character(), periodname = col_character(), periodcode = col_character(),
+    perioddescription = col_character(), orgunitlevel1 = col_character(), orgunitlevel2 = col_character(),
+    orgunitlevel3 = col_character(), orgunitlevel4 = col_character(), organisationunitid = col_character(),
+    organisationunitname = col_character(), organisationunitcode = col_character(), organisationunitdescription = col_character()
+  )
+
+  df <- readr::read_csv(file,
+                        col_types = column_types) %>%
 
     dplyr::filter(!organisationunitid == "abg5UReivZX") %>% # for whatever reason this site creates issues
 
