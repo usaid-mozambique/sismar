@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Tidy SISMA Program Data • sismar</title>
+<title>Arrumar dados programático do SISMA • sismar</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Tidy SISMA Program Data">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Arrumar dados programático do SISMA">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -39,7 +39,7 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/tidy_sop.html">Tidy SISMA Program Data</a></li>
+<li><a class="dropdown-item" href="../articles/tidy_sop.html">Arrumar dados programático do SISMA</a></li>
     <li><a class="dropdown-item" href="../articles/tidy-disa.html">Tidy DISA Viral Load Data</a></li>
   </ul>
 </li>
@@ -62,7 +62,7 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Tidy SISMA Program Data</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Arrumar dados programático do SISMA</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/usaid-mozambique/sismar/blob/master/vignettes/tidy_sop.Rmd" class="external-link"><code>vignettes/tidy_sop.Rmd</code></a></small>
@@ -72,31 +72,34 @@
     
     
 <div class="section level2">
-<h2 id="open-rstudio-and-load-packages">Open RStudio and Load Packages<a class="anchor" aria-label="anchor" href="#open-rstudio-and-load-packages"></a>
+<h2 id="abrir-o-rstudio-e-carregar-os-pacotes">Abrir o RStudio e carregar os pacotes<a class="anchor" aria-label="anchor" href="#abrir-o-rstudio-e-carregar-os-pacotes"></a>
 </h2>
-<p>Let’s begin by opening a new RStudio work session. Once a session is
-open, create a new R script (File -&gt; New File -&gt; R script) and
-load the core R packages needed for tidying SISMA .csv exports. The
-Tidyverse is a collection of open-source packages designed for general
-data science use. Sismar is a package designed for the specific purpose
-of munging and conducting feature engineering for SISMA rectangular
-exports. Finally, the Glue packages provides functions that allow us to
-combine and use string values within code.</p>
+<p>Comecemos por abrir uma nova sessão de trabalho do RStudio. Uma vez
+aberta a sessão, crie um novo script R (File -&gt; New File -&gt; R
+script) e carregue os principais pacotes R necessários para arrumar as
+exportações .csv do SISMA. O <code>tidyverse</code> é uma coleção de
+pacotes de código aberto concebidos para utilização geral em ciência de
+dados. O <code>sismar</code> é um pacote desenvolvido com o objetivo
+específico de efectuar a limpeza e a engenharia de caraterísticas das
+exportações rectangulares do SISMA. Por último, os pacotes
+<code>glue</code> fornecem funções que nos permitem combinar e utilizar
+valores de cadeia de caracteres no código.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usaid-mozambique.github.io/sismar/">sismar</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://glue.tidyverse.org/" class="external-link">glue</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="define-global-variables">Define Global Variables<a class="anchor" aria-label="anchor" href="#define-global-variables"></a>
+<h2 id="definir-variáveis-globais">Definir variáveis globais<a class="anchor" aria-label="anchor" href="#definir-vari%C3%A1veis-globais"></a>
 </h2>
-<p>We’ll begin our adventure by coding three values into our global
-environment for later use - 1) the calendar year for which data was
-downloaded from SISMA; 2) the path to the SISMA .csv export saved on our
-local machine; and 3) the path and filename where our processed dataset
-will be saved. Note that best practice is to store data and scripts in
-specific pre-created R project folder structures. This facilitates
-reproducibility and collaboration across users.</p>
+<p>Começaremos a nossa aventura codificando três valores no nosso
+ambiente global para utilização posterior - 1) o ano civil para o qual
+os dados foram descarregados do SISMA; 2) o caminho para a exportação
+.csv do SISMA guardada na nossa máquina local; e 3) o caminho e o nome
+do ficheiro onde o nosso conjunto de dados processados será guardado.
+Note que a melhor prática é armazenar dados e scripts em estruturas de
+pastas específicas de projectos R pré-criados. Isto facilita a
+reprodutibilidade e a colaboração entre utilizadores.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">year</span> <span class="op">&lt;-</span> <span class="st">"2024"</span></span>
 <span><span class="va">path_hiv_tarv</span> <span class="op">&lt;-</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"Data/tarv_{year}.csv"</span><span class="op">)</span></span>
@@ -108,72 +111,76 @@ reproducibility and collaboration across users.</p>
 <span><span class="co">#&gt; Dataout/hiv_tarv_2024.txt</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="tidy-sisma-dataset">Tidy SISMA Dataset<a class="anchor" aria-label="anchor" href="#tidy-sisma-dataset"></a>
+<h2 id="arrumar-dados-do-sisma">Arrumar dados do SISMA<a class="anchor" aria-label="anchor" href="#arrumar-dados-do-sisma"></a>
 </h2>
-<p>Having defined the local path to our SISMA dataset, we can now call
-functions from the sismar package to generate a tidy analytical
-dataframe. This can be done either by using a combination of sismar
-functions called in sequence or by calling a singular wrapper function
-and specifying the appropriate arguments. Let’s start with the first,
-slightly more verbose, approach.</p>
+<p>Tendo definido o caminho local para o nosso conjunto de dados SISMA,
+podemos agora chamar funções do pacote sismar para gerar um quadro de
+dados analítico organizado. Isto pode ser feito utilizando uma
+combinação de funções sismar chamadas em sequência ou chamando uma
+função de invólucro singular e especificando os argumentos apropriados.
+Comecemos com a primeira abordagem, um pouco mais detalhada.</p>
 <div class="section level5">
 <h5 id="approach-1-using-sequential-functions">Approach 1: Using Sequential Functions<a class="anchor" aria-label="anchor" href="#approach-1-using-sequential-functions"></a>
 </h5>
-<p>We’ll start by calling <code>clean_sisma_csv</code> and providing the
-function argument that specifies where our downloaded SISMA .csv export
-is saved on our local machine. Note that this function is not dependent
-on the type of program data contained within the .csv file. This means
-that clean_sisma_csv` can be used with any SISMA tabular download. In
-the output notice that the data frame’s indicators have been pivoted to
-a long format, that a small number of variables have been removed, and
-that the names of the pivoted indicators have been modified to be more
-machine readable.</p>
+<p>Começaremos chamando <code>clean_sisma_csv</code> e fornecendo o
+argumento da função que especifica onde nossa exportação SISMA .csv
+baixada é salva em nossa máquina local. Observe que essa função não
+depende do tipo de dados do programa contidos no arquivo .csv. Isso
+significa que clean_sisma_csv` pode ser usado com qualquer download
+tabular do SISMA. No resultado, repare que os indicadores do quadro de
+dados foram dinamizados para um formato longo, que um pequeno número de
+variáveis foi removido e que os nomes dos indicadores dinamizados foram
+modificados para serem mais legíveis.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clean_sisma_csv.html">clean_sisma_csv</a></span><span class="op">(</span><span class="va">path_hiv_tarv</span><span class="op">)</span></span></code></pre></div>
-<p>Next, we’ll call a sismar function to engineer data features that are
-encoded in the indicator names created by <code>clean_sisma_csv</code>.
-In this use case, we call <code>parse_sisma_hiv_tarv</code>. It’s
-important to note that there are numerous types of standard programmatic
-data sets that can be generated through saved SISMA reports. This means
-that the specific sismar parsing function called for feature engineering
-will vary depending on type of programmatic data set provided by the
-user. A full list and description of each sismar parsing function is
-provided in the sismar <a href="https://usaid-mozambique.github.io/sismar/reference/index.html">package
+<p>Em seguida, chamaremos uma função sismar para criar caraterísticas de
+dados que são codificadas nos nomes de indicadores criados por
+<code>clean_sisma_csv</code>. Neste caso de uso, chamamos
+<code>parse_sisma_hiv_tarv</code>. É importante notar que existem vários
+tipos de conjuntos de dados programáticos padrão que podem ser gerados
+através de relatórios SISMA guardados. Isto significa que a função
+específica de análise do sismar chamada para a engenharia de
+caraterísticas varia consoante o tipo de conjunto de dados programáticos
+fornecido pelo utilizador. A lista completa e a descrição de cada função
+de análise do sismar são fornecidas na secção sismar <a href="https://usaid-mozambique.github.io/sismar/reference/index.html">package
 documentation</a>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/parse_sisma_hiv_tarv.html">parse_sisma_hiv_tarv</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
-<p>In the parsing function output notice that new variables have been
-added to the data frame and that indicator names have been encoded to be
-more succinct. This tidy format is perfect for analysis!</p>
+<p>No resultado da função de análise, repare que foram adicionadas novas
+variáveis ao quadro de dados e que os nomes dos indicadores foram
+codificados para serem mais sucintos. Este formato organizado é perfeito
+para análise!</p>
 </div>
 <div class="section level5">
-<h5 id="approach-2-using-wrapper-function">Approach 2: Using Wrapper Function<a class="anchor" aria-label="anchor" href="#approach-2-using-wrapper-function"></a>
+<h5 id="approach-2-utilização-da-função-wrapper">Approach 2: Utilização da função “wrapper”<a class="anchor" aria-label="anchor" href="#approach-2-utiliza%C3%A7%C3%A3o-da-fun%C3%A7%C3%A3o-wrapper"></a>
 </h5>
-<p>As an alternative to approach 1, sismar also provides a wrapper
-function that calls both <code>clean_sisma_csv</code> and
-<code>parse_sisma_hiv_tarv</code> (or a similar user-specified parsing
-function). This reduces the amount of typing and code required for
-producing our final dataset. In this approach, we simply call
-<code>process_sisma_csv</code> and provide two required arguments: 1)
-The “file” argument that specifies the location of the SISMA .csv export
-and; 2) The “type” argument that specifies the programmatic data type
-for tidy’ing. A full list of values that can be passed to the “type”
-argument can be found in the <code>process_sisma_csv</code> <a href="https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html">documentation</a>.</p>
+<p>Como alternativa à abordagem 1, o sismar também fornece uma função
+wrapper que chama tanto <code>clean_sisma_csv</code> como
+<code>parse_sisma_hiv_tarv</code> (ou uma função de análise semelhante
+especificada pelo utilizador). Isso reduz a quantidade de digitação e
+código necessários para produzir nosso conjunto de dados final. Nesta
+abordagem, nós simplesmente chamamos <code>process_sisma_csv</code> e
+fornecemos dois argumentos necessários: 1) O argumento “file” (ficheiro)
+que especifica a localização da exportação .csv do SISMA e; 2) O
+argumento “type” (tipo) que especifica o tipo de dados programático para
+a arrumação. Uma lista completa de valores que podem ser passados para o
+argumento “type” pode ser encontrada no <code>process_sisma_csv</code>
+<a href="https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html">documentation</a>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/process_sisma_csv.html">process_sisma_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_hiv_tarv</span>, </span>
 <span>                        type <span class="op">=</span> <span class="st">"HIV TARV"</span><span class="op">)</span></span></code></pre></div>
-<p>Notice the output of this singular wrapper function is identical to
-the data frame generated in approach 1! br&lt;&gt;
-<code>process_sisma_csv</code> includes one more optional argument that
-defines the language of the variable names in the output file. Currently
-the only language options are “portuguese” and “english” with the former
-defined as the argument default. By defining the argument value as
-“english” notice the change in the names of the variable output.</p>
+<p>Repare-se que o resultado desta função singular é idêntico ao quadro
+de dados gerado na abordagem 1! br&lt;&gt; O
+<code>process_sisma_csv</code> inclui mais um argumento opcional que
+define o idioma dos nomes das variáveis no ficheiro de saída. Atualmente
+as únicas opções de idioma são “portuguese” e “english” sendo a primeira
+definida como argumento por defeito. Ao definir o valor do argumento
+como “english” observe a mudança nos nomes das variáveis de saída.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/process_sisma_csv.html">process_sisma_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_hiv_tarv</span>, </span>
 <span>                        type <span class="op">=</span> <span class="st">"HIV TARV"</span>,</span>
 <span>                        language <span class="op">=</span> <span class="st">"english"</span><span class="op">)</span></span></code></pre></div>
-<p>Happy analysis of your new tidy dataset!</p>
+<p>Boa análise do seu novo conjunto de dados organizado!</p>
 <hr>
 <p><em>Disclaimer: The findings, interpretation, and conclusions
 expressed herein are those of the authors and do not necessarily reflect
