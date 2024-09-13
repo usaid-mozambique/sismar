@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Tidy DISA Viral Load Data • sismar</title>
+<title>Arrumar Dados de Carga Viral da DISA • sismar</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Tidy DISA Viral Load Data">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Arrumar Dados de Carga Viral da DISA">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -39,8 +39,8 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/tidy_sop.html">Arrumar dados programático do SISMA</a></li>
-    <li><a class="dropdown-item" href="../articles/tidy-disa.html">Tidy DISA Viral Load Data</a></li>
+<li><a class="dropdown-item" href="../articles/tidy_sop.html">Arrumar Dados Programáticos do SISMA</a></li>
+    <li><a class="dropdown-item" href="../articles/tidy-disa.html">Arrumar Dados de Carga Viral da DISA</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
@@ -62,7 +62,7 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Tidy DISA Viral Load Data</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Arrumar Dados de Carga Viral da DISA</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/usaid-mozambique/sismar/blob/master/vignettes/tidy-disa.Rmd" class="external-link"><code>vignettes/tidy-disa.Rmd</code></a></small>
@@ -72,35 +72,38 @@
     
     
 <div class="section level2">
-<h2 id="open-rstudio-and-load-packages">Open RStudio and Load Packages<a class="anchor" aria-label="anchor" href="#open-rstudio-and-load-packages"></a>
+<h2 id="abrir-o-rstudio-e-carregar-os-pacotes">Abrir o RStudio e carregar os pacotes<a class="anchor" aria-label="anchor" href="#abrir-o-rstudio-e-carregar-os-pacotes"></a>
 </h2>
-<p>If not already done, open a new RStudio work session. As normal we’ll
-begin our work by creating a new R script (File -&gt; New File -&gt; R
-script). We’ll also load the core R packages needed for tidying DISA
-tabular data. Tidyverse is our trusty multipurpose “Swiss Army Knife” of
-data science programming in R. The sismar package allows us to tidy data
-exported from MISAU health information systems including DISA. The glue
-package allows us to combine and use string values within code.</p>
+<p>Se ainda não o fez, abra uma nova sessão de trabalho no RStudio. Como
+habitualmente, começaremos o nosso trabalho criando um novo script R
+(File -&gt; New File -&gt; R script). Também vamos carregar os
+principais pacotes R necessários para arrumar os dados tabulares do
+DISA. O Tidyverse é o nosso fiel e polivalente “canivete suíço” de
+programação de ciência de dados em R. O pacote sismar permite-nos
+arrumar os dados exportados dos sistemas de informação de saúde do
+MISAU, incluindo o DISA. O pacote glue permite-nos combinar e utilizar
+valores de cadeia de caracteres no código.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usaid-mozambique.github.io/sismar/">sismar</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://glue.tidyverse.org/" class="external-link">glue</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="define-global-variables">Define Global Variables<a class="anchor" aria-label="anchor" href="#define-global-variables"></a>
+<h2 id="definir-variáveis-globais">Definir variáveis globais<a class="anchor" aria-label="anchor" href="#definir-vari%C3%A1veis-globais"></a>
 </h2>
-<p>Before we process our DISA viral load data, let’s set a couple values
-in the global R environment so that we can later pass them into our
-sismar function. First define a value for the path to the OpenLDR DISA
-viral load .xlsx export saved on your local machine. Define a second
-value for the month of the DISA viral load export from the OpenLDR
-system.</p>
-<p>Note that the month date needs to be set in format %Y-%m-%d
-(“YYYY-MM-DD”). Although there are no restrictions on defining the exact
-day of the date string it is best to be consistent if tidy’ing and
-compiling submissions over multiple months. For example, if we’re
-defining day as “01” in our processing of May DISA data then we should
-also define it as “01” in our June processing.</p>
+<p>Antes de processarmos os nossos dados de carga viral DISA, vamos
+definir alguns valores no ambiente global do R para que possamos mais
+tarde passá-los para a nossa função sismar. Primeiro, defina um valor
+para o caminho para a exportação .xlsx da carga viral DISA do OpenLDR
+guardada na sua máquina local. Defina um segundo valor para o mês da
+exportação da carga viral DISA do sistema OpenLDR.</p>
+<p>Tenha em atenção que a data do mês tem de ser definida no formato
+%Y-%m-%d (“YYYY-MM-DD”). Embora não existam restrições quanto à
+definição do dia exato da cadeia de datas, é melhor ser consistente se
+estiver a arrumar e a compilar envios ao longo de vários meses. Por
+exemplo, se estivermos a definir o dia como “01” no nosso processamento
+dos dados DISA de maio, também o devemos definir como “01” no nosso
+processamento de junho.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">path_disa_cv</span> <span class="op">&lt;-</span> <span class="st">"Data/Relatorio Mensal de Carga Viral Junho 2024.xlsx"</span></span>
 <span><span class="va">month_input</span> <span class="op">&lt;-</span> <span class="st">"2024-06-20"</span></span>
@@ -111,50 +114,54 @@ also define it as “01” in our June processing.</p>
 <span><span class="co">#&gt; [1] "2024-06-20"</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="tidy-monthly-disa-viral-load-dataset">Tidy Monthly DISA Viral Load Dataset<a class="anchor" aria-label="anchor" href="#tidy-monthly-disa-viral-load-dataset"></a>
+<h2 id="arrumar-os-dados-mensais-de-carga-viral-disa">Arrumar os dados mensais de carga viral DISA<a class="anchor" aria-label="anchor" href="#arrumar-os-dados-mensais-de-carga-viral-disa"></a>
 </h2>
-<p>Can you believe we’ve already done the hard work of processing our
-monthly DISA viral load data set?! All we need to do now is write a
-single line of code to call the sismar <code>process_disa_cv</code>
-function with the arguments we’ve already set in our global environment
-and we’ve got our tidy viral load data ready for analysis!</p>
+<p>Acredita que já fizemos o trabalho árduo de processar o nosso
+conjunto mensal de dados de carga viral DISA? Tudo o que precisamos de
+fazer agora é escrever uma única linha de código para chamar a função
+<code>process_disa_cv</code> do sismar com os argumentos que já
+definimos no nosso ambiente global e temos os nossos dados de carga
+viral prontos para análise!</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/process_disa_cv.html">process_disa_cv</a></span><span class="op">(</span><span class="va">path_disa_cv</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="write-monthly-dataset-to-disk">Write Monthly Dataset to Disk<a class="anchor" aria-label="anchor" href="#write-monthly-dataset-to-disk"></a>
+<h2 id="gravar-dados-mensais-no-disco">Gravar dados mensais no disco<a class="anchor" aria-label="anchor" href="#gravar-dados-mensais-no-disco"></a>
 </h2>
-<p>You’ll likely want to write your processed monthly dataset to disk.
-This will be useful if (rather “when”) you decide to analyze multiple
-months of DISA data together. We can save .csv files to disk easily
-using <code>write_csv</code> from the Tidyverse readr package. All we do
-is call <code>write_csv</code> and pass in our “df” data object along
-with the file connection information (location and name of the .csv we
-save to disk).</p>
-<p>It’s worth noting in the below code chunk that we’ve also managed to
-apply a handy trick! We’ve used the glue package to append a period
-suffix automatically to the name of the .csv we save! This will ensure
-that every month we do not overwrite previous months files and that we
-end up with a full set of uniquely named monthly files to compile
-together! Clever how we can embed functions within other functions to
-make both more powerful, right?!</p>
+<p>É provável que queira gravar o seu conjunto de dados mensais
+processados no disco. Isto será útil se (ou melhor, “quando”) decidir
+analisar vários meses de dados DISA em conjunto. Podemos guardar
+ficheiros .csv para o disco facilmente usando <code>write_csv</code> do
+pacote Tidyverse readr. Tudo o que fazemos é chamar
+<code>write_csv</code> e passar o nosso objeto de dados “df” juntamente
+com a informação de ligação ao ficheiro (localização e nome do .csv que
+guardamos no disco).</p>
+<p>É de notar que no trecho de código abaixo também conseguimos aplicar
+um truque útil! Usámos o pacote glue para acrescentar automaticamente um
+sufixo de período ao nome do ficheiro .csv que guardámos! Isto irá
+garantir que todos os meses não substituímos os ficheiros dos meses
+anteriores e que acabamos com um conjunto completo de ficheiros mensais
+com um nome único para compilar em conjunto! É inteligente a forma como
+podemos incorporar funções noutras funções para as tornar mais
+poderosas, não é?!</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">write_csv</span>(df, <span class="at">file =</span> <span class="fu">glue</span>(<span class="st">"Data/processed/disa_vl_{month_input}"</span>)</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="compile-monthly-datasets">Compile Monthly Datasets<a class="anchor" aria-label="anchor" href="#compile-monthly-datasets"></a>
+<h2 id="compilar-dados-mensais">Compilar dados mensais<a class="anchor" aria-label="anchor" href="#compilar-dados-mensais"></a>
 </h2>
-<p>To append our saved monthly files together we’re going to up the
-level of difficulty by using an R regular expression and by calling a
-Tidyverse purrr function called “map” that helps us iterate tasks (in
-this case the task of reading a .csv file). At the end of the code
-chunk, we’ll use the function “reduce” to append our .csv’s
-together.</p>
-<p>The most opaque code line in the chunk begins with, “list.files”.
-This is where we effectively ask R to take an inventory of the complete
-file names in the folder where we’d saved our monthly processed DISA
-data. The “pattern” argument allows us to put parameters around what we
-inventory. The “^” symbol followed by “disa_vl_” ensures that only files
-that start with “disa_vl_” will be included in our compiled dataset.</p>
+<p>Para juntar os nossos ficheiros mensais guardados, vamos aumentar o
+nível de dificuldade utilizando uma expressão regular R e chamando uma
+função purrr do Tidyverse chamada “map” que nos ajuda a iterar tarefas
+(neste caso, a tarefa de ler um ficheiro .csv). No final do trecho de
+código, usaremos a função “reduce” para juntar os nossos ficheiros
+.csv.</p>
+<p>A linha de código mais opaca do trecho começa com “list.files”. É
+aqui que pedimos efetivamente ao R para fazer um inventário dos nomes
+completos dos ficheiros na pasta onde guardámos os nossos dados DISA
+processados mensalmente. O argumento “pattern” permite-nos colocar
+parâmetros à volta do que inventariamos. O símbolo “^” seguido de
+“disa_vl_” garante que apenas os ficheiros que começam por “disa_vl_”
+serão incluídos no nosso conjunto de dados compilado.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_compiled</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="st">"Data/processed/"</span>, pattern <span class="op">=</span> <span class="st">"^disa_vl_"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
@@ -162,12 +169,12 @@ that start with “disa_vl_” will be included in our compiled dataset.</p>
 <span>  <span class="fu">reduce</span><span class="op">(</span><span class="va">rbind</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="celebrate-and-analyze-your-work">Celebrate (and analyze) Your Work!<a class="anchor" aria-label="anchor" href="#celebrate-and-analyze-your-work"></a>
+<h2 id="celebre-e-analise-o-seu-trabalho">Celebre (e analise) o seu trabalho!<a class="anchor" aria-label="anchor" href="#celebre-e-analise-o-seu-trabalho"></a>
 </h2>
-<p>We’ve done some nice work here so take a moment to give yourself a
-pat on the back! However, don’t pat for too long because now the really
-fun job begins of exploring the dataset and generating insights! Happy
-analysis!</p>
+<p>Fizemos um bom trabalho aqui, por isso, reserve um momento para dar
+uma palmadinha nas costas! No entanto, não dê palmadinhas por muito
+tempo, porque agora começa o trabalho ainda mais divertido de explorar
+os dados e gerar percepções! Boa análise!</p>
 <hr>
 <p><em>Disclaimer: The findings, interpretation, and conclusions
 expressed herein are those of the authors and do not necessarily reflect
