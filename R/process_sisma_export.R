@@ -14,8 +14,18 @@
 
 process_sisma_export <- function(filename, language = "portuguese") {
 
+  # set column types for input file
+  column_types <- cols(
+    .default = col_double(),
+    periodid  = col_character(), periodname = col_character(), periodcode = col_character(),
+    perioddescription = col_character(), orgunitlevel1 = col_character(), orgunitlevel2 = col_character(),
+    orgunitlevel3 = col_character(), orgunitlevel4 = col_character(), organisationunitid = col_character(),
+    organisationunitname = col_character(), organisationunitcode = col_character(), organisationunitdescription = col_character()
+  )
+
   # load input file
-  df <- readr::read_csv(filename) |>
+  df <- readr::read_csv(filename,
+                        col_types = column_types) |>
     janitor::clean_names()
 
   templates <- input_templates
