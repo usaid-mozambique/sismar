@@ -2,7 +2,9 @@
 
 export("%>%")
 export(attach_meta_coord)
+export(attach_meta_mq)
 export(attach_meta_partner)
+export(attach_meta_pepfar_ip)
 export(attach_meta_uid)
 export(check_exact_match)
 export(clean_sisma_csv)

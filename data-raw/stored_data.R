@@ -66,7 +66,6 @@ tibble::tribble(
                "smi_cpn_mulheres_gravidas_que_fizeram_a_4_ou_mais_consultas_pre_natais",       "CPN_MG_CON4_COORTE",      NA,          NA,                   NA, "LdR CPN"
   )
 
-
 data_sisma_ats_results_map <-
 tibble::tribble(
                                                                             ~indicator, ~indicator_new,        ~sex,    ~age, ~age_coarse,    ~disaggregate, ~result_status,
@@ -332,7 +331,6 @@ tibble::tribble(
                                               "mz_ats_resultado_indeterminado_triagem",      "ATS_TST",          NA,      NA,          NA,    "ATS-Triagem",       "Indet.",
                                                  "mz_ats_resultado_indeterminado_uats",      "ATS_TST",          NA,      NA,          NA,       "ATS-UATS",       "Indet."
   )
-
 
 data_sisma_ats_ci_map <-
   tibble::tribble(
@@ -650,6 +648,7 @@ tibble::tribble(
   )
 
 
+
 data_sisma_ats_saaj_map <-
 tibble::tribble(
                                                                                              ~indicator, ~indicator_new,    ~source,    ~age, ~disaggregate, ~sub_group, ~result_status, ~age_coarse,        ~sex,
@@ -746,6 +745,7 @@ tibble::tribble(
                      "mz_saaj_testagem_para_hiv_numero_de_parceiros_testados_negativo_25_anos_feminino",      "ATS_TST", "LdR SAAJ",   "25+",        "SAAJ", "Parceiro",     "Negativo",       "15+",  "Feminino",
                     "mz_saaj_testagem_para_hiv_numero_de_parceiros_testados_negativo_25_anos_masculino",      "ATS_TST", "LdR SAAJ",   "25+",        "SAAJ", "Parceiro",     "Negativo",       "15+", "Masculino"
      )
+
 
 
 data_sisma_hiv_tarv_map <-
@@ -1029,6 +1029,7 @@ tibble::tribble(
   )
 
 
+
 data_sisma_hiv_prep_map <-
 tibble::tribble(
                                                                                                                      ~indicator,           ~indicator_new,    ~age, ~age_coarse,        ~sex, ~disaggregate,    ~source,
@@ -1125,6 +1126,7 @@ tibble::tribble(
   )
 
 
+
 data_sisma_hiv_apss_map <-
 tibble::tribble(
                                                                                                                                                                                        ~indicator,       ~indicator_new,  ~age, ~age_coarse,        ~sex,    ~source,
@@ -1157,6 +1159,7 @@ tibble::tribble(
                                   "mz_apss_pp_sessoes_no_de_pacientes_que_iniciou_cuidados_hiv_nesta_us_durante_o_trimestre_e_que_receberam_aconselhamento_pre_tarv_no_mesmo_periodo_15_feminino", "APSS_PRETARV_ACONS", "<15",       "<15",  "Feminino", "LdR APSS",
                                  "mz_apss_pp_sessoes_no_de_pacientes_que_iniciou_cuidados_hiv_nesta_us_durante_o_trimestre_e_que_receberam_aconselhamento_pre_tarv_no_mesmo_periodo_15_masculino", "APSS_PRETARV_ACONS", "<15",       "<15", "Masculino", "LdR APSS"
   )
+
 
 
 data_sisma_hiv_its_map <-
@@ -1398,6 +1401,7 @@ tibble::tribble(
   )
 
 
+
 data_sisma_hiv_dah_map <-
   tibble::tribble(
                                                                                                                                                                                   ~indicator,          ~indicator_new, ~sub_group,      ~disaggregate,        ~sex,    ~age, ~age_coarse,   ~source,
@@ -1571,6 +1575,7 @@ data_sisma_hiv_dah_map <-
                                                                                "mz_dah_reinicios_de_tarv_utentes_elegiveis_a_pedido_de_tb_lam_com_resultado_de_tb_lam_durante_o_mes_15_anos",            "TB_LAM_RES",         NA, "Reinicio de TARV",          NA,   "15+",       "15+", "LdR DAH"
     )
 
+
 data_sisma_smi_cpp_map <-
 tibble::tribble(
                                                                                    ~indicator,                 ~indicator_new, ~sex, ~age, ~sub_group, ~age_coarse, ~result_status,                      ~disaggregate, ~disaggregate_sub,   ~source,
@@ -1622,6 +1627,7 @@ tibble::tribble(
                                              "smi_cpp_recem_nascidos_transferidos_para_a_ccr",             "CPP_RN_TRANS_CCR",   NA,   NA,         NA,          NA,             NA,                                 NA,                NA, "LdR CPP",
                                    "smi_cpp_puerperas_transferidas_para_a_consulta_de_pf_csr",        "CPP_PUER_TRANS_PF_CSR",   NA,   NA,         NA,          NA,             NA,                                 NA,                NA, "LdR CPP"
   )
+
 
 
 data_sisma_smi_pav_map <-
@@ -1774,6 +1780,7 @@ data_sisma_smi_pav_map <-
             "pav_sarampo_rubeola_18_23_meses_posto_fixo_feminino",    "PAV_SARAMPO_RUBEOLA",  "Feminino", "18-23 meses",       "<15",    "Posto Fixo", "LdR PAV",
            "pav_sarampo_rubeola_18_23_meses_posto_fixo_masculino",    "PAV_SARAMPO_RUBEOLA", "Masculino", "18-23 meses",       "<15",    "Posto Fixo", "LdR PAV"
   )
+
 
 
 data_sisma_smi_ccd_map <-
@@ -2087,6 +2094,7 @@ tibble::tribble(
                        "smi_ug_total_testadas_para_hiv_nas_urgencias_de_ginecologia",            "UG_HIV_TESTE",                            NA,                      NA, "LdR UG",
                                              "smi_ug_tratamento_sindromatico_de_its",               "UG_TX_ITS",                            NA,                      NA, "LdR UG"
      )
+
 
 data_sisma_smi_pf_map <-
 tibble::tribble(

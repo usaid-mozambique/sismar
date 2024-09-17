@@ -1,5 +1,5 @@
 ---
-title: "Tidy DISA Viral Load Data"
+title: "Arrumar Dados de Carga Viral da DISA"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{tidy-disa}
@@ -14,9 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Open RStudio and Load Packages
+## Abrir o RStudio e carregar os pacotes
 
-If not already done, open a new RStudio work session.  As normal we'll begin our work by creating a new R script (File -> New File -> R script).  We'll also load the core R packages needed for tidying DISA tabular data. Tidyverse is our trusty multipurpose "Swiss Army Knife" of data science programming in R.  The sismar package allows us to tidy data exported from MISAU health information systems including DISA. The glue package allows us to combine and use string values within code.
+Se ainda não o fez, abra uma nova sessão de trabalho no RStudio.  Como habitualmente, começaremos o nosso trabalho criando um novo script R (File -> New File -> R script).  Também vamos carregar os principais pacotes R necessários para arrumar os dados tabulares do DISA. O Tidyverse é o nosso fiel e polivalente “canivete suíço” de programação de ciência de dados em R. O pacote sismar permite-nos arrumar os dados exportados dos sistemas de informação de saúde do MISAU, incluindo o DISA. O pacote glue permite-nos combinar e utilizar valores de cadeia de caracteres no código.
 
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -25,11 +25,11 @@ library(sismar)
 library(glue)
 ```
 
-## Define Global Variables
+## Definir variáveis globais
 
-Before we process our DISA viral load data, let's set a couple values in the global R environment so that we can later pass them into our sismar function.  First define a value for the path to the OpenLDR DISA viral load .xlsx export saved on your local machine.  Define a second value for the month of the DISA viral load export from the OpenLDR system.  
+Antes de processarmos os nossos dados de carga viral DISA, vamos definir alguns valores no ambiente global do R para que possamos mais tarde passá-los para a nossa função sismar.  Primeiro, defina um valor para o caminho para a exportação .xlsx da carga viral DISA do OpenLDR guardada na sua máquina local.  Defina um segundo valor para o mês da exportação da carga viral DISA do sistema OpenLDR.  
 
-Note that the month date needs to be set in format %Y-%m-%d ("YYYY-MM-DD"). Although there are no restrictions on defining the exact day of the date string it is best to be consistent if tidy'ing and compiling submissions over multiple months.  For example, if we're defining day as "01" in our processing of May DISA data then we should also define it as "01" in our June processing.  
+Tenha em atenção que a data do mês tem de ser definida no formato %Y-%m-%d (“YYYY-MM-DD”). Embora não existam restrições quanto à definição do dia exato da cadeia de datas, é melhor ser consistente se estiver a arrumar e a compilar envios ao longo de vários meses.  Por exemplo, se estivermos a definir o dia como “01” no nosso processamento dos dados DISA de maio, também o devemos definir como “01” no nosso processamento de junho.  
 
 
 ```{r}
@@ -41,30 +41,30 @@ month_input
 
 ```
 
-## Tidy Monthly DISA Viral Load Dataset
+## Arrumar os dados mensais de carga viral DISA
 
-Can you believe we've already done the hard work of processing our monthly DISA viral load data set?!  All we need to do now is write a single line of code to call the sismar `process_disa_cv` function with the arguments we've already set in our global environment and we've got our tidy viral load data ready for analysis!
+Acredita que já fizemos o trabalho árduo de processar o nosso conjunto mensal de dados de carga viral DISA?  Tudo o que precisamos de fazer agora é escrever uma única linha de código para chamar a função `process_disa_cv` do sismar com os argumentos que já definimos no nosso ambiente global e temos os nossos dados de carga viral prontos para análise!
 
 ```{r, eval = FALSE}
 df <- process_disa_cv(path_disa_cv)
 ```
 
-## Write Monthly Dataset to Disk
+## Gravar dados mensais no disco
 
-You'll likely want to write your processed monthly dataset to disk.  This will be useful if (rather "when") you decide to analyze multiple months of DISA data together.  We can save .csv files to disk easily using `write_csv` from the Tidyverse readr package.  All we do is call `write_csv` and pass in our "df" data object along with the file connection information (location and name of the .csv we save to disk).
+É provável que queira gravar o seu conjunto de dados mensais processados no disco.  Isto será útil se (ou melhor, “quando”) decidir analisar vários meses de dados DISA em conjunto.  Podemos guardar ficheiros .csv para o disco facilmente usando `write_csv` do pacote Tidyverse readr.  Tudo o que fazemos é chamar `write_csv` e passar o nosso objeto de dados “df” juntamente com a informação de ligação ao ficheiro (localização e nome do .csv que guardamos no disco).
 
-It's worth noting in the below code chunk that we've also managed to apply a handy trick!  We've used the glue package to append a period suffix automatically to the name of the .csv we save!  This will ensure that every month we do not overwrite previous months files and that we end up with a full set of uniquely named monthly files to compile together! Clever how we can embed functions within other functions to make both more powerful, right?!
+É de notar que no trecho de código abaixo também conseguimos aplicar um truque útil!  Usámos o pacote glue para acrescentar automaticamente um sufixo de período ao nome do ficheiro .csv que guardámos!  Isto irá garantir que todos os meses não substituímos os ficheiros dos meses anteriores e que acabamos com um conjunto completo de ficheiros mensais com um nome único para compilar em conjunto! É inteligente a forma como podemos incorporar funções noutras funções para as tornar mais poderosas, não é?!
 
 
 ```{r, eval = FALSE}
 write_csv(df, file = glue("Data/processed/disa_vl_{month_input}")
 ```
 
-## Compile Monthly Datasets
+## Compilar dados mensais
 
-To append our saved monthly files together we're going to up the level of difficulty by using an R regular expression and by calling a Tidyverse purrr function called "map" that helps us iterate tasks (in this case the task of reading a .csv file).  At the end of the code chunk, we'll use the function "reduce" to append our .csv's together.
+Para juntar os nossos ficheiros mensais guardados, vamos aumentar o nível de dificuldade utilizando uma expressão regular R e chamando uma função purrr do Tidyverse chamada “map” que nos ajuda a iterar tarefas (neste caso, a tarefa de ler um ficheiro .csv).  No final do trecho de código, usaremos a função “reduce” para juntar os nossos ficheiros .csv.
 
-The most opaque code line in the chunk begins with, "list.files". This is where we effectively ask R to take an inventory of the complete file names in the folder where we'd saved our monthly processed DISA data.  The "pattern" argument allows us to put parameters around what we inventory.  The "^" symbol followed by "disa_vl_" ensures that only files that start with "disa_vl_" will be included in our compiled dataset.  
+A linha de código mais opaca do trecho começa com “list.files”. É aqui que pedimos efetivamente ao R para fazer um inventário dos nomes completos dos ficheiros na pasta onde guardámos os nossos dados DISA processados mensalmente.  O argumento “pattern” permite-nos colocar parâmetros à volta do que inventariamos.  O símbolo “^” seguido de “disa_vl_” garante que apenas os ficheiros que começam por “disa_vl_” serão incluídos no nosso conjunto de dados compilado.  
 
 ```{r, eval = FALSE}
 df_compiled <-
@@ -73,6 +73,11 @@ df_compiled <-
   reduce(rbind)
 ```
 
-## Celebrate (and analyze) Your Work!
+## Celebre (e analise) o seu trabalho!
+Fizemos um bom trabalho aqui, por isso, reserve um momento para dar uma palmadinha nas costas!  No entanto, não dê palmadinhas por muito tempo, porque agora começa o trabalho ainda mais divertido de explorar os dados e gerar percepções!  Boa análise!
 
-We've done some nice work here so take a moment to give yourself a pat on the back!  However, don't pat for too long because now the really fun job begins of exploring the dataset and generating insights!  Happy analysis!
+
+
+---
+
+*Disclaimer: The findings, interpretation, and conclusions expressed herein are those of the authors and do not necessarily reflect the views of United States Agency for International Development. All errors remain our own.*
