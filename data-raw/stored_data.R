@@ -1,4 +1,21 @@
-## code to prepare indicator join tables that rename indicators and provide indicator features
+
+# inventory example data files
+files <- list.files("inst/extdata",
+                    pattern = glue::glue("^template.*\\.csv$"),
+                    full.names = TRUE)
+
+
+# map over files to create a list, reading in the file and keeping the column headers only
+input_templates <- purrr::map(files,
+~ readr::read_csv(.x, n_max = 0) |>
+  janitor::clean_names() |>
+  names())
+
+
+# name each element of the list based on the file name
+names(input_templates) <- basename(files)  |>
+  stringr::str_replace("template", "parse_sisma") |>
+  stringr::str_remove(".csv")
 
 
 data_sisma_smi_cpn_map <-
@@ -48,8 +65,6 @@ tibble::tribble(
                                                  "smi_cpn_total_de_parceiros_presentes",    "CPN_PARCEIRO_PRESENTE",      NA,          NA,                   NA, "LdR CPN",
                "smi_cpn_mulheres_gravidas_que_fizeram_a_4_ou_mais_consultas_pre_natais",       "CPN_MG_CON4_COORTE",      NA,          NA,                   NA, "LdR CPN"
   )
-usethis::use_data(data_sisma_smi_cpn_map, overwrite = TRUE, internal = TRUE)
-
 
 data_sisma_ats_results_map <-
 tibble::tribble(
@@ -316,7 +331,6 @@ tibble::tribble(
                                               "mz_ats_resultado_indeterminado_triagem",      "ATS_TST",          NA,      NA,          NA,    "ATS-Triagem",       "Indet.",
                                                  "mz_ats_resultado_indeterminado_uats",      "ATS_TST",          NA,      NA,          NA,       "ATS-UATS",       "Indet."
   )
-usethis::use_data(data_sisma_ats_results_map, overwrite = TRUE, internal = TRUE)
 
 data_sisma_ats_ci_map <-
   tibble::tribble(
@@ -421,7 +435,6 @@ data_sisma_ats_ci_map <-
                   "mz_ats_teste_de_subgrupo_por_contactos_dos_casos_indices_parceiros_sexuais_uats_negativo",   "ATS_CI_TST",       "ATS-UATS",   "Parceiro",     "Negativo",       "15+",
                   "mz_ats_teste_de_subgrupo_por_contactos_dos_casos_indices_parceiros_sexuais_uats_positivo",   "ATS_CI_TST",       "ATS-UATS",   "Parceiro",     "Positivo",       "15+"
     )
-usethis::use_data(data_sisma_ats_ci_map, overwrite = TRUE, internal = TRUE)
 
 
 data_sisma_ats_hist_map <-
@@ -545,7 +558,7 @@ tibble::tribble(
                                            "mz_ats_confirmacao_autoteste_hiv_triagem", "ATS_AUTO_CONF",    "ATS-Triagem",         NA,             NA,
                                               "mz_ats_confirmacao_autoteste_hiv_uats", "ATS_AUTO_CONF",       "ATS-UATS",         NA,             NA
   )
-usethis::use_data(data_sisma_ats_hist_map, overwrite = TRUE, internal = TRUE)
+
 
 data_sisma_ats_smi_map <-
 tibble::tribble(
@@ -569,7 +582,6 @@ tibble::tribble(
                                                                                "smi_pf_hiv_negative",      "ATS_TST",      "SMI-PF",         NA,     "Negativo",       "15+",  "Feminino",
                                                                                "smi_ug_hiv_negative",      "ATS_TST",      "SMI-UG",         NA,     "Negativo",       "15+",  "Feminino"
      )
-usethis::use_data(data_sisma_ats_smi_map, overwrite = TRUE, internal = TRUE)
 
 
 data_sisma_ats_ccsd_map <-
@@ -594,7 +606,6 @@ tibble::tribble(
               "mz_smi_ccs_total_de_maes_com_teste_de_hiv_negativo_brigada_movel",      "ATS_TST", "LdR SMI",     "SMI-CCS",   "Brigada Movel",     "Negativo",       "15+", "Feminino",
                  "mz_smi_ccs_total_de_maes_com_teste_de_hiv_negativo_posto_fixo",      "ATS_TST", "LdR SMI",     "SMI-CCS",      "Posto Fixo",     "Negativo",       "15+", "Feminino"
      )
-usethis::use_data(data_sisma_ats_ccsd_map, overwrite = TRUE, internal = TRUE)
 
 
 data_sisma_ats_autoteste_map <-
@@ -635,7 +646,7 @@ tibble::tribble(
     "mz_hiv_autoteste_tipo_de_distribuicao_athiv_distribuicao_primaria", "ATS_TST_AUTO_DISTR",      NA,          NA,          NA,            "Primaria", "LdR Autoteste",
   "mz_hiv_autoteste_tipo_de_distribuicao_athiv_distribuicao_secundaria", "ATS_TST_AUTO_DISTR",      NA,          NA,          NA,          "Secundaria", "LdR Autoteste"
   )
-usethis::use_data(data_sisma_ats_autoteste_map, overwrite = TRUE, internal = TRUE)
+
 
 
 data_sisma_ats_saaj_map <-
@@ -734,7 +745,7 @@ tibble::tribble(
                      "mz_saaj_testagem_para_hiv_numero_de_parceiros_testados_negativo_25_anos_feminino",      "ATS_TST", "LdR SAAJ",   "25+",        "SAAJ", "Parceiro",     "Negativo",       "15+",  "Feminino",
                     "mz_saaj_testagem_para_hiv_numero_de_parceiros_testados_negativo_25_anos_masculino",      "ATS_TST", "LdR SAAJ",   "25+",        "SAAJ", "Parceiro",     "Negativo",       "15+", "Masculino"
      )
-usethis::use_data(data_sisma_ats_saaj_map, overwrite = TRUE, internal = TRUE)
+
 
 
 data_sisma_hiv_tarv_map <-
@@ -849,7 +860,6 @@ tibble::tribble(
                                                                                                                                    "mz_hiv_sida_nat_no_fim_do_mes_20_feminino",         "TX_ACTIVO",   "20+",       "15+",  "Feminino",                 NA, "LdR TARV",
                                                                                                                                   "mz_hiv_sida_nat_no_fim_do_mes_20_masculino",         "TX_ACTIVO",   "20+",       "15+", "Masculino",                 NA, "LdR TARV"
   )
-usethis::use_data(data_sisma_hiv_tarv_map, overwrite = TRUE, internal = TRUE)
 
 
 data_sisma_smi_mat_map <-
@@ -963,7 +973,7 @@ tibble::tribble(
                                                       "smi_mat_partos_assistidos_na_comunidade", "MAT_OUTRAS_PARTO_ASSIS_COM",                                        NA,                NA, "LdR Matern.",
                                                    "smi_mat_mulheres_tranferidas_para_outra_us",     "MAT_OUTRAS_TRANSFER_US",                                        NA,                NA, "LdR Matern."
   )
-usethis::use_data(data_sisma_smi_mat_map, overwrite = TRUE, internal = TRUE)
+
 
 
 data_sisma_smi_ccr_map <-
@@ -1017,7 +1027,7 @@ tibble::tribble(
                                                       "smi_ccr_criancas_expostas_que_abandonaram",           "CCR_18M_CE_RESUL",            NA,                              "Abandonos", "LdR CCR",
                                                       "smi_ccr_criancas_expostas_que_foram_obito",           "CCR_18M_CE_RESUL",            NA,                                 "Óbitos", "LdR CCR"
   )
-usethis::use_data(data_sisma_smi_ccr_map, overwrite = TRUE, internal = TRUE)
+
 
 
 data_sisma_hiv_prep_map <-
@@ -1114,7 +1124,7 @@ tibble::tribble(
                     "mz_prep_novos_inicios_utentes_que_iniciaram_a_pr_ep_pela_1a_vez_durante_o_periodo_de_reporte_transgeneros",     "PREP_NOVOS_PERIODO",      NA,          NA,          NA,          "TG", "LdR PrEP",
                               "mz_prep_novos_inicios_utentes_que_iniciaram_a_pr_ep_pela_1a_vez_durante_o_periodo_de_reporte_ts",     "PREP_NOVOS_PERIODO",      NA,          NA,          NA,          "TS", "LdR PrEP"
   )
-usethis::use_data(data_sisma_hiv_prep_map, overwrite = TRUE, internal = TRUE)
+
 
 
 data_sisma_hiv_apss_map <-
@@ -1149,7 +1159,7 @@ tibble::tribble(
                                   "mz_apss_pp_sessoes_no_de_pacientes_que_iniciou_cuidados_hiv_nesta_us_durante_o_trimestre_e_que_receberam_aconselhamento_pre_tarv_no_mesmo_periodo_15_feminino", "APSS_PRETARV_ACONS", "<15",       "<15",  "Feminino", "LdR APSS",
                                  "mz_apss_pp_sessoes_no_de_pacientes_que_iniciou_cuidados_hiv_nesta_us_durante_o_trimestre_e_que_receberam_aconselhamento_pre_tarv_no_mesmo_periodo_15_masculino", "APSS_PRETARV_ACONS", "<15",       "<15", "Masculino", "LdR APSS"
   )
-usethis::use_data(data_sisma_hiv_apss_map, overwrite = TRUE, internal = TRUE)
+
 
 
 data_sisma_hiv_its_map <-
@@ -1211,7 +1221,7 @@ tibble::tribble(
                                 "mz_its_ulcera_genital_masculino_10",  "ITS_1CONS_DIAG_ULC", "Masculino",   "<10",       "<15",         NA,             NA,                   NA, "LdR ITS",
                            "mz_its_ulcera_genital_masculino_25_anos",  "ITS_1CONS_DIAG_ULC", "Masculino",   "25+",       "15+",         NA,             NA,                   NA, "LdR ITS"
   )
-usethis::use_data(data_sisma_hiv_its_map, overwrite = TRUE, internal = TRUE)
+
 
 data_sisma_hiv_ajmhcmm_map <-
 tibble::tribble(
@@ -1389,7 +1399,7 @@ tibble::tribble(
                                    "mz_ajmhcmm_mm_utentes_que_sairam_por_obito_5_9_anos",            "MM_SAIDA",          NA, "05-09",           "Obito",             NA, "LES AJM/HC/MM",
                                     "mz_ajmhcmm_mm_utentes_que_sairam_por_obito_25_anos",            "MM_SAIDA",          NA,   "25+",           "Obito",             NA, "LES AJM/HC/MM"
   )
-usethis::use_data(data_sisma_hiv_ajmhcmm_map, overwrite = TRUE, internal = TRUE)
+
 
 
 data_sisma_hiv_dah_map <-
@@ -1564,7 +1574,6 @@ data_sisma_hiv_dah_map <-
                                                                              "mz_dah_reinicios_de_tarv_utentes_elegiveis_a_pedido_de_tb_lam_com_resultado_de_tb_lam_durante_o_mes_0_14_anos",            "TB_LAM_RES",         NA, "Reinicio de TARV",          NA,   "<15",       "<15", "LdR DAH",
                                                                                "mz_dah_reinicios_de_tarv_utentes_elegiveis_a_pedido_de_tb_lam_com_resultado_de_tb_lam_durante_o_mes_15_anos",            "TB_LAM_RES",         NA, "Reinicio de TARV",          NA,   "15+",       "15+", "LdR DAH"
     )
-usethis::use_data(data_sisma_hiv_dah_map, overwrite = TRUE, internal = TRUE)
 
 
 data_sisma_smi_cpp_map <-
@@ -1618,7 +1627,7 @@ tibble::tribble(
                                              "smi_cpp_recem_nascidos_transferidos_para_a_ccr",             "CPP_RN_TRANS_CCR",   NA,   NA,         NA,          NA,             NA,                                 NA,                NA, "LdR CPP",
                                    "smi_cpp_puerperas_transferidas_para_a_consulta_de_pf_csr",        "CPP_PUER_TRANS_PF_CSR",   NA,   NA,         NA,          NA,             NA,                                 NA,                NA, "LdR CPP"
   )
-usethis::use_data(data_sisma_smi_cpp_map, overwrite = TRUE, internal = TRUE)
+
 
 
 data_sisma_smi_pav_map <-
@@ -1771,7 +1780,7 @@ data_sisma_smi_pav_map <-
             "pav_sarampo_rubeola_18_23_meses_posto_fixo_feminino",    "PAV_SARAMPO_RUBEOLA",  "Feminino", "18-23 meses",       "<15",    "Posto Fixo", "LdR PAV",
            "pav_sarampo_rubeola_18_23_meses_posto_fixo_masculino",    "PAV_SARAMPO_RUBEOLA", "Masculino", "18-23 meses",       "<15",    "Posto Fixo", "LdR PAV"
   )
-usethis::use_data(data_sisma_smi_pav_map, overwrite = TRUE, internal = TRUE)
+
 
 
 data_sisma_smi_ccd_map <-
@@ -1918,7 +1927,6 @@ tibble::tribble(
                               "mz_smi_ccd_total_de_criancas_de_0_59_meses_com_atraso_de_desenvolvimento_psicomotor_identificado_pela_1a_vez_brigada_movel", "CCD_ATRASO_PSICOMOTOR",          NA,  "0-59 meses",       "<15",                       NA,   "Brigada Movel",             NA, "LdR CCD",
                                  "mz_smi_ccd_total_de_criancas_de_0_59_meses_com_atraso_de_desenvolvimento_psicomotor_identificado_pela_1a_vez_posto_fixo", "CCD_ATRASO_PSICOMOTOR",          NA,  "0-59 meses",       "<15",                       NA,      "Posto Fixo",             NA, "LdR CCD"
   )
-usethis::use_data(data_sisma_smi_ccd_map, overwrite = TRUE, internal = TRUE)
 
 
 data_sisma_smi_ccs_map <-
@@ -2021,7 +2029,6 @@ data_sisma_smi_ccs_map <-
                                                                     "mz_smi_ccs_total_por_sexo_posto_fixo_feminino",             "CCS_TOTAL",  "Feminino",            NA,          NA,               NA,      "Posto Fixo",             NA, "LdR CCS",
                                                                    "mz_smi_ccs_total_por_sexo_posto_fixo_masculino",             "CCS_TOTAL", "Masculino",            NA,          NA,               NA,      "Posto Fixo",             NA, "LdR CCS"
   )
-usethis::use_data(data_sisma_smi_ccs_map, overwrite = TRUE, internal = TRUE)
 
 
 data_sisma_smi_ug_map <-
@@ -2087,7 +2094,6 @@ tibble::tribble(
                        "smi_ug_total_testadas_para_hiv_nas_urgencias_de_ginecologia",            "UG_HIV_TESTE",                            NA,                      NA, "LdR UG",
                                              "smi_ug_tratamento_sindromatico_de_its",               "UG_TX_ITS",                            NA,                      NA, "LdR UG"
      )
-usethis::use_data(data_sisma_smi_ug_map, overwrite = TRUE, internal = TRUE)
 
 
 data_sisma_smi_pf_map <-
@@ -2161,7 +2167,7 @@ tibble::tribble(
                                    "smi_pf_mulheres_via_positivo_e_hiv", "PF_CCU_VIA_POS_HIV_POS",          NA,      NA,          NA,                           NA,                    NA, "LdR PF",
                                "smi_pf_outro_tipo_de_implante_inserido",     "PF_MET_USO_DETALHE",          NA,      NA,          NA,                   "Implante",      "Outro Inserido", "LdR PF"
   )
-usethis::use_data(data_sisma_smi_pf_map, overwrite = TRUE, internal = TRUE)
+
 
 data_sisma_smi_pf_int_saaj_ape_map <-
 tibble::tribble(
@@ -2310,7 +2316,59 @@ tibble::tribble(
                                                                               "mz_pf_metodos_de_pf_pilula_microlut_triagem", "PF_MET_USO_DETALHE", "LdR PF Integrado - Triagem",      "Pilula", "Doses administradas",         NA,          NA,          NA,      NA,             NA,
                                                                         "mz_pf_metodos_de_pf_pilula_outros_microlut_outros", "PF_MET_USO_DETALHE",     "LdR PF Integrado - CPP",      "Pilula", "Doses administradas",         NA,          NA,          NA,      NA,             NA
   )
-usethis::use_data(data_sisma_smi_pf_int_saaj_ape_map, overwrite = TRUE, internal = TRUE)
+
+
+usethis::use_data(input_templates,
+                  data_sisma_smi_cpn_map,
+                  data_sisma_ats_results_map,
+                  data_sisma_ats_ci_map,
+                  data_sisma_ats_hist_map,
+                  data_sisma_ats_smi_map,
+                  data_sisma_ats_ccsd_map,
+                  data_sisma_ats_autoteste_map,
+                  data_sisma_ats_saaj_map,
+                  data_sisma_hiv_tarv_map,
+                  data_sisma_smi_mat_map,
+                  data_sisma_smi_ccr_map,
+                  data_sisma_hiv_prep_map,
+                  data_sisma_hiv_apss_map,
+                  data_sisma_hiv_its_map,
+                  data_sisma_hiv_ajmhcmm_map,
+                  data_sisma_hiv_dah_map,
+                  data_sisma_smi_cpp_map,
+                  data_sisma_smi_pav_map,
+                  data_sisma_smi_ccd_map,
+                  data_sisma_smi_ccs_map,
+                  data_sisma_smi_ug_map,
+                  data_sisma_smi_pf_map,
+                  data_sisma_smi_pf_int_saaj_ape_map,
+                  overwrite = TRUE,
+                  internal = TRUE)
+
+
+# usethis::use_data(data_sisma_smi_cpn_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_ats_results_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_ats_ci_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_ats_hist_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_ats_smi_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_ats_ccsd_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_ats_autoteste_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_ats_saaj_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_hiv_tarv_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_smi_mat_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_smi_ccr_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_hiv_prep_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_hiv_apss_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_hiv_its_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_hiv_ajmhcmm_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_hiv_dah_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_smi_cpp_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_smi_pav_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_smi_ccd_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_smi_ccs_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_smi_ug_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_smi_pf_map, overwrite = TRUE, internal = TRUE)
+# usethis::use_data(data_sisma_smi_pf_int_saaj_ape_map, overwrite = TRUE, internal = TRUE)
 
 
 data_sisma_sitelist <-
@@ -4567,7 +4625,6 @@ data_sisma_sitelist <-
      "KTP9oq6N9Q9",         "Zambezia",                        "Pebane",                                                   "CS Tomea",
      "WxpC1YdLnYz",         "Zambezia",                        "Pebane",                                               "CS Txalalane"
      )
-usethis::use_data(data_sisma_sitelist, overwrite = TRUE)
 
 
 data_disa_uid_map <-
@@ -6645,5 +6702,8 @@ data_disa_uid_map <-
     "CSMGR",            NA, "siMZUtd2cJW",
     "MILIB",            NA, "siMZUtd2cJW"
   )
-usethis::use_data(data_disa_uid_map, overwrite = TRUE)
 
+
+usethis::use_data(data_disa_uid_map,
+                  data_sisma_sitelist,
+                  overwrite = TRUE)

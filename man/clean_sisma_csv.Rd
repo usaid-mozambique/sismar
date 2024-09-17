@@ -21,6 +21,8 @@ represent indicator or data element values are pivoted long
 \description{
 \code{clean_sisma_csv()} A helper function that cleans .csv pivot tables
 exported from SISMA
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#superseded}{\figure{lifecycle-superseded.svg}{options: alt='[Superseded]'}}}{\strong{[Superseded]}}
+\code{clean_sisma_csv} has been superseded in favor of \code{clean_sisma_df}
 }
 \examples{
  \dontrun{
