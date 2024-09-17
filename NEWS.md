@@ -1,3 +1,8 @@
+# sismar 1.0.0
+* Addition of `process_sisma_export` which automatically detects SISMA export type passed in by user
+* Internalize parsing data
+* Addition of example data for unit testing and for sandbox use
+
 # sismar 0.4.0
 * Translation of pkgdown site to Portuguese.
 

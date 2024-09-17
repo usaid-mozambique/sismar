@@ -1,6 +1,6 @@
 Package: sismar
 Title: Transform tabular export files from SISMA
-Version: 0.4.0
+Version: 1.0.0
 Authors@R: c(
     person("Joe", "Lara", email = "jlara@usaid.gov", role = c("aut", "cre")),
     person("Karishma", "Srikanth", email = "ksrikanth@usaid.gov", role = c("aut")),
