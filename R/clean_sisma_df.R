@@ -1,6 +1,6 @@
 #' Clean SISMA input file prior to parsing
 #'
-#' @param df
+#' @param df A dataframe already ingested by `process_sisma_export`
 #'
 #' @return Cleaned SISMA dataframe
 #' @export

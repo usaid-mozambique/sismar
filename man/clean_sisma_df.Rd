@@ -7,7 +7,7 @@
 clean_sisma_df(df)
 }
 \arguments{
-\item{df}{}
+\item{df}{A dataframe already ingested by \code{process_sisma_export}}
 }
 \value{
 Cleaned SISMA dataframe
