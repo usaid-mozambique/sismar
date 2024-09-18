@@ -1,7 +1,9 @@
 # sismar 1.0.0
-* Addition of `process_sisma_export` which automatically detects SISMA export type passed in by user
-* Internalize parsing data
+* Addition of function `process_sisma_export` which automatically detects SISMA export type passed in by user
+* Addition of helper function `clean_sisma_df` to clean SISMA dataframes passed in by `process_sisma_export`
+* Addition of utility `setup_sisma_folder` to create a folder structure for data processing
 * Addition of example data for unit testing and for sandbox use
+* Internalize parsing data
 
 # sismar 0.4.0
 * Translation of pkgdown site to Portuguese.
