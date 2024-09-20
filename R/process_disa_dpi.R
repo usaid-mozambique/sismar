@@ -108,13 +108,10 @@ process_disa_dpi <- function(file, month) {
       idade_agrupada = NA_character_
     )
 
-  # fetch site maps for recoding site metadata
-  map_disa <- mozR::pull_sitemap(sheetname = "map_disa") |> dplyr::select(!c("note", "ajuda", "site_nid", "datim_uid"))
-  map_ou <- mozR::pull_sitemap(sheetname = "list_sisma") |> dplyr::select(c("sisma_uid", "provincia", "distrito", "us"))
 
   df_1 <- df |>
-    dplyr::left_join(map_disa, dplyr::join_by(disa_uid)) |>
-    dplyr::left_join(map_ou, dplyr::join_by(sisma_uid)) |>
+    dplyr::left_join(data_disa_uid_map, dplyr::join_by(disa_uid)) |>
+    dplyr::left_join(data_sisma_sitelist, dplyr::join_by(sisma_uid)) |>
     dplyr::select(!disa_uid) |>
     dplyr::select(sisma_uid,
                   provincia,
