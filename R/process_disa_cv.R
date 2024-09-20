@@ -123,12 +123,11 @@ process_disa_cv <- function(file, month) {
     dplyr::filter(valor > 0)
 
   # map_disa <- mozR::pull_sitemap(sheetname = "map_disa") |> dplyr::select(!c("note", "ajuda", "site_nid", "datim_uid"))
-  map_ou <- mozR::pull_sitemap(sheetname = "list_sisma") |> dplyr::select(c("sisma_uid", "provincia", "distrito", "us"))
-
+  # map_ou <- mozR::pull_sitemap(sheetname = "list_sisma") |> dplyr::select(c("sisma_uid", "provincia", "distrito", "us"))
 
   df_2 <- df_1 |>
     dplyr::left_join(data_disa_uid_map, dplyr::join_by(disa_uid)) |>
-    dplyr::left_join(map_ou, dplyr::join_by(sisma_uid)) |>
+    dplyr::left_join(data_sisma_sitelist, dplyr::join_by(sisma_uid)) |>
     dplyr::select(!disa_uid) |>
     dplyr::select(sisma_uid,
                   provincia,
