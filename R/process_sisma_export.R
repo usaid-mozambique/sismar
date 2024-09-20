@@ -56,8 +56,8 @@ process_sisma_export <- function(filename, language = "portuguese") {
   } else {
 
     # return error message when no template match is found
-    cat(col_red("\nPROCESSING ERROR ----"),
-        col_red("\nInput file not recognized. Please verify the path to your file and try again."),
+    cat(cli::col_red("\nPROCESSING ERROR ----"),
+        cli::col_red("\nInput file not recognized. Please verify the path to your file and try again."),
         "\n")
 
   }
