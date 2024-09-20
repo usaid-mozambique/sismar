@@ -5,7 +5,7 @@ resource_files:
   - images/sisma-reporte-lista.png
   - images/painel.png
 vignette: >
-  %\VignetteIndexEntry{tidy-disa}
+  %\VignetteIndexEntry{export-sisma}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---   
