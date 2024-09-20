@@ -2,22 +2,22 @@
 % Please edit documentation in R/attach_meta_coord.R
 \name{attach_meta_coord}
 \alias{attach_meta_coord}
-\title{Retreive and attach health facility geocoordinates metadata}
+\title{Anexar metadados de geocoordenadas de unidades de saúde}
 \usage{
 attach_meta_coord(df, sheetname = "map_us_coord")
 }
 \arguments{
-\item{df}{Dataframe cleaned via reshape_sisma}
+\item{df}{Dataframe já transformado através de \code{process_sisma_csv} ou \code{process_sisma_export}}
 
-\item{sheetname}{Sheet name from the MISAU_Site_Map}
+\item{sheetname}{Nome da folha do MISAU_Site_Map}
 }
 \value{
-A dataframe containing site metadata
+Um quadro de dados que contém metadados geográficos
 }
 \description{
-\code{attach_meta_coord} utilizes stored user credentials to access
-a GoogleSheet where health facility geocoordinates are
-stored.
+\code{attach_meta_coord} utiliza as credenciais de utilizador armazenadas para aceder
+a uma folha de cálculo do Google onde as coordenadas geográficas das unidades de
+saúde estão armazenadas.
 }
 \examples{
  \dontrun{
