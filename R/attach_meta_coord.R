@@ -1,12 +1,12 @@
-#' Retreive and attach health facility geocoordinates metadata
+#' Anexar metadados de geocoordenadas de unidades de saúde
 #'
-#'  `attach_meta_coord` utilizes stored user credentials to access
-#'  a GoogleSheet where health facility geocoordinates are
-#'  stored.
+#' `attach_meta_coord` utiliza as credenciais de utilizador armazenadas para aceder
+#' a uma folha de cálculo do Google onde as coordenadas geográficas das unidades de
+#' saúde estão armazenadas.
 #'
-#' @param df Dataframe cleaned via reshape_sisma
-#' @param sheetname Sheet name from the MISAU_Site_Map
-#' @return A dataframe containing site metadata
+#' @param df Dataframe já transformado através de `process_sisma_csv` ou `process_sisma_export`
+#' @param sheetname Nome da folha do MISAU_Site_Map
+#' @return Um quadro de dados que contém metadados geográficos
 #' @export
 #'
 #' @examples
