@@ -3,6 +3,7 @@ Title: Transform tabular export files from SISMA
 Version: 1.0.0
 Authors@R: c(
     person("Joe", "Lara", email = "jlara@usaid.gov", role = c("aut", "cre")),
+    person("Emilton", "Cumbana", email = "e.cumbana@outlook.com", role = ("aut")),
     person("Karishma", "Srikanth", email = "ksrikanth@usaid.gov", role = c("aut")),
     person("Kirstin", "Lyon", email = "kirstin.c.lyon@gmail.com", role = c("aut")))
 Description: Provides a set of functions for creating analytical datasets from SISMA CSV downloads. This 
