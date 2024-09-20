@@ -23,6 +23,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Emilton Cumbana \email{e.cumbana@outlook.com}
   \item Karishma Srikanth \email{ksrikanth@usaid.gov}
   \item Kirstin Lyon \email{kirstin.c.lyon@gmail.com}
 }

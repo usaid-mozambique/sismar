@@ -1,0 +1,38 @@
+---
+title: "Exportar Relatórios Padrão SISMA"
+output: rmarkdown::html_vignette
+resource_files:
+  - images/sisma-reporte-lista.png
+  - images/painel.png
+vignette: >
+  %\VignetteIndexEntry{tidy-disa}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---   
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Gerar relatório SISMA padrão criado para usar com sismar 
+
+O SISMA inclui ferramentas para visualizar e exportar os dados brutos contidos na base de dados.  Começaremos o nosso trabalho navegando para o painel de aplicações (localizado no canto superior direito da interface do SISMA). Selecione a ferramenta de visualização como ilustrado abaixo.  
+
+```{r, echo =  FALSE, fig.align='center'}
+knitr::include_graphics("images/painel.png", dpi = 144)
+```
+
+Com a ferramenta de visualização aberta, clique em “Arquivo” na barra de menus e, em seguida, clique na opção “Abrir”. Isto abrirá uma janela onde se pode selecionar um dos numerosos relatórios padrão do SISMA que foram criados pelos utilizadores do sistema. Existe um subconjunto destes relatórios que foram concebidos especificamente para trabalhar com o pacote R `sismar`. Na segunda coluna da tabela abaixo encontra-se uma listagem destes relatórios standard.  Na terceira coluna está uma contagem do número de colunas que aparecem na tabela resultante.
+
+```{r, echo =  FALSE, fig.align='center'}
+knitr::include_graphics("images/sisma-reporte-lista.png", dpi = 144)
+```
+
+
+
+---
+
+*Disclaimer: The findings, interpretation, and conclusions expressed herein are those of the authors and do not necessarily reflect the views of United States Agency for International Development. All errors remain our own.*

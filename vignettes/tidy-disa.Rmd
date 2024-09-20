@@ -5,7 +5,7 @@ vignette: >
   %\VignetteIndexEntry{tidy-disa}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
----
+---   
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
 ## Abrir o RStudio e carregar os pacotes
 
 Se ainda não o fez, abra uma nova sessão de trabalho no RStudio.  Como habitualmente, começaremos o nosso trabalho criando um novo script R (File -> New File -> R script).  Também vamos carregar os principais pacotes R necessários para arrumar os dados tabulares do DISA. O Tidyverse é o nosso fiel e polivalente “canivete suíço” de programação de ciência de dados em R. O pacote sismar permite-nos arrumar os dados exportados dos sistemas de informação de saúde do MISAU, incluindo o DISA. O pacote glue permite-nos combinar e utilizar valores de cadeia de caracteres no código.
-
 
 ```{r, eval = FALSE, echo = TRUE}
 library(tidyverse)
