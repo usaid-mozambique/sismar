@@ -34,13 +34,28 @@
 #'
 #' List of indicators
 #'
-#' @usage data(data_sisma_shape_map)
+#' @usage data(data_sisma_geo_above_site)
 #'
 #' @format A list of the variables included in the site list
 #' \describe{
-#'   \item{data_sisma_shape_map}{provincia}
-#'   \item{data_sisma_shape_map}{snuuid}
-#'   \item{data_sisma_shape_map}{distrito}
-#'   \item{data_sisma_shape_map}{psnuuid}
+#'   \item{data_sisma_geo_above_site}{provincia}
+#'   \item{data_sisma_geo_above_site}{snuuid}
+#'   \item{data_sisma_geo_above_site}{distrito}
+#'   \item{data_sisma_geo_above_site}{psnuuid}
 #' }
-"data_sisma_shape_map"
+"data_sisma_geo_above_site"
+
+
+#' Map for linking geocoordinates to SISMA health facility data
+#'
+#' List of indicators
+#'
+#' @usage data(data_sisma_geo_sites)
+#'
+#' @format A list of the variables included in the site list
+#' \describe{
+#'   \item{data_sisma_geo_sites}{sisma_uid}
+#'   \item{data_sisma_geo_sites}{latitude}
+#'   \item{data_sisma_geo_sites}{longitude}
+#' }
+"data_sisma_geo_sites"
