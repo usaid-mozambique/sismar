@@ -72,26 +72,36 @@
 
     
     
+<p>O pacote <code>sismar</code> foi desenvolvido para facilitar a
+limpeza e a transformação de tabelas de dados padrão exportados do
+SISMA. O artigo abaixo fornece uma explicação passo a passo sobre como
+extrair essas tabelas de dados padrão do SISMA. Notar que o pacote só é
+capaz de efetuar esta acção em tabelas de dados reconhecidos.</p>
 <div class="section level2">
-<h2 id="gerar-relatório-sisma-padrão-criado-para-usar-com-sismar">Gerar relatório SISMA padrão criado para usar com sismar<a class="anchor" aria-label="anchor" href="#gerar-relat%C3%B3rio-sisma-padr%C3%A3o-criado-para-usar-com-sismar"></a>
+<h2 id="gerar-relatório-sisma-padrão">Gerar relatório SISMA padrão<a class="anchor" aria-label="anchor" href="#gerar-relat%C3%B3rio-sisma-padr%C3%A3o"></a>
 </h2>
 <p>O SISMA inclui ferramentas para visualizar e exportar os dados brutos
 contidos na sua base de dados. Começaremos o nosso trabalho navegando
-para o painel de aplicações (localizado no canto superior direito da
-interface do SISMA). Selecione a ferramenta de visualização como
-ilustrado abaixo.</p>
+para o painel de aplicações localizado no canto superior direito da
+interface do SISMA. Selecione a ferramenta de visualização ilustrado
+abaixo.</p>
 <p><img src="images%2Fpainel.png" style="display: block; margin: auto;"></p>
-<p>Com a ferramenta de visualização aberta, clique em “Arquivo” na barra
-de menus e, em seguida, clique na opção “Abrir”. Isto abrirá uma janela
-onde se pode selecionar um dos numerosos relatórios padrão do SISMA que
-foram criados pelos utilizadores do sistema. Existe um subconjunto
-destes relatórios que foram concebidos especificamente para trabalhar
-com o pacote R <code>sismar</code>. Na segunda coluna da tabela abaixo
-encontra-se uma listagem destes relatórios padrão. Na terceira coluna
-está uma contagem do número de colunas que aparecem na tabela
-resultante. Uma vez escolhido o relatório que deseja exportar, usa a
-barra de pesquisa na janela do SISMA para procurar este relatório.
-Clique sobre ele quando aparece como opção.</p>
+<p>Uma vez aberta a ferramenta de visualização, clique em “Arquivo” na
+barra de menus e, em seguida, clique na opção “Abrir”. Isto abrirá uma
+janela onde se pode selecionar um dos numerosos relatórios padrão SISMA
+que foram criados pelos utilizadores do sistema. Um subconjunto destes
+relatórios foram desenhados especificamente para trabalhar com as
+funcionalidades do pacote <code>sismar</code>.</p>
+<p>A tabela seguinte apresenta em pormenor a coleção de relatórios SISMA
+padrão que podem ser utilizados com o pacote R sismar. A primeira coluna
+da tabela, intitulada “Programa”, indica o programa do DNSP ao qual os
+dados se referem. A segunda coluna, “Componente”, fornece o componente
+específico do programa capturado na exportação. A terceira coluna “SISMA
+Report” (Relatório SISMA) indica o nome do relatório tal como foi
+guardado no SISMA. Finalmente, a última coluna “No. Variables” (Nº de
+variáveis) representa uma contagem do número total de variáveis de
+coluna que devem estar presentes na exportação .csv extraída do
+SISMA.</p>
 <p><img src="images%2Fsisma-reporte-lista.png" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
