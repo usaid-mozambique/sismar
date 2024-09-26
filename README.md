@@ -22,9 +22,8 @@ A análise eficiente de dados rectangulares exportados dos sistemas de informaç
 
     ## SETUP
 
-    # install from GitHub using remotes
-      install.packages("remotes")
-      remotes::install_github("usaid-mozambique/sismar")
+    # install from rOpenSci
+      install.packages("sismar", repos = c('https://usaid-mozambique.r-universe.dev', 'https://cloud.r-project.org'))
     
     # load the package
       library(sismar)
