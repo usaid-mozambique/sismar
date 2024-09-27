@@ -1,14 +1,14 @@
-#' Configure project folder hierarchy
+#' Cria uma estrutura organizacional (pastas) que é comum a todos os projectos sismar
 #'
-#' @param folder_list A list of desired folders
+#' @param folder_list lista de pastas a instalar
 #'
-#' @return A standard set of in-project folders to use with `sismar` functions
+#' @return Um conjunto padrão de pastas no projeto para utilizar com as funções `sismar`
 #' @export
 #'
 #' @examples
 #'  \dontrun{
 #'
-#'  df <- setup_sismar_folder()}
+#'  setup_sismar_folder()}
 
 setup_sismar_folder <- function(
 
