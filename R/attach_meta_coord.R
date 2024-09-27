@@ -1,4 +1,4 @@
-#' Anexar metadados de geocoordenadas de unidades de saúde
+#' Anexar coordenadas geográficas das unidades sanitárias
 #'
 #' `attach_meta_coord` utiliza as credenciais de utilizador armazenadas para aceder
 #' a uma folha de cálculo do Google onde as coordenadas geográficas das unidades de
@@ -6,7 +6,7 @@
 #'
 #' @param df Dataframe já transformado através de `process_sisma_csv` ou `process_sisma_export`
 #' @param sheetname Nome da folha do MISAU_Site_Map
-#' @return Um quadro de dados que contém metadados geográficos
+#' @return Dataframe contendo coordenadas geográficas das unidades sanitárias
 #' @export
 #'
 #' @examples

@@ -2,7 +2,7 @@
 % Please edit documentation in R/attach_meta_coord.R
 \name{attach_meta_coord}
 \alias{attach_meta_coord}
-\title{Anexar metadados de geocoordenadas de unidades de saúde}
+\title{Anexar coordenadas geográficas das unidades sanitárias}
 \usage{
 attach_meta_coord(df, sheetname = "map_us_coord")
 }
@@ -12,7 +12,7 @@ attach_meta_coord(df, sheetname = "map_us_coord")
 \item{sheetname}{Nome da folha do MISAU_Site_Map}
 }
 \value{
-Um quadro de dados que contém metadados geográficos
+Dataframe contendo coordenadas geográficas das unidades sanitárias
 }
 \description{
 \code{attach_meta_coord} utiliza as credenciais de utilizador armazenadas para aceder
