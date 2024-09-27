@@ -1,9 +1,9 @@
-#' Check for DISA UID's without corresponding SISMA UID's and for SISMA UID's with multiple DISA UID's
+#' Detetar casos problemáticos de mapeamento de UID DISA para investigação
 #'
-#' @param df Dataframe already processed by either `process_disa_cv` or `process_disa_dpi`
-#' @param period_window Number of months returned in the output (counted from the most current month in the input dataframe)
+#' @param df Dataframe já processado por `process_disa_cv` ou `process_disa_dpi`
+#' @param period_window Número de meses analisados do dataframe providenciado (contado a partir do mês mais recente)
 #'
-#' @return Dataframe with multiple DISA UID's mapping to a SISMA UID or DISA UID's without a corresponding SISMA UID
+#' @return Dataframe com 1) UID DISA sem UID SISMA correspondentes; e 2) UID SISMA com múltiplos UID DISA
 #' @export
 #'
 #' @examples

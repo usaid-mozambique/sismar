@@ -2,7 +2,7 @@
 % Please edit documentation in R/setup_sismar_folder.R
 \name{setup_sismar_folder}
 \alias{setup_sismar_folder}
-\title{Configure project folder hierarchy}
+\title{Cria uma estrutura organizacional (pastas) que é comum a todos os projectos sismar}
 \usage{
 setup_sismar_folder(
   folder_list = list("Data", "Data/sismar", "Data/disa", "Data/pepfar",
@@ -12,16 +12,16 @@ setup_sismar_folder(
 )
 }
 \arguments{
-\item{folder_list}{A list of desired folders}
+\item{folder_list}{lista de pastas a instalar}
 }
 \value{
-A standard set of in-project folders to use with \code{sismar} functions
+Um conjunto padrão de pastas no projeto para utilizar com as funções \code{sismar}
 }
 \description{
-Configure project folder hierarchy
+Cria uma estrutura organizacional (pastas) que é comum a todos os projectos sismar
 }
 \examples{
  \dontrun{
 
- df <- setup_sismar_folder()}
+ setup_sismar_folder()}
 }

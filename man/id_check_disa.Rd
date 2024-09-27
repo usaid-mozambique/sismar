@@ -2,20 +2,20 @@
 % Please edit documentation in R/id_check_disa.R
 \name{id_check_disa}
 \alias{id_check_disa}
-\title{Check for DISA UID's without corresponding SISMA UID's and for SISMA UID's with multiple DISA UID's}
+\title{Detetar casos problemáticos de mapeamento de UID DISA para investigação}
 \usage{
 id_check_disa(df, period_window = 6)
 }
 \arguments{
-\item{df}{Dataframe already processed by either \code{process_disa_cv} or \code{process_disa_dpi}}
+\item{df}{Dataframe já processado por \code{process_disa_cv} ou \code{process_disa_dpi}}
 
-\item{period_window}{Number of months returned in the output (counted from the most current month in the input dataframe)}
+\item{period_window}{Número de meses analisados do dataframe providenciado (contado a partir do mês mais recente)}
 }
 \value{
-Dataframe with multiple DISA UID's mapping to a SISMA UID or DISA UID's without a corresponding SISMA UID
+Dataframe com 1) UID DISA sem UID SISMA correspondentes; e 2) UID SISMA com múltiplos UID DISA
 }
 \description{
-Check for DISA UID's without corresponding SISMA UID's and for SISMA UID's with multiple DISA UID's
+Detetar casos problemáticos de mapeamento de UID DISA para investigação
 }
 \examples{
  \dontrun{
