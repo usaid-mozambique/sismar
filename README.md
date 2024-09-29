@@ -9,26 +9,26 @@
 
 Criar quadros de dados analíticos a partir de dados brutos do MISAU
 
-## Overview
+## Resumo
 
 A análise eficiente de dados rectangulares exportados dos sistemas de informação de saúde do MISAU requer acções de processamento tais como pivotagem, eliminação/coerção de variáveis e engenharia de caraterísticas de dados úteis na análise. O pacote sismar fornece um conjunto de funções que executam essas acções e preparam os quadros de dados para análise no R ou em software analítico alternativo.
 
 
-## Installation
+## Instalação
 
-`sismar` não está no CRAN, então os usuários terão que instalá-lo directamente do GitHub usando o código abaixo.
+`sismar` não está alojado no CRAN, Eventuais usarios podem instalá-lo directamente rOpenSci usando o código abaixo.
 
 ``` r
 
-    ## SETUP
+    ## CONFIGURAÇÃO
 
-    # install from rOpenSci
+    # instalar a partir de rOpenSci
       install.packages("sismar", repos = c('https://usaid-mozambique.r-universe.dev', 'https://cloud.r-project.org'))
     
-    # load the package
+    # carregar o pacote
       library(sismar)
       
-    ## LIST FUNCTIONS INCLUDED WITH PACKAGE
+    ## LISTAR FUNÇÕES INCLUÍDAS NO PACOTE
       ls("package:sismar")
     
 ```
