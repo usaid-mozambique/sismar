@@ -1,3 +1,7 @@
+# sismar 1.1.0
+* migration to portuguese documentation
+* overall improvements to function documentation
+
 # sismar 1.0.0
 * Addition of function `process_sisma_export` which automatically detects SISMA export type passed in by user
 * Addition of helper function `clean_sisma_df` to clean SISMA dataframes passed in by `process_sisma_export`

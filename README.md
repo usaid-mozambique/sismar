@@ -16,7 +16,7 @@ A análise eficiente de dados rectangulares exportados dos sistemas de informaç
 
 ## Instalação
 
-`sismar` não está alojado no CRAN, Eventuais usarios podem instalá-lo directamente rOpenSci usando o código abaixo.
+`sismar` não está alojado no CRAN, Eventuais usarios podem instalá-lo directamente de rOpenSci usando o código abaixo.
 
 ``` r
 
