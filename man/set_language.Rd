@@ -2,20 +2,21 @@
 % Please edit documentation in R/set_language.R
 \name{set_language}
 \alias{set_language}
-\title{Set language of output variables}
+\title{Função auxiliar que define a lingua dos variáveis no quadro gerado}
 \usage{
 set_language(df, language = "portuguese")
 }
 \arguments{
-\item{df}{input dataframe}
+\item{df}{Objecto relatório padrão introduzido por \code{process_sisma_export}
+ou \code{process_sisma_csv}}
 
-\item{language}{variable output language}
+\item{language}{Língua desejada ("portuguese" ou "english")}
 }
 \value{
-dataframe with desired variable language
+Quadro de dados arrumado com nomes das variáveis na lingua desejada
 }
 \description{
-Set language of output variables
+Função auxiliar que define a lingua dos variáveis no quadro gerado
 }
 \examples{
  \dontrun{

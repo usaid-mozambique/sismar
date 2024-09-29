@@ -1,9 +1,11 @@
-#' Create tidy dataframes for standard SISMA .csv exports
+#' Arrumar quadros de dados a partir de relatórios padrão SISMA em formato .csv
 #'
-#' @param filename Path of sisma csv input
-#' @param language Language of output variable names (portuguese or english)
+#' @param filename Caminho do ficheiro .csv exportado do SISMA
+#' @param language Linga dos nomes das variáveis no quadro gerado (português ou inglês)
 #'
-#' @return A tidy dataframe of SISMA program results
+#' @return devolve um quadro de dados arrumado com 16 colunas de metadados da us,
+#' desagregações do indicador, e valores
+#'
 #' @export
 #'
 #' @examples

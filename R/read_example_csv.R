@@ -1,8 +1,9 @@
-#' Read example SISMA CSV data into environment
+#' função auxiliar que lê dados de exemplo no ambiente R
 #'
-#' @param example_data The name of the example data file to read
+#' @param example_data Nome dos dados de exemplo gravado no `sismar`
 #'
-#' @return A data frame with the example data
+#' @return `read_example_csv` Quadro de dados de exemplo
+#'
 #' @export
 #'
 #' @examples

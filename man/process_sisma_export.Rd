@@ -2,20 +2,21 @@
 % Please edit documentation in R/process_sisma_export.R
 \name{process_sisma_export}
 \alias{process_sisma_export}
-\title{Create tidy dataframes for standard SISMA .csv exports}
+\title{Arrumar quadros de dados a partir de relatórios padrão SISMA em formato .csv}
 \usage{
 process_sisma_export(filename, language = "portuguese")
 }
 \arguments{
-\item{filename}{Path of sisma csv input}
+\item{filename}{Caminho do ficheiro .csv exportado do SISMA}
 
-\item{language}{Language of output variable names (portuguese or english)}
+\item{language}{Linga dos nomes das variáveis no quadro gerado (português ou inglês)}
 }
 \value{
-A tidy dataframe of SISMA program results
+devolve um quadro de dados arrumado com 16 colunas de metadados da us,
+desagregações do indicador, e valores
 }
 \description{
-Create tidy dataframes for standard SISMA .csv exports
+Arrumar quadros de dados a partir de relatórios padrão SISMA em formato .csv
 }
 \examples{
  \dontrun{

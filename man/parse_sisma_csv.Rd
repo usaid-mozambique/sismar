@@ -2,21 +2,22 @@
 % Please edit documentation in R/parse_sisma_csv.R
 \name{parse_sisma_csv}
 \alias{parse_sisma_csv}
-\title{Parse dataframes for user-specified SISMA .csv service areas}
+\title{Arrumar quadros de dados SISMA por tipo especificado pelo utilizador}
 \usage{
 parse_sisma_csv(data, type)
 }
 \arguments{
-\item{data}{Path to SISMA dataset (saved in .csv format)}
+\item{data}{Caminho para o ficheiro de dados SISMA (guardado em formato .csv)}
 
-\item{type}{Defines programmatic data type for processing}
+\item{type}{Define o tipo de dados programáticos para processamento}
 }
 \value{
-A tidy SISMA programmatic dataframe
+\code{parse_sisma_csv} devolve um quadro de dados arrumado com 16
+colunas de metadados da us, desagregações do indicador, e valores
 }
 \description{
-\code{parse_sisma_csv} is a wrapper function that parses
-SISMA tabular exports saved locally in .csv format
+\code{parse_sisma_csv} função auxiliar que chama a função apropriada
+com base no argumento definido pelo utilizador
 \subsection{Input File Types}{
 \itemize{
 \item SMI-CPN: CPN, Saude Materna Infantil

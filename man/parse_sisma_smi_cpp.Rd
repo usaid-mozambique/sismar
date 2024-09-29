@@ -2,21 +2,23 @@
 % Please edit documentation in R/parse_sisma_smi_cpp.R
 \name{parse_sisma_smi_cpp}
 \alias{parse_sisma_smi_cpp}
-\title{Create tidy dataframes for CPP services}
+\title{Arrumar quadros de dados para os serviços da Consulta Pós-parto (CPP)}
 \usage{
 parse_sisma_smi_cpp(df)
 }
 \arguments{
-\item{df}{A dataframe object output from \code{clean_sisma_csv}}
+\item{df}{Objecto relatório padrão introduzido por \code{process_sisma_export}
+ou \code{process_sisma_csv}}
 }
 \value{
-\code{parse_sisma_smi_cpp} returns a tidy object with 16 columns of
-site metadata, indicator features and results
+\code{parse_sisma_smi_cpp} devolve um quadro de dados arrumado com 16
+colunas de metadados da us, desagregações do indicador, e valores
 }
 \description{
-\code{parse_sisma_smi_cpp} produces a tidy dataframe from an object passed in by
-\code{sisma_clean_csv}. It engineers useful data features such as sex, age,
-indicator disaggregation, sub-group type, etc.
+\code{parse_sisma_smi_cpp} Uma função auxiliar que  gera um quadro de dados arrumado
+a partir  de um objecto relatório padrão introduzido por \code{process_sisma_export}
+ou \code{process_sisma_csv}. Variáveis úteis que são criados por esta função incluem
+sexo, idade, tipo de subgrupo, e outras desagregações presentes na fonte.
 }
 \examples{
  \dontrun{

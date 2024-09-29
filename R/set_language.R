@@ -1,9 +1,9 @@
-#' Set language of output variables
+#' Função auxiliar que define a lingua dos variáveis no quadro gerado
 #'
-#' @param df input dataframe
-#' @param language variable output language
+#' @inheritParams parse_sisma_ats_auto
+#' @param language Língua desejada ("portuguese" ou "english")
 #'
-#' @return dataframe with desired variable language
+#' @return Quadro de dados arrumado com nomes das variáveis na lingua desejada
 #' @export
 #'
 #' @examples

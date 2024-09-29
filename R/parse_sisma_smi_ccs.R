@@ -1,13 +1,15 @@
-#' Create tidy dataframes for CCS services
+#' Arrumar quadros de dados para os serviços da Consulta da Criança Sadia (CCS)
 #'
-#' `parse_sisma_smi_ccs` produces a tidy dataframe from an object passed in by
-#' `sisma_clean_csv`. It engineers useful data features such as sex, age,
-#' indicator disaggregation, sub-group type, etc.
+#' `parse_sisma_smi_ccs` Uma função auxiliar que  gera um quadro de dados arrumado
+#' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
+#' ou `process_sisma_csv`. Variáveis úteis que são criados por esta função incluem
+#' sexo, idade, tipo de subgrupo, e outras desagregações presentes na fonte.
 #'
 #' @inheritParams parse_sisma_ats_auto
 #'
-#' @return `parse_sisma_smi_ccs` returns a tidy object with 16 columns of
-#'   site metadata, indicator features and results
+#' @return `parse_sisma_smi_ccs` devolve um quadro de dados arrumado com 16
+#' colunas de metadados da us, desagregações do indicador, e valores
+#'
 #' @export
 #'
 #' @examples

@@ -1,7 +1,7 @@
-#' Parse dataframes for user-specified SISMA .csv service areas
+#' Arrumar quadros de dados SISMA por tipo especificado pelo utilizador
 #'
-#' @description `parse_sisma_csv` is a wrapper function that parses
-#' SISMA tabular exports saved locally in .csv format
+#' @description `parse_sisma_csv` função auxiliar que chama a função apropriada
+#' com base no argumento definido pelo utilizador
 #'
 #'   ## Input File Types
 #' * SMI-CPN: CPN, Saude Materna Infantil
@@ -27,9 +27,12 @@
 #' * HIV AJMHCMM: Adolescent Joven Mentor, Homen Campeao, Maes Mentora
 #' * HIV DAH: Doenca Avancada do HIV
 #'
-#' @param data Path to SISMA dataset (saved in .csv format)
-#' @param type Defines programmatic data type for processing
-#' @return A tidy SISMA programmatic dataframe
+#' @param data Caminho para o ficheiro de dados SISMA (guardado em formato .csv)
+#' @param type Define o tipo de dados programáticos para processamento
+#'
+#' @return `parse_sisma_csv` devolve um quadro de dados arrumado com 16
+#' colunas de metadados da us, desagregações do indicador, e valores
+#'
 #' @export
 #'
 #' @examples

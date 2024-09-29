@@ -2,18 +2,18 @@
 % Please edit documentation in R/read_example_csv.R
 \name{read_example_csv}
 \alias{read_example_csv}
-\title{Read example SISMA CSV data into environment}
+\title{função auxiliar que lê dados de exemplo no ambiente R}
 \usage{
 read_example_csv(example_data)
 }
 \arguments{
-\item{example_data}{The name of the example data file to read}
+\item{example_data}{Nome dos dados de exemplo gravado no \code{sismar}}
 }
 \value{
-A data frame with the example data
+\code{read_example_csv} Quadro de dados de exemplo
 }
 \description{
-Read example SISMA CSV data into environment
+função auxiliar que lê dados de exemplo no ambiente R
 }
 \examples{
  \dontrun{
