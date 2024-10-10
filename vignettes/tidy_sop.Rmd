@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 ## Abrir o RStudio e carregar os pacotes
 
-Comecemos por abrir uma nova sessão de trabalho do RStudio.  Uma vez aberta a sessão, crie um novo script R (File -> New File -> R script) e carregue os principais pacotes R necessários para arrumar as exportações .csv do SISMA. O `tidyverse` é uma coleção de pacotes de código aberto concebidos para utilização geral em ciência de dados. O `sismar` é um pacote desenvolvido com o objetivo específico de efectuar a limpeza e a engenharia de caraterísticas das exportações rectangulares do SISMA. Por último, os pacotes `glue` fornecem funções que nos permitem combinar e utilizar valores de cadeia de caracteres no código.
+Comecemos por abrir uma nova sessão de trabalho do RStudio.  Uma vez aberta a sessão, crie um novo script R (File -> New File -> R script) e carregue os principais pacotes R necessários para arrumar as exportações .csv do SISMA. O `tidyverse` é uma coleção de pacotes de código aberto concebidos para utilização geral em ciência de dados. O `sismar` é um pacote desenvolvido com o objetivo específico de efectuar a limpeza e a engenharia de caraterísticas das exportações do SISMA. Por último, os pacotes `glue` fornecem funções que nos permitem combinar e utilizar valores de cadeia de caracteres no código.
 
 ```{r, eval = FALSE, echo = TRUE}
 library(tidyverse)
@@ -43,17 +43,17 @@ output_hiv_tarv
 
 ## Arrumar dados do SISMA
 
-Tendo definido o caminho local para o nosso conjunto de dados SISMA, podemos agora chamar funções do pacote sismar para gerar um quadro de dados analítico organizado.  Isto pode ser feito utilizando uma combinação de funções sismar chamadas em sequência ou chamando uma função de invólucro singular e especificando os argumentos apropriados.  Comecemos com a primeira abordagem, um pouco mais detalhada. 
+Tendo definido o caminho local para o nosso conjunto de dados SISMA, podemos agora chamar funções do pacote sismar para gerar um quadro de dados analítico arrumado.  Isto pode ser feito utilizando uma combinação de funções sismar chamadas em sequência ou chamando uma função "wrapper" singular especificando os argumentos apropriados, ou finalmente usando uma função individual que automaticamente reconhece o tipo de ficheiro insumo sendo introduzido pelo utilizador (abordagem recomendada).  Comecemos por uma descrição da primeira abordagem. 
 
 ##### Abordagem 1: Using Sequential Functions
 
-Começaremos chamando `clean_sisma_csv` e fornecendo o argumento da função que especifica onde nossa exportação SISMA .csv baixada é salva em nossa máquina local. Observe que essa função não depende do tipo de dados do programa contidos no arquivo .csv. Isso significa que clean_sisma_csv` pode ser usado com qualquer download tabular do SISMA. No resultado, repare que os indicadores do quadro de dados foram dinamizados para um formato longo, que um pequeno número de variáveis foi removido e que os nomes dos indicadores dinamizados foram modificados para serem mais legíveis.
+Começaremos chamando `clean_sisma_csv` e fornecendo o argumento da função que especifica onde nossa exportação SISMA .csv baixada é salva em nossa máquina local. Observe que essa função não depende do tipo de dados do programa contidos no arquivo .csv. Isso significa que `clean_sisma_csv` pode ser usado com qualquer download tabular do SISMA. No resultado, repare que os indicadores do quadro de dados foram "pivotados" para um formato longo, que alguns variáveis foram removidos, e que os nomes dos indicadores foram ligerament alterados para serem mais legíveis.
 
 ```{r, eval = FALSE}
 df <- clean_sisma_csv(path_hiv_tarv)
 ```
 
-Em seguida, chamaremos uma função sismar para criar caraterísticas de dados que são codificadas nos nomes de indicadores criados por `clean_sisma_csv`.  Neste caso de uso, chamamos `parse_sisma_hiv_tarv`. É importante notar que existem vários tipos de conjuntos de dados programáticos padrão que podem ser gerados através de relatórios SISMA guardados. Isto significa que a função específica de análise do sismar chamada para a engenharia de caraterísticas varia consoante o tipo de conjunto de dados programáticos fornecido pelo utilizador. A lista completa e a descrição de cada função de análise do sismar são fornecidas na secção sismar [package documentation](https://usaid-mozambique.github.io/sismar/reference/index.html).
+Em seguida, chamaremos uma função sismar para criar caraterísticas de dados que são codificadas nos nomes de indicadores criados por `clean_sisma_csv`.  Neste caso de uso, chamamos `parse_sisma_hiv_tarv`. É importante notar que existem vários tipos de conjuntos de dados programáticos padrão que podem ser gerados através de relatórios SISMA guardados. Isto significa que a função específica de análise do sismar chamada para a engenharia de caraterísticas varia consoante o tipo de conjunto de dados programáticos fornecido pelo utilizador. A lista completa e a descrição de cada função de análise do sismar são fornecidas na secção `sismar` [package documentation](https://usaid-mozambique.github.io/sismar/reference/index.html).
 
 ```{r, eval = FALSE}
 df <- parse_sisma_hiv_tarv(df)
@@ -62,21 +62,30 @@ No resultado da função de análise, repare que foram adicionadas novas variáv
 
 ##### Abordagem 2: Utilização da função "wrapper"
 
-Como alternativa à abordagem 1, o sismar também fornece uma função wrapper que chama tanto `clean_sisma_csv` como `parse_sisma_hiv_tarv` (ou uma função de análise semelhante especificada pelo utilizador). Isso reduz a quantidade de digitação e código necessários para produzir nosso conjunto de dados final. Nesta abordagem, nós simplesmente chamamos `process_sisma_csv` e fornecemos dois argumentos necessários: 1) O argumento “file” (ficheiro) que especifica a localização da exportação .csv do SISMA e; 2) O argumento “type” (tipo) que especifica o tipo de dados programático para a arrumação. Uma lista completa de valores que podem ser passados para o argumento “type” pode ser encontrada no `process_sisma_csv` [documentation](https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html). 
+Como alternativa à abordagem 1, o sismar também fornece uma função wrapper que utiliza tanto `clean_sisma_csv` assim como `parse_sisma_hiv_tarv` (ou uma função de análise semelhante especificada pelo utilizador). Isso reduz a quantidade de digitação e código necessário para produzir nosso producto final. Nesta abordagem, nós simplesmente chamamos `process_sisma_csv` e fornecemos dois argumentos necessários: 1) O argumento “file” (ficheiro) que especifica a localização da exportação .csv do SISMA e; 2) O argumento “type” (tipo) que especifica o tipo de dados programático para a arrumação. Uma lista completa de valores que podem ser passados para o argumento “type” pode ser encontrada no `process_sisma_csv` [documentation](https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html). 
 
 ```{r, eval = FALSE}
 df <- process_sisma_csv(file = path_hiv_tarv, 
                         type = "HIV TARV")
 ```
 
-Repare-se que o resultado desta função singular é idêntico ao quadro de dados gerado na abordagem 1!
-br<>
-O `process_sisma_csv` inclui mais um argumento opcional que define o idioma dos nomes das variáveis no ficheiro de saída.  Atualmente as únicas opções de idioma são “portuguese” e “english” sendo a primeira definida como argumento por defeito. Ao definir o valor do argumento como “english” observe a mudança nos nomes das variáveis de saída.
+Repare-se que o resultado desta função singular é idêntico ao quadro de dados gerado na abordagem 1! O `process_sisma_csv` inclui mais um argumento opcional que define a lingua dos nomes das variáveis no ficheiro producto.  Actualmente as únicas opções de idioma são “portuguese” e “english” sendo a primeira definida como argumento por defeito. Ao definir o valor do argumento como “english” observe a mudança nos nomes das variáveis no quadro de dados resultante.
+
+```{r, eval = FALSE}
 
 ```{r, eval = FALSE}
 df <- process_sisma_csv(file = path_hiv_tarv, 
                         type = "HIV TARV",
                         language = "english")
+
+```
+
+##### Abordagem 3: Utilização a nova função "wrapper" automatizado (recommendado)
+
+Já tendo visto como funciona a abordagem 2, pensem como seria maravilhoso não ter de memorizar ou procurar o argumento "type" para informar ao `sismar` que tipo de relatorio está a ser introduzido. Uma função recém-criada no `sismar` chamada `process_sisma_export` faz exatamente isso, eliminando a necessidade de definir este argumento. `process_sisma_export` detecta automaticamente as colunas presentes na tabela de entrada e, em seguida, chama o código correcto para criar magicamente a tabela de dados arrumada. Um exemplo de como isto funciona está abaixo!
+
+```{r, eval = FALSE}
+df <- process_sisma_export(file = path_hiv_tarv)
 
 ```
 
