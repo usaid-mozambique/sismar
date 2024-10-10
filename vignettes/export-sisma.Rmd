@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-O pacote `sismar` foi desenvolvido para facilitar a limpeza e transformação de tabelas de dados padrão exportados do SISMA. O artigo abaixo fornece uma explicação passo a passo sobre como exportar essas tabelas padrão do SISMA. Notar que as funções do pacote sismar só são capazes de executar estas acções em exportações reconhecidas do SISMA.  
+O pacote `sismar` foi desenvolvido para facilitar a limpeza e transformação de tabelas de dados padrão exportados do SISMA. O artigo abaixo fornece uma explicação passo a passo sobre como exportar essas tabelas padrão do SISMA. Notar que as funções do pacote sismar só são capazes de executar estas acções em exportações reconhecidas.  
 
 ## Gerar relatório SISMA padrão 
 
@@ -27,23 +27,23 @@ O próprio SISMA inclui ferramentas para visualizar e exportar dados brutos cont
 knitr::include_graphics("images/painel.png", dpi = 144)
 ```
 
-Uma vez aberta a ferramenta de visualização, clique em “Arquivo” na barra de menus e, em seguida, clique na opção “Abrir”. Isto abrirá uma janela onde se pode selecionar um dos numerosos relatórios padrão SISMA que foram criados pelos utilizadores do sistema. Um subconjunto destes relatórios foram desenhados especificamente para trabalhar com as funcionalidades do pacote `sismar`. Estes relatórios padrão podem ser facilmente achados pesquisando com a palavra-chave "sismar" como ilustrado abaixo.
+Depois de abrir a ferramenta de visualização, clique em “Arquivo” na barra de menus e, em seguida, clique na opção “Abrir”. Isto abrirá uma janela onde se pode selecionar um dos numerosos relatórios padrão SISMA que foram criados pelos utilizadores do sistema. Um subconjunto destes relatórios foram desenhados especificamente para trabalhar com as funcionalidades do pacote `sismar`. Estes relatórios padrão podem ser facilmente achados pesquisando com a palavra-chave "sismar" como ilustrado abaixo.
 
 ```{r, echo =  FALSE, fig.align='center'}
 knitr::include_graphics("images/sisma-reporte-escolha.png", dpi = 144)
 ```
 
-Os relatórios SISMA padrão específicos também podem ser encontrados pesquisando o nome de cada relatório individual guardado no SISMA. A tabela seguinte apresenta em pormenor o conjunto de relatórios SISMA padrão que podem ser utilizados com o pacote R `sismar`. A primeira coluna da tabela, intitulada “Programa”, indica o programa do DNSP ao qual os dados se referem.  A segunda coluna, “Componente”, fornece o componente específico do programa capturado na exportação de dados do SISMA.  A terceira coluna “Relatório SISMA" indica o nome do relatório tal como foi gravado no SISMA.  Finalmente, a última coluna “No. Variables” representa uma contagem do número total de colunas que devem constar na exportação .csv extraída do SISMA.
+Relatórios específicos podem ser achados pesquisando os nomes individuais deles. A tabela abaixo apresenta o conjunto de relatórios SISMA padrão que podem ser utilizados com o pacote R `sismar`. A primeira coluna da tabela, intitulada “Programa”, indica o programa do DNSP ao qual os dados se referem.  A segunda coluna, “Componente”, fornece o componente específico do programa capturado na exportação de dados do SISMA.  A terceira coluna “Relatório SISMA" indica o nome do relatório tal como foi gravado no SISMA.  Finalmente, a última coluna “No. Variables” representa uma contagem do número total de colunas que devem constar na exportação .csv extraída do SISMA.
 
 ```{r, echo =  FALSE, fig.align='center'}
 knitr::include_graphics("images/sisma-reporte-lista.png", dpi = 144)
 ```
 
-Depois de encontrar o relatório padrão desejado, clique nele no menu e aguarde o carregamento da tabela de dados no seu navegador. Dependendo do número de utilizadores no sistema e do tamanho do conjunto de dados solicitado, isto pode demorar vários minutos.
+Depois de encontrar o relatório padrão desejado, clique nele no menu e aguarde o carregamento da tabela de dados no seu navegador. Dependendo do número de utilizadores no sistema e do tamanho do conjunto de dados solicitado, isto pode demorar alguns minutos.
 
 ## Descarregar relatório SISMA padrão
 
-Assim que a tabela de dados aparecer, podemos descarregá-la. Aceda à barra de menus e clique na opção “Descarregar”. O menu oferece vários formatos diferentes mas é imprescindível descarregar os seus dados no formato CSV, pois as funções do pacote `sismar` foram desenhandas para reconhecer este formato específico.
+Assim que a tabela de dados aparecer, o utilizador pode descarregá-la. Aceda à barra de menus e clique na opção “Descarregar”. O menu oferece vários formatos mas é imprescindível descarregar a tabela no formato CSV, pois as funções do pacote `sismar` foram desenhandas para reconhecer este tipo de documento.
 
 
 
@@ -51,9 +51,9 @@ Assim que a tabela de dados aparecer, podemos descarregá-la. Aceda à barra de 
 knitr::include_graphics("images/sisma-reporte-descarregar.png", dpi = 144)
 ```
 
-Neste ponto, o SISMA oferecerá a oportunidade de definir o nome e a localização do ficheiro que está a ser descarregado para o disco local. A prática recomendada é guardar o ficheiro com um nome que indique o tipo de relatório padrão que está a ser guardado e o ano do conteúdo do relatório (por exemplo sismar_hiv_autotest_2024.csv).
+Neste ponto, o SISMA oferecerá a oportunidade de definir o nome e a localização do ficheiro que está a ser descarregado para o disco local. A prática recomendada é guardar o ficheiro com um nome que indique o tipo de relatório padrão que está a ser guardado e o ano do periodo do relatório (por exemplo "hiv_autotest_2024.csv").
 
-Com o ficheiro gravado no disco local pode-se chamar este ficheiro em R utilizando a função do pacote `sismar` `process_sismar_export`, `process_sismar_csv`, ou `clean_sisma_csv`.  
+Com o ficheiro gravado no disco local o utilizador pode chamar e carregar este ficheiro no ambiente R utilizando as funções `process_sismar_export`, `process_sismar_csv`, ou `clean_sisma_csv` do `sismar`.  
 
 
 
