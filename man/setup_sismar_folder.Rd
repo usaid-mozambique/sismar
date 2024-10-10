@@ -5,7 +5,7 @@
 \title{Cria uma estrutura organizacional (pastas) que é comum a todos os projectos sismar}
 \usage{
 setup_sismar_folder(
-  folder_list = list("Data", "Data/sismar", "Data/disa", "Data/pepfar",
+  folder_list = list("Data", "Data/sisma", "Data/disa", "Data/pepfar", "Data/ine",
     "Data/sismar/processed", "Data/disa/processed", "Data/pepfar/processed", "Images",
     "Scripts", "AI", "Dataout", "Data_public", "GIS", "Documents", "Graphics",
     "markdown")

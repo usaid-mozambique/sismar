@@ -12,7 +12,7 @@
 
 setup_sismar_folder <- function(
 
-  folder_list = list("Data", "Data/sismar", "Data/disa", "Data/pepfar", # data
+  folder_list = list("Data", "Data/sisma", "Data/disa", "Data/pepfar", "Data/ine", # data
                      "Data/sismar/processed", "Data/disa/processed", "Data/pepfar/processed", # data processed
                      "Images", "Scripts", "AI", "Dataout", "Data_public", "GIS", "Documents", "Graphics", "markdown") # other
   )
