@@ -82,9 +82,9 @@ exportações .csv do SISMA. O <code>tidyverse</code> é uma coleção de
 pacotes de código aberto concebidos para utilização geral em ciência de
 dados. O <code>sismar</code> é um pacote desenvolvido com o objetivo
 específico de efectuar a limpeza e a engenharia de caraterísticas das
-exportações rectangulares do SISMA. Por último, os pacotes
-<code>glue</code> fornecem funções que nos permitem combinar e utilizar
-valores de cadeia de caracteres no código.</p>
+exportações do SISMA. Por último, os pacotes <code>glue</code> fornecem
+funções que nos permitem combinar e utilizar valores de cadeia de
+caracteres no código.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usaid-mozambique.github.io/sismar/">sismar</a></span><span class="op">)</span></span>
@@ -116,10 +116,12 @@ reprodutibilidade e a colaboração entre utilizadores.</p>
 </h2>
 <p>Tendo definido o caminho local para o nosso conjunto de dados SISMA,
 podemos agora chamar funções do pacote sismar para gerar um quadro de
-dados analítico organizado. Isto pode ser feito utilizando uma
-combinação de funções sismar chamadas em sequência ou chamando uma
-função de invólucro singular e especificando os argumentos apropriados.
-Comecemos com a primeira abordagem, um pouco mais detalhada.</p>
+dados analítico arrumado. Isto pode ser feito utilizando uma combinação
+de funções sismar chamadas em sequência ou chamando uma função “wrapper”
+singular especificando os argumentos apropriados, ou finalmente usando
+uma função individual que automaticamente reconhece o tipo de ficheiro
+insumo sendo introduzido pelo utilizador (abordagem recomendada).
+Comecemos por uma descrição da primeira abordagem.</p>
 <div class="section level5">
 <h5 id="abordagem-1-using-sequential-functions">Abordagem 1: Using Sequential Functions<a class="anchor" aria-label="anchor" href="#abordagem-1-using-sequential-functions"></a>
 </h5>
@@ -127,11 +129,11 @@ Comecemos com a primeira abordagem, um pouco mais detalhada.</p>
 argumento da função que especifica onde nossa exportação SISMA .csv
 baixada é salva em nossa máquina local. Observe que essa função não
 depende do tipo de dados do programa contidos no arquivo .csv. Isso
-significa que clean_sisma_csv` pode ser usado com qualquer download
-tabular do SISMA. No resultado, repare que os indicadores do quadro de
-dados foram dinamizados para um formato longo, que um pequeno número de
-variáveis foi removido e que os nomes dos indicadores dinamizados foram
-modificados para serem mais legíveis.</p>
+significa que <code>clean_sisma_csv</code> pode ser usado com qualquer
+download tabular do SISMA. No resultado, repare que os indicadores do
+quadro de dados foram “pivotados” para um formato longo, que alguns
+variáveis foram removidos, e que os nomes dos indicadores foram
+ligerament alterados para serem mais legíveis.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/clean_sisma_csv.html">clean_sisma_csv</a></span><span class="op">(</span><span class="va">path_hiv_tarv</span><span class="op">)</span></span></code></pre></div>
 <p>Em seguida, chamaremos uma função sismar para criar caraterísticas de
@@ -143,7 +145,7 @@ através de relatórios SISMA guardados. Isto significa que a função
 específica de análise do sismar chamada para a engenharia de
 caraterísticas varia consoante o tipo de conjunto de dados programáticos
 fornecido pelo utilizador. A lista completa e a descrição de cada função
-de análise do sismar são fornecidas na secção sismar <a href="https://usaid-mozambique.github.io/sismar/reference/index.html">package
+de análise do sismar são fornecidas na secção <code>sismar</code> <a href="https://usaid-mozambique.github.io/sismar/reference/index.html">package
 documentation</a>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/parse_sisma_hiv_tarv.html">parse_sisma_hiv_tarv</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
@@ -156,31 +158,47 @@ para análise!</p>
 <h5 id="abordagem-2-utilização-da-função-wrapper">Abordagem 2: Utilização da função “wrapper”<a class="anchor" aria-label="anchor" href="#abordagem-2-utiliza%C3%A7%C3%A3o-da-fun%C3%A7%C3%A3o-wrapper"></a>
 </h5>
 <p>Como alternativa à abordagem 1, o sismar também fornece uma função
-wrapper que chama tanto <code>clean_sisma_csv</code> como
+wrapper que utiliza tanto <code>clean_sisma_csv</code> assim como
 <code>parse_sisma_hiv_tarv</code> (ou uma função de análise semelhante
 especificada pelo utilizador). Isso reduz a quantidade de digitação e
-código necessários para produzir nosso conjunto de dados final. Nesta
-abordagem, nós simplesmente chamamos <code>process_sisma_csv</code> e
-fornecemos dois argumentos necessários: 1) O argumento “file” (ficheiro)
-que especifica a localização da exportação .csv do SISMA e; 2) O
-argumento “type” (tipo) que especifica o tipo de dados programático para
-a arrumação. Uma lista completa de valores que podem ser passados para o
+código necessário para produzir nosso producto final. Nesta abordagem,
+nós simplesmente chamamos <code>process_sisma_csv</code> e fornecemos
+dois argumentos necessários: 1) O argumento “file” (ficheiro) que
+especifica a localização da exportação .csv do SISMA e; 2) O argumento
+“type” (tipo) que especifica o tipo de dados programático para a
+arrumação. Uma lista completa de valores que podem ser passados para o
 argumento “type” pode ser encontrada no <code>process_sisma_csv</code>
 <a href="https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html">documentation</a>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/process_sisma_csv.html">process_sisma_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_hiv_tarv</span>, </span>
 <span>                        type <span class="op">=</span> <span class="st">"HIV TARV"</span><span class="op">)</span></span></code></pre></div>
 <p>Repare-se que o resultado desta função singular é idêntico ao quadro
-de dados gerado na abordagem 1! br&lt;&gt; O
-<code>process_sisma_csv</code> inclui mais um argumento opcional que
-define o idioma dos nomes das variáveis no ficheiro de saída. Atualmente
-as únicas opções de idioma são “portuguese” e “english” sendo a primeira
-definida como argumento por defeito. Ao definir o valor do argumento
-como “english” observe a mudança nos nomes das variáveis de saída.</p>
+de dados gerado na abordagem 1! O <code>process_sisma_csv</code> inclui
+mais um argumento opcional que define a lingua dos nomes das variáveis
+no ficheiro producto. Actualmente as únicas opções de idioma são
+“portuguese” e “english” sendo a primeira definida como argumento por
+defeito. Ao definir o valor do argumento como “english” observe a
+mudança nos nomes das variáveis no quadro de dados resultante.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/process_sisma_csv.html">process_sisma_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_hiv_tarv</span>, </span>
 <span>                        type <span class="op">=</span> <span class="st">"HIV TARV"</span>,</span>
 <span>                        language <span class="op">=</span> <span class="st">"english"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level5">
+<h5 id="abordagem-3-utilização-a-nova-função-wrapper-automatizado-recommendado">Abordagem 3: Utilização a nova função “wrapper” automatizado
+(recommendado)<a class="anchor" aria-label="anchor" href="#abordagem-3-utiliza%C3%A7%C3%A3o-a-nova-fun%C3%A7%C3%A3o-wrapper-automatizado-recommendado"></a>
+</h5>
+<p>Já tendo visto como funciona a abordagem 2, pensem como seria
+maravilhoso não ter de memorizar ou procurar o argumento “type” para
+informar ao <code>sismar</code> que tipo de relatorio está a ser
+introduzido. Uma função recém-criada no <code>sismar</code> chamada
+<code>process_sisma_export</code> faz exatamente isso, eliminando a
+necessidade de definir este argumento. <code>process_sisma_export</code>
+detecta automaticamente as colunas presentes na tabela de entrada e, em
+seguida, chama o código correcto para criar magicamente a tabela de
+dados arrumada. Um exemplo de como isto funciona está abaixo!</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/process_sisma_export.html">process_sisma_export</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_hiv_tarv</span><span class="op">)</span></span></code></pre></div>
 <p>Boa análise do seu novo conjunto de dados organizado!</p>
 <hr>
 <p><em>Disclaimer: The findings, interpretation, and conclusions
