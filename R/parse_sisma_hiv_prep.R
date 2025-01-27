@@ -24,7 +24,7 @@ parse_sisma_hiv_prep <- function(df) {
 
     dplyr::left_join(data_sisma_hiv_prep_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%
-    dplyr::mutate(period_cohort = NA,
+    dplyr::mutate(period_cohort = as.Date(NA),
                   source = "LdR PrEP",
                   disaggregate_sub = NA_character_,
                   sub_group = NA_character_,

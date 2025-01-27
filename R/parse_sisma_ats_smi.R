@@ -51,7 +51,7 @@ parse_sisma_ats_smi <- function(df) {
                         names_to = "indicator",
                         values_to = "value") %>%
 
-    dplyr::mutate(period_cohort = NA_character_,
+    dplyr::mutate(period_cohort = as.Date(NA),
                   disaggregate = dplyr::case_when(stringr::str_detect(indicator, "smi_cpn") ~ "SMI-CPN",
                                                   stringr::str_detect(indicator, "smi_mat") ~ "SMI-MAT",
                                                   stringr::str_detect(indicator, "smi_ccr") ~ "SMI-CCR",

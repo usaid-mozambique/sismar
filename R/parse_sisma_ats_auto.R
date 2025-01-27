@@ -24,7 +24,7 @@ parse_sisma_ats_auto <- function(df) {
 
     dplyr::filter(!is.na(value)) %>%
     dplyr::left_join(data_sisma_ats_autoteste_map, by = "indicator") %>%
-    dplyr::mutate(period_cohort = NA,
+    dplyr::mutate(period_cohort = as.Date(NA),
                   disaggregate_sub = NA_character_,
                   sub_group = NA_character_,
                   result_status = NA_character_) %>%
