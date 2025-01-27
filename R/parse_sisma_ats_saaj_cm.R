@@ -65,7 +65,7 @@ parse_sisma_ats_saaj_cm <- function(df) {
 
     dplyr::filter(!value == 0) %>%
 
-    dplyr::mutate(period_cohort = NA_character_,
+    dplyr::mutate(period_cohort = as.Date(NA),
                   age = dplyr::case_when(stringr::str_detect(indicator, "_10_an")    ~ "<10", # saaj ages
                                          stringr::str_detect(indicator, "10_14")     ~ "10-14",
                                          stringr::str_detect(indicator, "15_19")     ~ "15-19",

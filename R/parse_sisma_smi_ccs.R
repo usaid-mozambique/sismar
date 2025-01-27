@@ -22,7 +22,7 @@ parse_sisma_smi_ccs <- function(df) {
 
   df <- df %>%
 
-    dplyr::mutate(period_cohort = NA,
+    dplyr::mutate(period_cohort = as.Date(NA),
                   sub_group = NA_character_) %>%
     dplyr::left_join(data_sisma_smi_ccs_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%

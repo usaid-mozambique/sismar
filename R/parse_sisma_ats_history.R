@@ -24,7 +24,7 @@ parse_sisma_ats_history <- function(df) {
     dplyr::left_join(data_sisma_ats_hist_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%
     dplyr::mutate(
-      period_cohort = NA_character_,
+      period_cohort = as.Date(NA),
       disaggregate_sub = NA_character_,
       age_coarse = NA_character_,
       source = "LdR ATS",

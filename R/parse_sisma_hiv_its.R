@@ -24,7 +24,7 @@ parse_sisma_hiv_its <- function(df) {
 
     dplyr::filter(!is.na(value)) %>%
     dplyr::left_join(data_sisma_hiv_its_map, by = "indicator") %>%
-    dplyr::mutate(period_cohort = NA,
+    dplyr::mutate(period_cohort = as.Date(NA),
                   disaggregate_sub = NA_character_) %>%
     dplyr::select(sisma_uid,
                   snu,

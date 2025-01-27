@@ -24,7 +24,7 @@ parse_sisma_hiv_ajmhcmm <- function(df) {
 
     dplyr::left_join(data_sisma_hiv_ajmhcmm_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%
-    dplyr::mutate(period_cohort = NA,
+    dplyr::mutate(period_cohort = as.Date(NA),
                   disaggregate_sub = NA_character_,
                   sub_group = NA_character_,
                   age_coarse = dplyr::case_when(age == "15-24" ~ "15+",

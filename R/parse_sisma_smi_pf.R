@@ -24,7 +24,7 @@ parse_sisma_smi_pf <- function(df) {
 
     dplyr::left_join(data_sisma_smi_pf_map, by = "indicator") %>%
     dplyr::filter(!is.na(value)) %>%
-    dplyr::mutate(period_cohort = NA,
+    dplyr::mutate(period_cohort = as.Date(NA),
                   sub_group = NA_character_,
                   result_status = NA_character_) %>%
     dplyr::select(sisma_uid,

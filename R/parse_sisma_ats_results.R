@@ -25,7 +25,7 @@ parse_sisma_ats_results <- function(df) {
     dplyr::filter(!is.na(value)) %>%
     dplyr::left_join(data_sisma_ats_results_map, by = "indicator") %>%
     dplyr::mutate(
-      period_cohort = NA_character_,
+      period_cohort = as.Date(NA),
       indicator = "ATS_TST",
       age_coarse = dplyr::case_when(age == "<01"   ~ "<15",
                                     age == "01-09" ~ "<15",

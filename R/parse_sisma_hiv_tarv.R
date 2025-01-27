@@ -23,7 +23,7 @@ parse_sisma_hiv_tarv <- function(df) {
 
     dplyr::left_join(data_sisma_hiv_tarv_map, by = "indicator") %>%
     tidyr::drop_na(tidyselect::any_of(c("indicator_new", "source", "value"))) %>%
-    dplyr::mutate(period_cohort = NA,
+    dplyr::mutate(period_cohort = as.Date(NA),
                   disaggregate_sub = NA_character_,
                   sub_group = NA_character_,
                   result_status = NA_character_) %>%

@@ -25,7 +25,7 @@ parse_sisma_ats_ccsd <- function(df) {
     dplyr::left_join(data_sisma_ats_ccsd_map, by = "indicator") %>%
     dplyr::filter(!is.na(indicator_new)) %>%
     dplyr::mutate(
-      period_cohort = NA_character_,
+      period_cohort = as.Date(NA),
       source = "LdR SMI",
       sub_group = NA_character_,
       age = NA_character_,
