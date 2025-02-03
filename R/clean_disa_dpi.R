@@ -36,6 +36,9 @@ clean_disa_dpi <- function(df){
                                        "repeticao.rej" ~ "Repiticao Rej",
                                        "conheita.seg" ~ "Colheita Seg",
                                        "nao.reportado" ~ "Nao Reportado",
+                                       "convencional" ~ "Convencional",
+                                       "conventional" ~ "Convencional",
+                                       "mpima" ~ "MPIMA",
                                        .default = disagregacao),
 
       disagregacao_sub = dplyr::case_match(disagregacao_sub,
@@ -50,11 +53,6 @@ clean_disa_dpi <- function(df){
                                            "negative" ~ "Negativo",
                                            "indet" ~ "Indet.",
                                            .default = resultado_estado),
-
-      fonte = dplyr::case_match(fonte,
-                                "convencional" ~ "Convencional",
-                                "mpima" ~ "MPIMA",
-                                .default = fonte),
 
       sexo = dplyr::case_when(
         sexo == "F" ~ "Feminino",
