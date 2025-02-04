@@ -5268,8 +5268,6 @@ data_disa_uid_map <-
       "NHANA", "pJsVkSEEVR5", "kl6QWeL9RDW",
       "NIPEP", "GTp1AjUKM0z", "klThMLasoQV",
       "NANHU", "RyHDFZVUdXW", "KmfuUMQ7T93",
-           NA, "zqkV9145JNY", "Kn9F1mXO0GV",
-           NA, "zqkV9145JNY", "Kn9F1mXO0GV",
       "INHAV", "kDWc5CPUAzx", "KnMV7w5s8CE",
       "NHATU", "d8hTjNkMDcG", "KnsNOPwc6m8",
        "SOCO", "gHGZi7u7RXD", "KNU8WQL2zSc",

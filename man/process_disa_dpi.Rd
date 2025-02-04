@@ -4,12 +4,14 @@
 \alias{process_disa_dpi}
 \title{Tidy DISA DPI .xlsx files (extracted from OpenLDR)}
 \usage{
-process_disa_dpi(file, month)
+process_disa_dpi(file, period, type = "new")
 }
 \arguments{
 \item{file}{Path of DISA DPI .xlsx file}
 
-\item{month}{Month of DISA DPI extract (passed as "\%Y-\%m-\%d")}
+\item{period}{Month of DISA DPI extract (passed as "\%Y-\%m-\%d")}
+
+\item{type}{Type of DISA data file to tidy ("old" or "new")}
 }
 \value{
 A tidy dataframe of DISA DPI results
