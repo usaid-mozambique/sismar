@@ -24,7 +24,7 @@ parse_sisma_ats_results <- function(df) {
     dplyr::filter(!is.na(value)) %>%
     dplyr::left_join(data_sisma_ats_results_map, by = "indicator") %>%
     dplyr::mutate(
-      indicator = "ATS_TST",
+      indicator_new = "ATS_TST",
       source = "LdR ATS",
       age_coarse = dplyr::case_when(age == "<01"   ~ "<15",
                                     age == "01-09" ~ "<15",
@@ -34,7 +34,7 @@ parse_sisma_ats_results <- function(df) {
 
   df_pos <- df %>%
     dplyr::filter(result_status == "Positivo") %>%
-    dplyr::mutate(indicator = "ATS_TST_POS")
+    dplyr::mutate(indicator_new = "ATS_TST_POS")
 
   df <- dplyr::bind_rows(df, df_pos) %>%
     add_missing_vars() %>%

@@ -21,7 +21,7 @@ seq_vars <- function(df) {
                   sitename,
                   period,
                   period_cohort,
-                  indicator,
+                  indicator = indicator_new,
                   source,
                   disaggregate,
                   disaggregate_sub,
