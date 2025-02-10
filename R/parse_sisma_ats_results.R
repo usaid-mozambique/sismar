@@ -25,15 +25,17 @@ parse_sisma_ats_results <- function(df) {
     dplyr::filter(!is.na(value)) %>%
     dplyr::left_join(data_sisma_ats_results_map, by = "indicator") %>%
     dplyr::mutate(
-      period_cohort = as.Date(NA),
+      # period_cohort = as.Date(NA),
       indicator = "ATS_TST",
       age_coarse = dplyr::case_when(age == "<01"   ~ "<15",
                                     age == "01-09" ~ "<15",
                                     age == "10-14" ~ "<15"),
       age_coarse = tidyr::replace_na(age_coarse, "15+"),
-      disaggregate_sub = NA_character_,
-      source = "LdR ATS",
-      sub_group = NA_character_)
+      # disaggregate_sub = NA_character_,
+      source = "LdR ATS"
+      # sub_group = NA_character_)
+    ) %>%
+    add_missing_vars()
 
   df_pos <- df_all %>%
     dplyr::filter(result_status == "Positivo") %>%
@@ -41,22 +43,7 @@ parse_sisma_ats_results <- function(df) {
                   period_cohort = NA)
 
   df_parse <- dplyr::bind_rows(df_all, df_pos) %>%
-    dplyr::select(sisma_uid,
-                  snu,
-                  psnu,
-                  sitename,
-                  period,
-                  period_cohort,
-                  indicator,
-                  source,
-                  disaggregate,
-                  disaggregate_sub,
-                  sub_group,
-                  sex,
-                  age_coarse,
-                  age,
-                  result_status,
-                  value)
+    seq_vars()
 
   return(df_parse)
 
