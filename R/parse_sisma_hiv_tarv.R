@@ -20,13 +20,15 @@
 parse_sisma_hiv_tarv <- function(df) {
 
   df <- df %>%
+
     dplyr::left_join(data_sisma_hiv_tarv_map, by = "indicator") %>%
-    tidyr::drop_na(tidyselect::any_of(c("indicator_new", "source", "value"))) %>%
+    tidyr::drop_na(tidyselect::any_of(c("indicator_new", "source", "value")))
 
   df_activos_prev <- df %>%
     dplyr::filter(indicator_new == "TX_ACTIVO") %>%
     dplyr::mutate(indicator_new = "TX_ACTIVO_PREV") %>%
     dplyr::mutate(period = period + months(1))
+
 
   df <- dplyr::bind_rows(df, df_activos_prev) %>%
     add_missing_vars() %>%

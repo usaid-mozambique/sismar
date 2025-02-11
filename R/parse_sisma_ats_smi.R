@@ -87,8 +87,8 @@ parse_sisma_ats_smi <- function(df) {
     dplyr::filter(result_status == "Positivo") %>%
     dplyr::mutate(indicator = "ATS_TST_POS")
 
-  df_parse <- dplyr::bind_rows(df, df_pos) %>%
-    df <- dplyr::bind_rows(df, df_pos) %>%
+  df <- dplyr::bind_rows(df, df_pos) %>%
+    dplyr::mutate(indicator_new = indicator) %>%
     add_missing_vars() %>%
     seq_vars()
 

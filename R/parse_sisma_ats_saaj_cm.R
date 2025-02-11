@@ -112,6 +112,7 @@ parse_sisma_ats_saaj_cm <- function(df) {
 
 
   df <- dplyr::bind_rows(df, df_pos) %>%
+    dplyr::mutate(indicator_new = indicator) %>%
     add_missing_vars() %>%
     seq_vars()
 
