@@ -20,7 +20,7 @@
 
 parse_sisma_ats_smi <- function(df) {
 
-  df_all <- df %>%
+  df <- df %>%
 
     tidyr::pivot_wider(names_from = indicator, values_from = value) %>%
 
@@ -51,15 +51,13 @@ parse_sisma_ats_smi <- function(df) {
                         names_to = "indicator",
                         values_to = "value") %>%
 
-    dplyr::mutate(period_cohort = as.Date(NA),
+    dplyr::mutate(
                   disaggregate = dplyr::case_when(stringr::str_detect(indicator, "smi_cpn") ~ "SMI-CPN",
                                                   stringr::str_detect(indicator, "smi_mat") ~ "SMI-MAT",
                                                   stringr::str_detect(indicator, "smi_ccr") ~ "SMI-CCR",
                                                   stringr::str_detect(indicator, "smi_cpp") ~ "SMI-CPP",
                                                   stringr::str_detect(indicator, "smi_pf") ~ "SMI-PF",
                                                   stringr::str_detect(indicator, "smi_ug") ~ "SMI-UG"),
-
-                  disaggregate_sub = NA_character_,
 
                   result_status = dplyr::case_when(stringr::str_detect(indicator, "negativ") ~ "Negativo",
                                                    stringr::str_detect(indicator, "positi") ~ "Positivo",
@@ -82,33 +80,19 @@ parse_sisma_ats_smi <- function(df) {
 
                   indicator = "ATS_TST",
 
-                  source = "LdR SMI",
+                  source = "LdR SMI"
+                  )
 
-                  age = NA_character_,)
-
-  df_pos <- df_all %>%
+  df_pos <- df %>%
     dplyr::filter(result_status == "Positivo") %>%
-    dplyr::mutate(indicator = dplyr::case_when(indicator == "ATS_TST" ~ "ATS_TST_POS"))
+    dplyr::mutate(indicator = "ATS_TST_POS")
 
-  df_parse <- dplyr::bind_rows(df_all, df_pos) %>%
-    dplyr::select(sisma_uid,
-                  snu,
-                  psnu,
-                  sitename,
-                  period,
-                  period_cohort,
-                  indicator,
-                  source,
-                  disaggregate,
-                  disaggregate_sub,
-                  sub_group,
-                  sex,
-                  age_coarse,
-                  age,
-                  result_status,
-                  value)
+  df_parse <- dplyr::bind_rows(df, df_pos) %>%
+    df <- dplyr::bind_rows(df, df_pos) %>%
+    add_missing_vars() %>%
+    seq_vars()
 
 
-  return(df_parse)
+  return(df)
 
 }
