@@ -9,6 +9,7 @@
 <url><loc>https://usaid-mozambique.github.io/sismar/authors.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/index.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/news/index.html</loc></url>
+<url><loc>https://usaid-mozambique.github.io/sismar/reference/add_missing_vars.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/attach_meta_coord.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/attach_meta_mq.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/attach_meta_partner.html</loc></url>
@@ -55,6 +56,7 @@
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/process_sisma_csv.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/process_sisma_export.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/read_example_csv.html</loc></url>
+<url><loc>https://usaid-mozambique.github.io/sismar/reference/seq_vars.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/set_language.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/setup_sismar_folder.html</loc></url>
 <url><loc>https://usaid-mozambique.github.io/sismar/reference/sismar-package.html</loc></url>
