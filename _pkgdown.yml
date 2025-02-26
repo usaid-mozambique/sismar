@@ -2,3 +2,87 @@ url: https://usaid-mozambique.github.io/sismar/
 template:
   bootstrap: 5
 
+lang: pt
+
+navbar:
+  structure:
+    left:
+    - home
+    - reference
+    - articles
+    - outro
+    - news
+    right:
+    - search
+    - github
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Referência
+      href: reference/index.html
+    articles:
+      text: Artigos
+      menu:
+      - text: Exportar dados SISMA
+        href: articles/export-sisma.html
+      - text: Arrumar dados SISMA
+        href: articles/tidy_sop.html
+      - text: Arrumar dados DISA
+        href: articles/tidy-disa.html
+    outro:
+      text: Outro
+      menu:
+      - text: Portal SISMA
+        href: https://sisma.misau.gov.mz/prod/dhis-web-commons/security/login.action
+      - text: Elementos de Dados sismar
+        href: https://helpdeskmoz.sis.org.mz/portal/pt/kb/sesp-epts/documenta%C3%A7%C3%A3o-de-desenvolvimento/requisitos-do-sistema-especifica%C3%A7%C3%B5es
+    news:
+      text: Changelog
+      href: news/index.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/usaid-mozambique/sismar
+
+  home:
+  links:
+    - text: Source code
+      href: https://github.com/usaid-mozambique/sismar
+    - text: Report bug
+      href: https://github.com/usaid-mozambique/sismar/issues
+
+
+articles:
+- title: Artigos
+  navbar: ~
+  contents:
+  - export-sisma
+  - tidy_sop
+  - tidy-disa
+
+reference:
+- title: Processar ficheiros
+- contents:
+  - starts_with("process_")
+- title: Arrumar dados
+- contents:
+  - starts_with("parse_")
+  - dedup_naomi
+- title: Limpar quadros
+- contents:
+  - starts_with("clean_")
+- title: Anexar metadados
+- contents:
+  - starts_with("attach_")
+- title: Utilitários
+- contents:
+  - read_example_csv
+  - id_check_disa
+  - check_exact_match
+  - starts_with("add_")
+  - starts_with("set")
+  - seq_vars
+- title: Dados
+- contents:
+  - starts_with("data_")

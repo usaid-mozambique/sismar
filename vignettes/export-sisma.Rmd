@@ -1,5 +1,5 @@
 ---
-title: "Exportar Relatórios Padrão SISMA"
+title: "Exportar Relatórios SISMA"
 output: rmarkdown::html_vignette
 resource_files:
   - images/sisma-reporte-lista.png
