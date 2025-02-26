@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+## Introdução
 
 O pacote `sismar` foi desenvolvido para facilitar a limpeza e transformação de tabelas de dados padrão exportados do SISMA. O artigo abaixo fornece uma explicação passo a passo sobre como exportar essas tabelas padrão do SISMA. Notar que as funções do pacote sismar só são capazes de executar estas acções em exportações reconhecidas.  
 

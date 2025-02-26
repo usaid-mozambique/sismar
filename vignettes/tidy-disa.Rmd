@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Abrir o RStudio e carregar os pacotes
+## Carregar os pacotes
 
 Se ainda não o fez, abra uma nova sessão de trabalho no RStudio.  Como habitualmente, começaremos o nosso trabalho criando um novo script R (File -> New File -> R script).  Também vamos carregar os principais pacotes R necessários para arrumar os dados tabulares do DISA. O Tidyverse é o nosso fiel e polivalente “canivete suíço” de programação de ciência de dados em R. O pacote sismar permite-nos arrumar os dados exportados dos sistemas de informação de saúde do MISAU, incluindo o DISA. O pacote glue permite-nos combinar e utilizar valores de cadeia de caracteres no código.
 
@@ -40,7 +40,7 @@ month_input
 
 ```
 
-## Arrumar os dados mensais de carga viral DISA
+## Arrumar dados mensais DISA
 
 Acredita que já fizemos o trabalho árduo de processar o nosso conjunto mensal de dados de carga viral DISA?  Tudo o que precisamos de fazer agora é escrever uma única linha de código para chamar a função `process_disa_cv` do sismar com os argumentos que já definimos no nosso ambiente global e temos os nossos dados de carga viral prontos para análise!
 
@@ -48,7 +48,7 @@ Acredita que já fizemos o trabalho árduo de processar o nosso conjunto mensal 
 df <- process_disa_cv(path_disa_cv)
 ```
 
-## Gravar dados mensais no disco
+## Gravar dados mensais
 
 É provável que queira gravar o seu conjunto de dados mensais processados no disco.  Isto será útil se (ou melhor, “quando”) decidir analisar vários meses de dados DISA em conjunto.  Podemos guardar ficheiros .csv para o disco facilmente usando `write_csv` do pacote Tidyverse readr.  Tudo o que fazemos é chamar `write_csv` e passar o nosso objeto de dados “df” juntamente com a informação de ligação ao ficheiro (localização e nome do .csv que guardamos no disco).
 
@@ -73,7 +73,7 @@ df_compiled <-
 ```
 
 ## Celebre (e analise) o seu trabalho!
-Fizemos um bom trabalho aqui, por isso, reserve um momento para dar uma palmadinha nas costas!  No entanto, não dê palmadinhas por muito tempo, porque agora começa o trabalho ainda mais divertido de explorar os dados e gerar percepções!  Boa análise!
+Parabens! Acabas de conseguir arrumar e compilar os dados de Carga Viral do DISA.  Agora começa a parte ainda mais divertida da análise dos seus dados!
 
 
 
