@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Abrir o RStudio e carregar os pacotes
+## Carregar os pacotes
 
 Comecemos por abrir uma nova sessão de trabalho do RStudio.  Uma vez aberta a sessão, crie um novo script R (File -> New File -> R script) e carregue os principais pacotes R necessários para arrumar as exportações .csv do SISMA. O `tidyverse` é uma coleção de pacotes de código aberto concebidos para utilização geral em ciência de dados. O `sismar` é um pacote desenvolvido com o objetivo específico de efectuar a limpeza e a engenharia de caraterísticas das exportações do SISMA. Por último, os pacotes `glue` fornecem funções que nos permitem combinar e utilizar valores de cadeia de caracteres no código.
 
@@ -41,7 +41,7 @@ path_hiv_tarv
 output_hiv_tarv
 ```
 
-## Arrumar dados do SISMA
+## Arrumar dados SISMA
 
 Tendo definido o caminho local para o nosso conjunto de dados SISMA, podemos agora chamar funções do pacote sismar para gerar um quadro de dados analítico arrumado.  Isto pode ser feito utilizando uma combinação de funções sismar chamadas em sequência ou chamando uma função "wrapper" singular especificando os argumentos apropriados, ou finalmente usando uma função individual que automaticamente reconhece o tipo de ficheiro insumo sendo introduzido pelo utilizador (abordagem recomendada).  Comecemos por uma descrição da primeira abordagem. 
 

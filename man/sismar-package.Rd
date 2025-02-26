@@ -4,11 +4,11 @@
 \name{sismar-package}
 \alias{sismar}
 \alias{sismar-package}
-\title{sismar: Transform tabular export files from SISMA}
+\title{sismar: Arrumar dados SISMA}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Provides a set of functions for creating analytical datasets from SISMA CSV downloads. This includes functions that reshape files into long format, remove unnecessary variables, and engineer features useful in analysis.
+Fornece um conjunto de funções para a criação de conjuntos de dados analíticos a partir de downloads do SISMA e DISA. Inclui funções que arrumam os ficheiros para um formato longo, removem variáveis desnecessárias, e criam colunas úteis para a análise.
 }
 \seealso{
 Useful links:

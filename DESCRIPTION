@@ -1,14 +1,14 @@
 Package: sismar
-Title: Transform tabular export files from SISMA
+Title: Arrumar dados SISMA
 Version: 1.1.0
 Authors@R: c(
     person("Joe", "Lara", email = "jlara@usaid.gov", role = c("aut", "cre")),
     person("Emilton", "Cumbana", email = "e.cumbana@outlook.com", role = ("aut")),
     person("Karishma", "Srikanth", email = "ksrikanth@usaid.gov", role = c("aut")),
     person("Kirstin", "Lyon", email = "kirstin.c.lyon@gmail.com", role = c("aut")))
-Description: Provides a set of functions for creating analytical datasets from SISMA CSV downloads. This 
-    includes functions that reshape files into long format, remove unnecessary variables, and engineer
-    features useful in analysis.
+Description: Fornece um conjunto de funções para a criação de conjuntos de dados analíticos 
+    a partir de downloads do SISMA e DISA. Inclui funções que arrumam os ficheiros para um 
+    formato longo, removem variáveis desnecessárias, e criam colunas úteis para a análise.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
