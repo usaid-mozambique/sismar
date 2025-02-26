@@ -19,8 +19,6 @@ A análise eficiente de dados rectangulares exportados dos sistemas de informaç
 `sismar` não está no CRAN e precisa ser instalado diretamente do rOpenSci usando o código abaixo.
 
 ``` r
-
-    # instalar via rOpenSci
     # instalar a partir de rOpenSci
       install.packages("sismar", repos = c('https://usaid-mozambique.r-universe.dev', 'https://cloud.r-project.org'))
     
