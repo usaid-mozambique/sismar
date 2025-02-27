@@ -31,7 +31,8 @@ Imports:
     lifecycle,
     crayon,
     cli,
-    usethis
+    usethis,
+    shiny
 Depends: 
     R (>= 3.5)
 Suggests: 
