@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_hiv_tarv}
 \alias{parse_sisma_hiv_tarv}
-\title{Arrumar quadros de dados para os serviços de Tratamento Antiretroviral (TARV)}
+\title{Arrumar quadros de dados - Tratamento Antiretroviral (TARV)}
 \usage{
 parse_sisma_hiv_tarv(df)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_hiv_prep}
 \alias{parse_sisma_hiv_prep}
-\title{Arrumar quadros de dados para os serviços de Profilaxia Pré-Exposição (PrEP)}
+\title{Arrumar quadros de dados - Profilaxia Pré-Exposição (PrEP)}
 \usage{
 parse_sisma_hiv_prep(df)
 }

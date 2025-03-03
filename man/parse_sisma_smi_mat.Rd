@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_mat}
 \alias{parse_sisma_smi_mat}
-\title{Arrumar quadros de dados para os serviços da Maternidade}
+\title{Arrumar quadros de dados - Maternidade}
 \usage{
 parse_sisma_smi_mat(df)
 }

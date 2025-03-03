@@ -1,8 +1,11 @@
-#' Clean SISMA input file prior to parsing
+#' Limpar ficheiro bruto SISMA
 #'
-#' @param df A dataframe already ingested by `process_sisma_export`
+#' @description
+#' `clean_sisma_df()` pega num objecto de dados importado através de `process_sisma_export` e devolve-o transformado numa estrutura longa, cria uma coluna de período formatada e devolve um objeto de dados limpo com 7 colunas
 #'
-#' @return Cleaned SISMA dataframe
+#' @param df um objecto de dados importado através de `process_sisma_export`
+#'
+#' @return `clean_sisma_df()` devolve um objeto de dados limpo com 7 colunas (período, província, distrito, us, sisma_uid, indicador e valor)
 #' @export
 #'
 #' @examples
@@ -57,13 +60,14 @@ clean_sisma_df <- function(df) {
 }
 
 
-#' Arrumar quadros de dados a partir de relatórios padrão SISMA em formato .csv
+#' Arrumar quadros de dados .csv do SISMA
+#'
+#' @description `process_sisma_export()` utiliza um caminho fornecido pelo utilizador para uma exportação SISMA csv em bruto e executa várias acções de processamento, incluindo arrumação e criação de caraterísticas de dados.
 #'
 #' @param filename Caminho do ficheiro .csv exportado do SISMA
 #' @param language Linga dos nomes das variáveis no quadro gerado (português ou inglês)
 #'
-#' @return devolve um quadro de dados arrumado com 16 colunas de metadados da us,
-#' desagregações do indicador, e valores
+#' @return devolve um quadro de dados arrumado com 16 colunas de metadados da us, desagregações do indicador, e valores
 #'
 #' @export
 #'
@@ -126,22 +130,16 @@ process_sisma_export <- function(filename, language = "portuguese") {
 }
 
 
-#' Clean SISMA .csv exports
+#' Importar e limpar ficheiro bruto SISMA
 #'
-#' @description `clean_sisma_csv()` A helper function that cleans .csv pivot tables
-#' exported from SISMA
+#' @description `clean_sisma_csv()` importa um ficheiro .csv bruto de SISMA e devolve um objecto transformado numa estrutura longa, cria uma coluna de período formatada e devolve um objeto de dados com 7 colunas (período, província, distrito, us, sisma_uid, indicador e valor)
 #' `r lifecycle::badge("superseded")`
-#' `clean_sisma_csv` has been superseded in favor of `clean_sisma_df`
+#' `clean_sisma_csv` foi substituída por `clean_sisma_df`
 #'
-#' @param file Path to a .csv file exported from SISMA that contains
-#'   data element variables running wide and period and organizational
-#'   units running long
+#' @param file Caminho para um ficheiro .csv exportado do SISMA que contém variáveis de elementos no horizontal e período e unidades organizacionais no vertical
 #'
-#' @return `clean_sisma_csv()` returns an object with 7 columns (period, snu,
-#'   psnu, sitename, sisma_uid, indicator, value). Unnecessary columns from
-#'   the input file are removed and a period column coded from the input
-#'   variable periodcode is created. All numeric data element columns that
-#'   represent indicator or data element values are pivoted long
+#' @return `clean_sisma_csv()` devolve um objeto de dados limpo com 7 colunas (período, província, distrito, us, sisma_uid, indicador e valor)
+#' @export
 #'
 #' @export
 #'
@@ -290,7 +288,7 @@ process_sisma_csv <- function(file, type, language = "portuguese"){
 }
 
 
-#' Arrumar quadros de dados SISMA por tipo especificado pelo utilizador
+#' Arrumar quadros de dados SISMA por tipo
 #'
 #' @description `parse_sisma_csv` função auxiliar que chama a função apropriada
 #' com base no argumento definido pelo utilizador
@@ -310,7 +308,7 @@ process_sisma_csv <- function(file, type, language = "portuguese"){
 #' * ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
 #' * ATS SAAJ: ATS Serviço Amigo Adolescente Joven
 #' * ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
-#' * ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
+#' * ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)
 #' * ATS Auto: ATS Autotestagem, Programa de HIV
 #' * HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 #' * HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
@@ -363,7 +361,7 @@ parse_sisma_csv <- function(data, type){
 }
 
 
-#' Arrumar quadros de dados para os serviços de Tratamento Antiretroviral (TARV)
+#' Arrumar quadros de dados - Tratamento Antiretroviral (TARV)
 #'
 #' `parse_sisma_hiv_tarv` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -404,8 +402,7 @@ parse_sisma_hiv_tarv <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de Adolescente joven mentor,
-#' homem campeão, mães mentoras
+#' Arrumar quadros de dados - adolescente joven mentor, homem campeão, e mães mentoras
 #'
 #' `parse_sisma_hiv_ajmhcmm` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -445,8 +442,7 @@ parse_sisma_hiv_ajmhcmm <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços Apoio Psicossocial (APSS),
-#' do PNC ITS-HIV/SIDA
+#' Arrumar quadros de dados - Apoio Psicossocial do HIV (APSS)
 #'
 #' `parse_sisma_hiv_apss` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -480,7 +476,7 @@ parse_sisma_hiv_apss <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de auto-diagnóstico do HIV
+#' Arrumar quadros de dados - auto-diagnóstico do HIV
 #'
 #' `parse_sisma_ats_auto` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -515,8 +511,7 @@ parse_sisma_ats_auto <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de testagem do HIV nas consultas
-#' da criança sadia (CCS) e em risco (CCR)
+#' Arrumar quadros de dados testagem do HIV da CCS e CCR
 #'
 #' `parse_sisma_ats_ccsd` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -560,7 +555,7 @@ parse_sisma_ats_ccsd <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de testagem do HIV caso índice
+#' Arrumar quadros de dados - testagem do HIV caso índice
 #'
 #' `parse_sisma_ats_index` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -600,8 +595,7 @@ parse_sisma_ats_index <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de testagem do HIV em populações-chave
-#' e vulneráveis e dados da historial de testagem do HIV
+#' Arrumar quadros de dados - testagem do HIV em populações-chave/vulnerável e dados da historial de testagem do HIV
 #'
 #' `parse_sisma_ats_history` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -640,8 +634,7 @@ parse_sisma_ats_history <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de testagem do HIV reportado a
-#' partir do registo ATS
+#' Arrumar quadros de dados - testagem do HIV reportado a partir do registo ATS
 #'
 #' `parse_sisma_ats_results` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -687,8 +680,7 @@ parse_sisma_ats_results <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de testagem do HIV dos Serviços
-#' Amigos dos Adolescentes e Jovens (SAAJ)
+#' Arrumar quadros de dados - testagem do HIV do SAAJ
 #'
 #' `parse_sisma_ats_saaj_cm` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -811,8 +803,7 @@ parse_sisma_ats_saaj_cm <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de testagem do HIV dos Serviços
-#' Saúde Materno-Infantil (SMI)
+#' Arrumar quadros de dados - testagem do HIV dos serviços SMI
 #'
 #' `parse_sisma_ats_smi` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -911,7 +902,7 @@ parse_sisma_ats_smi <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços doença avançada do HIV
+#' Arrumar quadros de dados - doença avançada do HIV
 #'
 #' `parse_sisma_hiv_dah` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -944,8 +935,7 @@ parse_sisma_hiv_dah <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de Infecções de Transmissão
-#' Sexual (ITS) do PNC ITS-HIV/SIDA
+#' Arrumar quadros de dados - infecções de transmissão sexual (ITS)
 #'
 #' `parse_sisma_hiv_its` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -978,7 +968,7 @@ parse_sisma_hiv_its <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de Profilaxia Pré-Exposição (PrEP)
+#' Arrumar quadros de dados - Profilaxia Pré-Exposição (PrEP)
 #'
 #' `parse_sisma_hiv_prep` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1018,7 +1008,7 @@ parse_sisma_hiv_prep <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços da Consulta da Criança Doente (CCD)
+#' Arrumar quadros de dados - consulta da criança doente (CCD)
 #'
 #' `parse_sisma_smi_cpp` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1052,7 +1042,7 @@ parse_sisma_smi_ccd <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços da Consulta da Criança de Risco (CCR)
+#' Arrumar quadros de dados - consulta da criança de risco (CCR)
 #'
 #' `parse_sisma_smi_ccr` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1085,7 +1075,7 @@ parse_sisma_smi_ccr <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços da Consulta da Criança Sadia (CCS)
+#' Arrumar quadros de dados - consulta da criança sadia (CCS)
 #'
 #' `parse_sisma_smi_ccs` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1119,7 +1109,7 @@ parse_sisma_smi_ccs <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços da Consulta Pré-natal (CPN)
+#' Arrumar quadros de dados - consulta pré-natal (CPN)
 #'
 #' `parse_sisma_smi_cpn` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1153,7 +1143,7 @@ parse_sisma_smi_cpn <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços da Consulta Pós-parto (CPP)
+#' Arrumar quadros de dados - consulta pós-parto (CPP)
 #'
 #' `parse_sisma_smi_cpp` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1187,7 +1177,7 @@ parse_sisma_smi_cpp <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços da Maternidade
+#' Arrumar quadros de dados - Maternidade
 #'
 #' `parse_sisma_smi_mat` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1220,7 +1210,7 @@ parse_sisma_smi_mat <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços do Programa Alargado de Vacinação (PAV)
+#' Arrumar quadros de dados - programa alargado de vacinação (PAV)
 #'
 #' `parse_sisma_smi_pav` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1253,7 +1243,7 @@ parse_sisma_smi_pav <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços do Planeamento Familiar (PF)
+#' Arrumar quadros de dados - planeamento familiar (PF)
 #'
 #' `parse_sisma_smi_pf` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1287,7 +1277,7 @@ parse_sisma_smi_pf <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços do Planeamento Familiar (PF) Integrado
+#' Arrumar quadros de dados - planeamento familiar (PF) integrado
 #'
 #' `parse_sisma_smi_pf_int` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1321,7 +1311,7 @@ parse_sisma_smi_pf_int <- function(df) {
 }
 
 
-#' Arrumar quadros de dados para os serviços de Urgência de Ginecológica
+#' Arrumar quadros de dados - urgência de ginecológica
 #'
 #' `parse_sisma_smi_ug` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`

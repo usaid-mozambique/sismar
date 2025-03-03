@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_pav}
 \alias{parse_sisma_smi_pav}
-\title{Arrumar quadros de dados para os serviços do Programa Alargado de Vacinação (PAV)}
+\title{Arrumar quadros de dados - programa alargado de vacinação (PAV)}
 \usage{
 parse_sisma_smi_pav(df)
 }

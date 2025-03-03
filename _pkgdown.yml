@@ -68,14 +68,18 @@ articles:
   - tidy-disa
 
 reference:
-- title: Processar ficheiros
+- title: Processar
 - contents:
-  - starts_with("process_")
-- title: Arrumar dados
-- contents:
-  - starts_with("parse_")
+  - process_sisma_export
+  - process_sisma_csv
+  - process_disa_cv
+  - process_disa_dpi
   - dedup_naomi
-- title: Limpar quadros
+- title: Arrumar
+- contents:
+  - parse_sisma_csv
+  - starts_with("parse_")
+- title: Limpar
 - contents:
   - starts_with("clean_")
 - title: Anexar metadados

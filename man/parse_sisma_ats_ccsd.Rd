@@ -2,8 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_ats_ccsd}
 \alias{parse_sisma_ats_ccsd}
-\title{Arrumar quadros de dados para os serviços de testagem do HIV nas consultas
-da criança sadia (CCS) e em risco (CCR)}
+\title{Arrumar quadros de dados testagem do HIV da CCS e CCR}
 \usage{
 parse_sisma_ats_ccsd(df)
 }
