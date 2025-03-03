@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_pf_int}
 \alias{parse_sisma_smi_pf_int}
-\title{Arrumar quadros de dados - planeamento familiar (PF) integrado}
+\title{Arrumar: Planeamento familiar (PF) integrado}
 \usage{
 parse_sisma_smi_pf_int(df)
 }

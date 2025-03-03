@@ -3,19 +3,19 @@
 \docType{data}
 \name{data_sisma_geo_sites}
 \alias{data_sisma_geo_sites}
-\title{Map for linking geocoordinates to SISMA health facility data}
+\title{Mapa para ligar as coordenadas geográficas aos dados das unidades de saúde SISMA}
 \format{
-A list of the variables included in the site list
+Uma lista das variáveis incluídas no objecto de dados
 \describe{
-\item{data_sisma_geo_sites}{sisma_uid}
-\item{data_sisma_geo_sites}{latitude}
-\item{data_sisma_geo_sites}{longitude}
+\item{sisma_uid}{UID SISMA (e.g. x9jhds3ie6)}
+\item{latitude}{Latitude geográfica}
+\item{longitude}{Longitude geográfica}
 }
 }
 \usage{
 data(data_sisma_geo_sites)
 }
 \description{
-List of indicators
+Mapa para ligar as coordenadas geográficas aos dados das unidades de saúde SISMA
 }
 \keyword{datasets}

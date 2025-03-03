@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_ats_smi}
 \alias{parse_sisma_ats_smi}
-\title{Arrumar quadros de dados - testagem do HIV dos serviços SMI}
+\title{Arrumar: Testagem do HIV SMI}
 \usage{
 parse_sisma_ats_smi(df)
 }

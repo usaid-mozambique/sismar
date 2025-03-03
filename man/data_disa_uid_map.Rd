@@ -3,19 +3,19 @@
 \docType{data}
 \name{data_disa_uid_map}
 \alias{data_disa_uid_map}
-\title{UID map for linking DISA, SISMA and DATIM}
+\title{Mapa de UID para ligação entre DISA, SISMA e DATIM}
 \format{
-A list of the variables included in the site list
+Uma lista das variáveis incluídas no objecto de dados
 \describe{
-\item{data_disa_uid_map}{disa_uid}
-\item{data_disa_uid_map}{sisma_uid}
-\item{data_disa_uid_map}{datim_uid}
+\item{disa_uid}{UID DISA (e.g. CHAEM)}
+\item{sisma_uid}{UID SISMA (e.g. x9jhds3ie6)}
+\item{datim_uid}{UID DATIM (e.g. jIem8wI1Rx)}
 }
 }
 \usage{
 data(data_disa_uid_map)
 }
 \description{
-List of indicators
+Mapa de UID para ligação entre DISA, SISMA e DATIM
 }
 \keyword{datasets}

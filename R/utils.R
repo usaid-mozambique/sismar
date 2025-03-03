@@ -14,7 +14,7 @@
 NULL
 
 
-#' Cria uma estrutura organizacional (pastas) que é comum a todos os projectos sismar
+#' Função auxiliar que cria uma estrutura padrão de pastas
 #'
 #' @param folder_list lista de pastas a instalar
 #'

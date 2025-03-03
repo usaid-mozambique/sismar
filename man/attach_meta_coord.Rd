@@ -2,7 +2,7 @@
 % Please edit documentation in R/attach_meta.R
 \name{attach_meta_coord}
 \alias{attach_meta_coord}
-\title{Anexar coordenadas geográficas das unidades sanitárias}
+\title{Anexar coordenadas geográficas}
 \usage{
 attach_meta_coord(df, sheetname = "map_us_coord")
 }
@@ -15,9 +15,7 @@ attach_meta_coord(df, sheetname = "map_us_coord")
 Dataframe contendo coordenadas geográficas das unidades sanitárias
 }
 \description{
-\code{attach_meta_coord} utiliza as credenciais de utilizador armazenadas para aceder
-a uma folha de cálculo do Google onde as coordenadas geográficas das unidades de
-saúde estão armazenadas.
+\code{attach_meta_coord} Une as coordenadas geográficas da unidade sanitária gravadas no pacote \code{sismar} ao objeto de dados introduzido pelo utilizador
 }
 \examples{
  \dontrun{

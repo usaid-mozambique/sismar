@@ -1,8 +1,6 @@
-#' Anexar coordenadas geográficas das unidades sanitárias
+#' Anexar coordenadas geográficas
 #'
-#' `attach_meta_coord` utiliza as credenciais de utilizador armazenadas para aceder
-#' a uma folha de cálculo do Google onde as coordenadas geográficas das unidades de
-#' saúde estão armazenadas.
+#' `attach_meta_coord` Une as coordenadas geográficas da unidade sanitária gravadas no pacote `sismar` ao objeto de dados introduzido pelo utilizador
 #'
 #' @param df Dataframe já transformado através de `process_sisma_csv` ou `process_sisma_export`
 #' @param sheetname Nome da folha do MISAU_Site_Map
@@ -37,9 +35,9 @@ attach_meta_coord <- function(df, sheetname = "map_us_coord") {
 }
 
 
-#' Anexar metadados MQ
+#' Anexar metadados melhoria da qualidade
 #'
-#' `attach_meta_mq` utiliza credenciais de utilizador armazenadas para aceder a uma folha de cálculo do Google onde estão armazenados metadados de uid de província e distrito
+#' `attach_meta_mq` Une iniciativas de melhoria da qualidade gravadas no pacote `sismar` ao objeto de dados introduzido pelo utilizador
 #'
 #' @param df Dataframe limpo através de `process_sisma_export`
 #' @return Um objeto de dados que contém metadados MQ
@@ -74,7 +72,7 @@ attach_meta_mq <- function(df) {
 
 #' Anexar metadados do apoio dos parceiros
 #'
-#' `attach_meta_partner` utiliza credenciais de utilizador armazenadas para aceder a uma folha de cálculo do Google onde estão armazenados metadados de uid de província e distrito
+#' `attach_meta_partner` Une informações sobre o apoio dos parceiros gravadas no pacote `sismar` ao objeto de dados introduzido pelo utilizador
 #'
 #' @param df Dataframe limpo através de `process_sisma_export`
 #' @param sheetname Nome da folha do PCMD_Site_Map
@@ -108,9 +106,7 @@ attach_meta_partner <- function(df, sheetname = "Alcancar") {
 
 #' Retreive and attach partner metadata
 #'
-#'  `attach_meta_pepfar_ip` utilizes stored user credentials to access
-#'  a GoogleSheet where province and district uid metadata is
-#'  stored.
+#'  `attach_meta_pepfar_ip` Une informações sobre o apoio dos parceiros PEPFAR gravadas no pacote `sismar` ao objeto de dados introduzido pelo utilizador
 #'
 #' @param df Dataframe cleaned via reshape_sisma
 #' @return A dataframe containing partner metadata

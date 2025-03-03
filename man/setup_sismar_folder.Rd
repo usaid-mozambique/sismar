@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{setup_sismar_folder}
 \alias{setup_sismar_folder}
-\title{Cria uma estrutura organizacional (pastas) que é comum a todos os projectos sismar}
+\title{Função auxiliar que cria uma estrutura padrão de pastas}
 \usage{
 setup_sismar_folder(
   folder_list = list("Data", "Data/sisma", "Data/disa", "Data/pepfar", "Data/ine",
@@ -18,7 +18,7 @@ setup_sismar_folder(
 Um conjunto padrão de pastas no projeto para utilizar com as funções \code{sismar}
 }
 \description{
-Cria uma estrutura organizacional (pastas) que é comum a todos os projectos sismar
+Função auxiliar que cria uma estrutura padrão de pastas
 }
 \examples{
  \dontrun{

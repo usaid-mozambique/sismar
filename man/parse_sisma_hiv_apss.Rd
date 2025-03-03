@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_hiv_apss}
 \alias{parse_sisma_hiv_apss}
-\title{Arrumar quadros de dados - Apoio Psicossocial do HIV (APSS)}
+\title{Arrumar: Apoio Psicossocial do HIV (APSS)}
 \usage{
 parse_sisma_hiv_apss(df)
 }

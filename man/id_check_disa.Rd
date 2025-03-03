@@ -2,7 +2,7 @@
 % Please edit documentation in R/id_check_disa.R
 \name{id_check_disa}
 \alias{id_check_disa}
-\title{Detetar casos problemáticos de mapeamento de UID DISA para investigação}
+\title{Detetar casos problemáticos de mapeamento de UID DISA}
 \usage{
 id_check_disa(df, period_window = 6)
 }
@@ -15,7 +15,7 @@ id_check_disa(df, period_window = 6)
 Dataframe com 1) UID DISA sem UID SISMA correspondentes; e 2) UID SISMA com múltiplos UID DISA
 }
 \description{
-Detetar casos problemáticos de mapeamento de UID DISA para investigação
+Detetar casos problemáticos de mapeamento de UID DISA
 }
 \examples{
  \dontrun{

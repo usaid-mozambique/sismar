@@ -1,4 +1,4 @@
-#' Reordenar variáveis padrão
+#' Função auxiliar que reordena variáveis em sequência padrão
 #'
 #' @param df Objecto quadro de dados contendo todos variáveis padrão
 #'

@@ -2,20 +2,20 @@
 % Please edit documentation in R/check_exact_match.R
 \name{check_exact_match}
 \alias{check_exact_match}
-\title{Helper function to check for input matches against template}
+\title{Função auxiliar para mapear ficheiro de insumo ao modelo de processamento}
 \usage{
 check_exact_match(df_vars, template_vars)
 }
 \arguments{
-\item{df_vars}{dataframe variables}
+\item{df_vars}{variáveis de dataframe}
 
-\item{template_vars}{reference input variables}
+\item{template_vars}{variáveis dos modelos de referência}
 }
 \value{
-matrix of match vs. no match
+matriz de correspondência
 }
 \description{
-Helper function to check for input matches against template
+Função auxiliar para mapear ficheiro de insumo ao modelo de processamento
 }
 \examples{
  \dontrun{

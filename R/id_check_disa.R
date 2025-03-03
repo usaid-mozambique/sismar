@@ -1,4 +1,4 @@
-#' Detetar casos problemáticos de mapeamento de UID DISA para investigação
+#' Detetar casos problemáticos de mapeamento de UID DISA
 #'
 #' @param df Dataframe já processado por `process_disa_cv` ou `process_disa_dpi`
 #' @param period_window Número de meses analisados do dataframe providenciado (contado a partir do mês mais recente)

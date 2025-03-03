@@ -3,20 +3,20 @@
 \docType{data}
 \name{data_sisma_geo_above_site}
 \alias{data_sisma_geo_above_site}
-\title{Map for linking province and district shape codes to SISMA data}
+\title{Mapa para ligar os códigos de forma da província e do distrito aos dados SISMA}
 \format{
-A list of the variables included in the site list
+Uma lista das variáveis incluídas no objecto de dados
 \describe{
-\item{data_sisma_geo_above_site}{provincia}
-\item{data_sisma_geo_above_site}{snuuid}
-\item{data_sisma_geo_above_site}{distrito}
-\item{data_sisma_geo_above_site}{psnuuid}
+\item{provincia}{Provincia}
+\item{snuuid}{UID da provincia}
+\item{distrito}{Distrito}
+\item{psnuuid}{UID do distrito}
 }
 }
 \usage{
 data(data_sisma_geo_above_site)
 }
 \description{
-List of indicators
+Mapa para ligar os códigos de forma da província e do distrito aos dados SISMA
 }
 \keyword{datasets}

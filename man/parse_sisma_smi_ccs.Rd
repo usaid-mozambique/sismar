@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_ccs}
 \alias{parse_sisma_smi_ccs}
-\title{Arrumar quadros de dados - consulta da criança sadia (CCS)}
+\title{Arrumar: Consulta da criança sadia (CCS)}
 \usage{
 parse_sisma_smi_ccs(df)
 }

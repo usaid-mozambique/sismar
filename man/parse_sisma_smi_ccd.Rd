@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_ccd}
 \alias{parse_sisma_smi_ccd}
-\title{Arrumar quadros de dados - consulta da criança doente (CCD)}
+\title{Arrumar: Consulta da criança doente (CCD)}
 \usage{
 parse_sisma_smi_ccd(df)
 }

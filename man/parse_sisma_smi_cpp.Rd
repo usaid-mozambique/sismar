@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_cpp}
 \alias{parse_sisma_smi_cpp}
-\title{Arrumar quadros de dados - consulta pós-parto (CPP)}
+\title{Arrumar: Consulta pós-parto (CPP)}
 \usage{
 parse_sisma_smi_cpp(df)
 }

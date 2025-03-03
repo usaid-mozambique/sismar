@@ -71,28 +71,35 @@ reference:
 - title: Processar
 - contents:
   - process_sisma_export
-  - process_sisma_csv
   - process_disa_cv
   - process_disa_dpi
-  - dedup_naomi
+  - process_naomi
+  - process_sisma_csv
 - title: Arrumar
 - contents:
   - parse_sisma_csv
   - starts_with("parse_")
 - title: Limpar
 - contents:
-  - starts_with("clean_")
-- title: Anexar metadados
+  - clean_sisma_df
+  - clean_disa_dpi
+  - clean_sisma_csv
+- title: Juntar metadados
 - contents:
   - starts_with("attach_")
 - title: Utilitários
 - contents:
-  - read_example_csv
-  - id_check_disa
+  - setup_sismar_folder
   - check_exact_match
-  - starts_with("add_")
-  - starts_with("set")
+  - add_missing_vars
+  - set_language
   - seq_vars
+  - id_check_disa
+  - read_example_csv
 - title: Dados
 - contents:
-  - starts_with("data_")
+  - data_sisma_sitelist
+  - data_disa_uid_map
+  - data_sisma_geo_sites
+  - data_sisma_geo_above_site
+

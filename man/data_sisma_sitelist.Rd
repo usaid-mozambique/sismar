@@ -3,20 +3,20 @@
 \docType{data}
 \name{data_sisma_sitelist}
 \alias{data_sisma_sitelist}
-\title{Deduplicated SISMA site list}
+\title{Lista de unidades sanitárias SISMA}
 \format{
-A list of the variables included in the site list
+Uma lista das variáveis incluídas no objecto de dados
 \describe{
-\item{data_sisma_sitelist}{sisma_uid}
-\item{data_sisma_sitelist}{provincia}
-\item{data_sisma_sitelist}{distrito}
-\item{data_sisma_sitelist}{us}
+\item{sisma_uid}{UID SISMA (e.g. x9jhds3ie6)}
+\item{provincia}{Provincia}
+\item{distrito}{Distrito}
+\item{us}{Unidade Sanitária}
 }
 }
 \usage{
 data(data_sisma_sitelist)
 }
 \description{
-List of indicators
+Lista de unidades sanitárias SISMA
 }
 \keyword{datasets}

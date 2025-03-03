@@ -1,61 +1,53 @@
 
-#' Deduplicated SISMA site list
-#'
-#' List of indicators
+#' Lista de unidades sanitárias SISMA
 #'
 #' @usage data(data_sisma_sitelist)
 #'
-#' @format A list of the variables included in the site list
+#' @format Uma lista das variáveis incluídas no objecto de dados
 #' \describe{
-#'   \item{data_sisma_sitelist}{sisma_uid}
-#'   \item{data_sisma_sitelist}{provincia}
-#'   \item{data_sisma_sitelist}{distrito}
-#'   \item{data_sisma_sitelist}{us}
+#'   \item{sisma_uid}{UID SISMA (e.g. x9jhds3ie6)}
+#'   \item{provincia}{Provincia}
+#'   \item{distrito}{Distrito}
+#'   \item{us}{Unidade Sanitária}
 #' }
 "data_sisma_sitelist"
 
 
-#' UID map for linking DISA, SISMA and DATIM
-#'
-#' List of indicators
+#' Mapa de UID para ligação entre DISA, SISMA e DATIM
 #'
 #' @usage data(data_disa_uid_map)
 #'
-#' @format A list of the variables included in the site list
+#' @format Uma lista das variáveis incluídas no objecto de dados
 #' \describe{
-#'   \item{data_disa_uid_map}{disa_uid}
-#'   \item{data_disa_uid_map}{sisma_uid}
-#'   \item{data_disa_uid_map}{datim_uid}
+#'   \item{disa_uid}{UID DISA (e.g. CHAEM)}
+#'   \item{sisma_uid}{UID SISMA (e.g. x9jhds3ie6)}
+#'   \item{datim_uid}{UID DATIM (e.g. jIem8wI1Rx)}
 #' }
 "data_disa_uid_map"
 
 
-#' Map for linking province and district shape codes to SISMA data
-#'
-#' List of indicators
+#' Mapa para ligar os códigos de forma da província e do distrito aos dados SISMA
 #'
 #' @usage data(data_sisma_geo_above_site)
 #'
-#' @format A list of the variables included in the site list
+#' @format Uma lista das variáveis incluídas no objecto de dados
 #' \describe{
-#'   \item{data_sisma_geo_above_site}{provincia}
-#'   \item{data_sisma_geo_above_site}{snuuid}
-#'   \item{data_sisma_geo_above_site}{distrito}
-#'   \item{data_sisma_geo_above_site}{psnuuid}
+#'   \item{provincia}{Provincia}
+#'   \item{snuuid}{UID da provincia}
+#'   \item{distrito}{Distrito}
+#'   \item{psnuuid}{UID do distrito}
 #' }
 "data_sisma_geo_above_site"
 
 
-#' Map for linking geocoordinates to SISMA health facility data
-#'
-#' List of indicators
+#' Mapa para ligar as coordenadas geográficas aos dados das unidades de saúde SISMA
 #'
 #' @usage data(data_sisma_geo_sites)
 #'
-#' @format A list of the variables included in the site list
+#' @format Uma lista das variáveis incluídas no objecto de dados
 #' \describe{
-#'   \item{data_sisma_geo_sites}{sisma_uid}
-#'   \item{data_sisma_geo_sites}{latitude}
-#'   \item{data_sisma_geo_sites}{longitude}
+#'   \item{sisma_uid}{UID SISMA (e.g. x9jhds3ie6)}
+#'   \item{latitude}{Latitude geográfica}
+#'   \item{longitude}{Longitude geográfica}
 #' }
 "data_sisma_geo_sites"

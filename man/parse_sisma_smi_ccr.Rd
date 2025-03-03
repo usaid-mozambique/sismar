@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_ccr}
 \alias{parse_sisma_smi_ccr}
-\title{Arrumar quadros de dados - consulta da criança de risco (CCR)}
+\title{Arrumar: Consulta da criança de risco (CCR)}
 \usage{
 parse_sisma_smi_ccr(df)
 }

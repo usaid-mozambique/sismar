@@ -1,4 +1,4 @@
-#' Adicionar variáveis faltando no quadro de dados arrumado pela família de funções `parse`
+#' Função auxiliar que adiciona variáveis em falta nos quadros arrumados pelas funções `parse`
 #'
 #' @param df Objecto quadro de dados processado pela família de funções `parse`
 #'

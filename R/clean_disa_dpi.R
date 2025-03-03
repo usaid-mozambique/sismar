@@ -1,8 +1,8 @@
-#' Helper function for recoding DISA dataframe
+#' Função auxiliar para recodificar o quadro de dados DISA
 #'
-#' @param df Semi-processed dataframe passed in via process_disa_dpi
+#' @param df Quadro de dados semi-processado transmitido através de process_disa_dpi
 #'
-#' @return Recoded DISA dataframe
+#' @return Quadro de dados DISA recodificado
 #' @export
 #'
 #' @examples

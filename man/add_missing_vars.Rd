@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_missing_vars.R
 \name{add_missing_vars}
 \alias{add_missing_vars}
-\title{Adicionar variáveis faltando no quadro de dados arrumado pela família de funções \code{parse}}
+\title{Função auxiliar que adiciona variáveis em falta nos quadros arrumados pelas funções \code{parse}}
 \usage{
 add_missing_vars(df)
 }
@@ -13,7 +13,7 @@ add_missing_vars(df)
 Objecto quadro de dados contendo todos variáveis padrão
 }
 \description{
-Adicionar variáveis faltando no quadro de dados arrumado pela família de funções \code{parse}
+Função auxiliar que adiciona variáveis em falta nos quadros arrumados pelas funções \code{parse}
 }
 \examples{
  \dontrun{

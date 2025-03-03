@@ -13,9 +13,7 @@ attach_meta_pepfar_ip(df)
 A dataframe containing partner metadata
 }
 \description{
-\code{attach_meta_pepfar_ip} utilizes stored user credentials to access
-a GoogleSheet where province and district uid metadata is
-stored.
+\code{attach_meta_pepfar_ip} Une informações sobre o apoio dos parceiros PEPFAR gravadas no pacote \code{sismar} ao objeto de dados introduzido pelo utilizador
 }
 \examples{
  \dontrun{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/attach_meta.R
 \name{attach_meta_mq}
 \alias{attach_meta_mq}
-\title{Anexar metadados MQ}
+\title{Anexar metadados melhoria da qualidade}
 \usage{
 attach_meta_mq(df)
 }
@@ -13,7 +13,7 @@ attach_meta_mq(df)
 Um objeto de dados que contém metadados MQ
 }
 \description{
-\code{attach_meta_mq} utiliza credenciais de utilizador armazenadas para aceder a uma folha de cálculo do Google onde estão armazenados metadados de uid de província e distrito
+\code{attach_meta_mq} Une iniciativas de melhoria da qualidade gravadas no pacote \code{sismar} ao objeto de dados introduzido pelo utilizador
 }
 \examples{
  \dontrun{

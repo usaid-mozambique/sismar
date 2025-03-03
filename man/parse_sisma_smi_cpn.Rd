@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_cpn}
 \alias{parse_sisma_smi_cpn}
-\title{Arrumar quadros de dados - consulta pré-natal (CPN)}
+\title{Arrumar: Consulta pré-natal (CPN)}
 \usage{
 parse_sisma_smi_cpn(df)
 }

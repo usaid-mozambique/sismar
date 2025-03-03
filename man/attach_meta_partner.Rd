@@ -15,7 +15,7 @@ attach_meta_partner(df, sheetname = "Alcancar")
 A dataframe containing partner metadata
 }
 \description{
-\code{attach_meta_partner} utiliza credenciais de utilizador armazenadas para aceder a uma folha de cálculo do Google onde estão armazenados metadados de uid de província e distrito
+\code{attach_meta_partner} Une informações sobre o apoio dos parceiros gravadas no pacote \code{sismar} ao objeto de dados introduzido pelo utilizador
 }
 \examples{
  \dontrun{

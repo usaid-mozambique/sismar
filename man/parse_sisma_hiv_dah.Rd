@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_hiv_dah}
 \alias{parse_sisma_hiv_dah}
-\title{Arrumar quadros de dados - doença avançada do HIV}
+\title{Arrumar: Doença avançada do HIV}
 \usage{
 parse_sisma_hiv_dah(df)
 }

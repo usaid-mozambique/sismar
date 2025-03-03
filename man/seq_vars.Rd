@@ -2,7 +2,7 @@
 % Please edit documentation in R/seq_vars.R
 \name{seq_vars}
 \alias{seq_vars}
-\title{Reordenar variáveis padrão}
+\title{Função auxiliar que reordena variáveis em sequência padrão}
 \usage{
 seq_vars(df)
 }
@@ -14,7 +14,7 @@ devolve um quadro de dados arrumado com 16
 variáveis reordenados
 }
 \description{
-Reordenar variáveis padrão
+Função auxiliar que reordena variáveis em sequência padrão
 }
 \examples{
  \dontrun{

@@ -1,9 +1,9 @@
-#' Helper function to check for input matches against template
+#' Função auxiliar para mapear ficheiro de insumo ao modelo de processamento
 #'
-#' @param df_vars dataframe variables
-#' @param template_vars reference input variables
+#' @param df_vars variáveis de dataframe
+#' @param template_vars variáveis dos modelos de referência
 #'
-#' @return matrix of match vs. no match
+#' @return matriz de correspondência
 #' @export
 #'
 #' @examples
