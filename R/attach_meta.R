@@ -37,14 +37,12 @@ attach_meta_coord <- function(df, sheetname = "map_us_coord") {
 }
 
 
-#' Retreive and attach MQ metadata
+#' Anexar metadados MQ
 #'
-#'  `attach_meta_mq` utilizes stored user credentials to access
-#'  a GoogleSheet where province and district uid metadata is
-#'  stored.
+#' `attach_meta_mq` utiliza credenciais de utilizador armazenadas para aceder a uma folha de cálculo do Google onde estão armazenados metadados de uid de província e distrito
 #'
-#' @param df Dataframe cleaned via reshape_sisma
-#' @return A dataframe containing mq metadata
+#' @param df Dataframe limpo através de `process_sisma_export`
+#' @return Um objeto de dados que contém metadados MQ
 #' @export
 #'
 #' @examples
@@ -74,14 +72,12 @@ attach_meta_mq <- function(df) {
 
 }
 
-#' Retreive and attach partner metadata
+#' Anexar metadados do apoio dos parceiros
 #'
-#'  `attach_meta_partner` utilizes stored user credentials to access
-#'  a GoogleSheet where province and district uid metadata is
-#'  stored.
+#' `attach_meta_partner` utiliza credenciais de utilizador armazenadas para aceder a uma folha de cálculo do Google onde estão armazenados metadados de uid de província e distrito
 #'
-#' @param df Dataframe cleaned via reshape_sisma
-#' @param sheetname Sheet name from the PCMD_Site_Map
+#' @param df Dataframe limpo através de `process_sisma_export`
+#' @param sheetname Nome da folha do PCMD_Site_Map
 #' @return A dataframe containing partner metadata
 #' @export
 #'
