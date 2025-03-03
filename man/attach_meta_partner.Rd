@@ -2,22 +2,20 @@
 % Please edit documentation in R/attach_meta.R
 \name{attach_meta_partner}
 \alias{attach_meta_partner}
-\title{Retreive and attach partner metadata}
+\title{Anexar metadados do apoio dos parceiros}
 \usage{
 attach_meta_partner(df, sheetname = "Alcancar")
 }
 \arguments{
-\item{df}{Dataframe cleaned via reshape_sisma}
+\item{df}{Dataframe limpo através de \code{process_sisma_export}}
 
-\item{sheetname}{Sheet name from the PCMD_Site_Map}
+\item{sheetname}{Nome da folha do PCMD_Site_Map}
 }
 \value{
 A dataframe containing partner metadata
 }
 \description{
-\code{attach_meta_partner} utilizes stored user credentials to access
-a GoogleSheet where province and district uid metadata is
-stored.
+\code{attach_meta_partner} utiliza credenciais de utilizador armazenadas para aceder a uma folha de cálculo do Google onde estão armazenados metadados de uid de província e distrito
 }
 \examples{
  \dontrun{

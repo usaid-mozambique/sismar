@@ -2,20 +2,18 @@
 % Please edit documentation in R/attach_meta.R
 \name{attach_meta_mq}
 \alias{attach_meta_mq}
-\title{Retreive and attach MQ metadata}
+\title{Anexar metadados MQ}
 \usage{
 attach_meta_mq(df)
 }
 \arguments{
-\item{df}{Dataframe cleaned via reshape_sisma}
+\item{df}{Dataframe limpo através de \code{process_sisma_export}}
 }
 \value{
-A dataframe containing mq metadata
+Um objeto de dados que contém metadados MQ
 }
 \description{
-\code{attach_meta_mq} utilizes stored user credentials to access
-a GoogleSheet where province and district uid metadata is
-stored.
+\code{attach_meta_mq} utiliza credenciais de utilizador armazenadas para aceder a uma folha de cálculo do Google onde estão armazenados metadados de uid de província e distrito
 }
 \examples{
  \dontrun{
