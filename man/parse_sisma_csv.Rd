@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_csv}
 \alias{parse_sisma_csv}
-\title{Arrumar quadros de dados SISMA por tipo}
+\title{Arrumar dados SISMA por tipo}
 \usage{
 parse_sisma_csv(data, type)
 }

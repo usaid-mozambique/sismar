@@ -1,4 +1,4 @@
-#' Processar ficheiro .csv da Naomi
+#' Processar: Naomi 'indicators' .csv
 #'
 #' `process_naomi` processa ficheiros .csv da Naomi e junta metadados para facilitar mapeamento geoespacial de indicadores
 #'

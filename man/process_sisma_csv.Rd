@@ -2,26 +2,25 @@
 % Please edit documentation in R/process_sisma.R
 \name{process_sisma_csv}
 \alias{process_sisma_csv}
-\title{Create tidy dataframes for user-specified SISMA .csv services}
+\title{Processar: Dados em formato .csv do SISMA}
 \usage{
 process_sisma_csv(file, type, language = "portuguese")
 }
 \arguments{
-\item{file}{Path of sisma csv input}
+\item{file}{Caminho do ficheiro csv do sisma}
 
-\item{type}{Type of sisma csv export (SMI-CPN, ATS Result, etc.)}
+\item{type}{Tipo de exportação sisma csv (SMI-CPN, Resultado ATS, etc.)}
 
-\item{language}{Language of output variable names (portuguese or english)}
+\item{language}{Lingua dos nomes das variáveis geradas (português ou inglês)}
 }
 \value{
-A tidy dataframe of SISMA program results
+Um quadro de dados arrumado dos resultados SISMA
 }
 \description{
-\code{process_sisma_csv} is a wrapper function that cleans
-and transforms SISMA tabular exports saved locally in .csv format
+\code{process_sisma_csv} é uma função que limpa e transforma as exportações tabulares do SISMA guardadas localmente no formato .csv
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#superseded}{\figure{lifecycle-superseded.svg}{options: alt='[Superseded]'}}}{\strong{[Superseded]}}
-\code{process_sisma_csv} has been superseded in favor of \code{process_sisma_export}
-\subsection{Input File Types}{
+\code{process_sisma_csv} foi substituído a favor de \code{process_sisma_export}
+\subsection{Tipos de ficheiros de entrada}{
 \itemize{
 \item SMI-CPN: CPN, Saude Materna Infantil
 \item SMI-MAT: Maternidade, Saude Materna Infantil

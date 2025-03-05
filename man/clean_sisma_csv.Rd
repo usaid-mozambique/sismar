@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{clean_sisma_csv}
 \alias{clean_sisma_csv}
-\title{Importar e limpar ficheiro bruto SISMA}
+\title{Importar e limpar ficheiro .csv do SISMA}
 \usage{
 clean_sisma_csv(file)
 }

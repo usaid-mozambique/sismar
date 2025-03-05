@@ -60,7 +60,7 @@ clean_sisma_df <- function(df) {
 }
 
 
-#' Arrumar quadros de dados .csv do SISMA
+#' Process: Dados em formato .csv do SISMA
 #'
 #' @description `process_sisma_export()` utiliza um caminho fornecido pelo utilizador para uma exportação SISMA csv em bruto e executa várias acções de processamento, incluindo arrumação e criação de caraterísticas de dados.
 #'
@@ -130,7 +130,7 @@ process_sisma_export <- function(filename, language = "portuguese") {
 }
 
 
-#' Importar e limpar ficheiro bruto SISMA
+#' Importar e limpar ficheiro .csv do SISMA
 #'
 #' @description `clean_sisma_csv()` importa um ficheiro .csv bruto de SISMA e devolve um objecto transformado numa estrutura longa, cria uma coluna de período formatada e devolve um objeto de dados com 7 colunas (período, província, distrito, us, sisma_uid, indicador e valor)
 #' `r lifecycle::badge("superseded")`
@@ -207,14 +207,13 @@ clean_sisma_csv <- function(file) {
 }
 
 
-#' Create tidy dataframes for user-specified SISMA .csv services
+#' Processar: Dados em formato .csv do SISMA
 #'
-#' @description `process_sisma_csv` is a wrapper function that cleans
-#' and transforms SISMA tabular exports saved locally in .csv format
+#' @description `process_sisma_csv` é uma função que limpa e transforma as exportações tabulares do SISMA guardadas localmente no formato .csv
 #' `r lifecycle::badge("superseded")`
-#' `process_sisma_csv` has been superseded in favor of `process_sisma_export`
+#' `process_sisma_csv` foi substituído a favor de `process_sisma_export`
 #'
-#'   ## Input File Types
+#'   ## Tipos de ficheiros de entrada
 #' * SMI-CPN: CPN, Saude Materna Infantil
 #' * SMI-MAT: Maternidade, Saude Materna Infantil
 #' * SMI-CCR: CCR, Saude Materna Infantil
@@ -237,11 +236,11 @@ clean_sisma_csv <- function(file) {
 #' * HIV AJMHCMM: Adolescent Joven Mentor, Homen Campeao, Maes Mentora
 #' * HIV DAH: Doenca Avancada do HIV
 #'
-#' @param file Path of sisma csv input
-#' @param type Type of sisma csv export (SMI-CPN, ATS Result, etc.)
-#' @param language Language of output variable names (portuguese or english)
+#' @param file Caminho do ficheiro csv do sisma
+#' @param type Tipo de exportação sisma csv (SMI-CPN, Resultado ATS, etc.)
+#' @param language Lingua dos nomes das variáveis geradas (português ou inglês)
 #'
-#' @return A tidy dataframe of SISMA program results
+#' @return Um quadro de dados arrumado dos resultados SISMA
 #' @export
 #'
 #' @examples
@@ -288,7 +287,7 @@ process_sisma_csv <- function(file, type, language = "portuguese"){
 }
 
 
-#' Arrumar quadros de dados SISMA por tipo
+#' Arrumar dados SISMA por tipo
 #'
 #' @description `parse_sisma_csv` função auxiliar que chama a função apropriada
 #' com base no argumento definido pelo utilizador
@@ -1177,7 +1176,7 @@ parse_sisma_smi_cpp <- function(df) {
 }
 
 
-#' Arrumar: Maternidade
+#' Arrumar: Maternidade (Mat)
 #'
 #' `parse_sisma_smi_mat` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
@@ -1311,7 +1310,7 @@ parse_sisma_smi_pf_int <- function(df) {
 }
 
 
-#' Arrumar: Urgência de ginecológica
+#' Arrumar: Urgência de ginecológica (UG)
 #'
 #' `parse_sisma_smi_ug` Uma função auxiliar que  gera um quadro de dados arrumado
 #' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`

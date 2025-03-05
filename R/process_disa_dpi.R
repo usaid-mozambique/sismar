@@ -1,10 +1,10 @@
-#' Tidy DISA DPI .xlsx files (extracted from OpenLDR)
+#' Processar: Diagnóstico precoce infantil (DPI) da DISA OpenLDR
 #'
-#' @param file Path of DISA DPI .xlsx file
-#' @param period Month of DISA DPI extract (passed as "%Y-%m-%d")
-#' @param type Type of DISA data file to tidy ("old" or "new")
+#' @param file Caminho do ficheiro DPI .xlsx
+#' @param period Mês dos dados DPI (formatado “AAAA-MM-DD”)
+#' @param type Tipo de ficheiro de dados DPI a arrumar (“new” ou “old”)
 #'
-#' @return A tidy dataframe of DISA DPI results
+#' @return Um quadro de dados arrumado dos resultados do DPI
 #' @export
 #'
 #' @examples

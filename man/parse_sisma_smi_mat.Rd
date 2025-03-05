@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_mat}
 \alias{parse_sisma_smi_mat}
-\title{Arrumar: Maternidade}
+\title{Arrumar: Maternidade (Mat)}
 \usage{
 parse_sisma_smi_mat(df)
 }

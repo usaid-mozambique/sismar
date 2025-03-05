@@ -2,20 +2,20 @@
 % Please edit documentation in R/process_disa_cv.R
 \name{process_disa_cv}
 \alias{process_disa_cv}
-\title{Tidy DISA viral load .xlsx files (extracted from OpenLDR)}
+\title{Processar: Carga Viral (CV) da DISA OpenLDR}
 \usage{
 process_disa_cv(file, month)
 }
 \arguments{
-\item{file}{Path of DISA viral load .xlsx file}
+\item{file}{Caminho do ficheiro CV .xlsx}
 
-\item{month}{Month of DISA viral load extract (passed as "\%Y-\%m-\%d")}
+\item{month}{Mês dos dados CV (formatado “AAAA-MM-DD”)}
 }
 \value{
-A tidy dataframe of DISA viral load results
+Um quadro de dados arrumado dos resultados do CV
 }
 \description{
-Tidy DISA viral load .xlsx files (extracted from OpenLDR)
+Processar: Carga Viral (CV) da DISA OpenLDR
 }
 \examples{
  \dontrun{

@@ -2,22 +2,22 @@
 % Please edit documentation in R/process_disa_dpi.R
 \name{process_disa_dpi}
 \alias{process_disa_dpi}
-\title{Tidy DISA DPI .xlsx files (extracted from OpenLDR)}
+\title{Processar: Diagnóstico precoce infantil (DPI) da DISA OpenLDR}
 \usage{
 process_disa_dpi(file, period, type = "new")
 }
 \arguments{
-\item{file}{Path of DISA DPI .xlsx file}
+\item{file}{Caminho do ficheiro DPI .xlsx}
 
-\item{period}{Month of DISA DPI extract (passed as "\%Y-\%m-\%d")}
+\item{period}{Mês dos dados DPI (formatado “AAAA-MM-DD”)}
 
-\item{type}{Type of DISA data file to tidy ("old" or "new")}
+\item{type}{Tipo de ficheiro de dados DPI a arrumar (“new” ou “old”)}
 }
 \value{
-A tidy dataframe of DISA DPI results
+Um quadro de dados arrumado dos resultados do DPI
 }
 \description{
-Tidy DISA DPI .xlsx files (extracted from OpenLDR)
+Processar: Diagnóstico precoce infantil (DPI) da DISA OpenLDR
 }
 \examples{
  \dontrun{

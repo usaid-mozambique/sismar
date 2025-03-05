@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_ug}
 \alias{parse_sisma_smi_ug}
-\title{Arrumar: Urgência de ginecológica}
+\title{Arrumar: Urgência de ginecológica (UG)}
 \usage{
 parse_sisma_smi_ug(df)
 }

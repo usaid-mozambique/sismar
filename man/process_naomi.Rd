@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_naomi.R
 \name{process_naomi}
 \alias{process_naomi}
-\title{Processar ficheiro .csv da Naomi}
+\title{Processar: Naomi 'indicators' .csv}
 \usage{
 process_naomi(
   filename,
