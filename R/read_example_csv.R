@@ -1,4 +1,4 @@
-#' função auxiliar que lê dados de exemplo no ambiente R
+#' Função auxiliar que lê dados de exemplo no ambiente R
 #'
 #' @param example_data Nome dos dados de exemplo gravado no `sismar`
 #'
