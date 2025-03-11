@@ -9,7 +9,7 @@ library(DT)  # Ensure DT is loaded
 # Define UI for the Shiny app
 ui <- fluidPage(
   useShinyjs(),
-  theme = shinytheme("flatly"),
+  theme = shinytheme("superhero"),
 
   tags$head(
     # Load Google Fonts (Montserrat & Lato)
