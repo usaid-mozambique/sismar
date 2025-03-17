@@ -2,7 +2,7 @@
 % Please edit documentation in R/set_language.R
 \name{set_language}
 \alias{set_language}
-\title{Função auxiliar que define a lingua dos variáveis no quadro gerado}
+\title{Define a lingua dos variáveis no quadro gerado}
 \usage{
 set_language(df, language = "portuguese")
 }
@@ -16,7 +16,7 @@ ou \code{process_sisma_csv}}
 Quadro de dados arrumado com nomes das variáveis na lingua desejada
 }
 \description{
-Função auxiliar que define a lingua dos variáveis no quadro gerado
+Define a lingua dos variáveis no quadro gerado
 }
 \examples{
  \dontrun{

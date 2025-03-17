@@ -2,27 +2,20 @@
 % Please edit documentation in R/process_sisma.R
 \name{clean_sisma_csv}
 \alias{clean_sisma_csv}
-\title{Clean SISMA .csv exports}
+\title{Importar e limpar ficheiro .csv do SISMA}
 \usage{
 clean_sisma_csv(file)
 }
 \arguments{
-\item{file}{Path to a .csv file exported from SISMA that contains
-data element variables running wide and period and organizational
-units running long}
+\item{file}{Caminho para um ficheiro .csv exportado do SISMA que contém variáveis de elementos no horizontal e período e unidades organizacionais no vertical}
 }
 \value{
-\code{clean_sisma_csv()} returns an object with 7 columns (period, snu,
-psnu, sitename, sisma_uid, indicator, value). Unnecessary columns from
-the input file are removed and a period column coded from the input
-variable periodcode is created. All numeric data element columns that
-represent indicator or data element values are pivoted long
+\code{clean_sisma_csv()} devolve um objeto de dados limpo com 7 colunas (período, província, distrito, us, sisma_uid, indicador e valor)
 }
 \description{
-\code{clean_sisma_csv()} A helper function that cleans .csv pivot tables
-exported from SISMA
+\code{clean_sisma_csv()} importa um ficheiro .csv bruto de SISMA e devolve um objecto transformado numa estrutura longa, cria uma coluna de período formatada e devolve um objeto de dados com 7 colunas (período, província, distrito, us, sisma_uid, indicador e valor)
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#superseded}{\figure{lifecycle-superseded.svg}{options: alt='[Superseded]'}}}{\strong{[Superseded]}}
-\code{clean_sisma_csv} has been superseded in favor of \code{clean_sisma_df}
+\code{clean_sisma_csv} foi substituída por \code{clean_sisma_df}
 }
 \examples{
  \dontrun{

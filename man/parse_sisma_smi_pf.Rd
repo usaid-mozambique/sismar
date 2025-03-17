@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_smi_pf}
 \alias{parse_sisma_smi_pf}
-\title{Arrumar quadros de dados para os serviços do Planeamento Familiar (PF)}
+\title{Arrumar: Planeamento familiar (PF)}
 \usage{
 parse_sisma_smi_pf(df)
 }

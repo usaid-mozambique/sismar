@@ -2,18 +2,18 @@
 % Please edit documentation in R/process_sisma.R
 \name{clean_sisma_df}
 \alias{clean_sisma_df}
-\title{Clean SISMA input file prior to parsing}
+\title{Limpar ficheiro bruto SISMA}
 \usage{
 clean_sisma_df(df)
 }
 \arguments{
-\item{df}{A dataframe already ingested by \code{process_sisma_export}}
+\item{df}{um objecto de dados importado através de \code{process_sisma_export}}
 }
 \value{
-Cleaned SISMA dataframe
+\code{clean_sisma_df()} devolve um objeto de dados limpo com 7 colunas (período, província, distrito, us, sisma_uid, indicador e valor)
 }
 \description{
-Clean SISMA input file prior to parsing
+\code{clean_sisma_df()} pega num objecto de dados importado através de \code{process_sisma_export} e devolve-o transformado numa estrutura longa, cria uma coluna de período formatada e devolve um objeto de dados limpo com 7 colunas
 }
 \examples{
  \dontrun{

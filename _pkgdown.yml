@@ -1,3 +1,4 @@
+
 url: https://usaid-mozambique.github.io/sismar/
 
 template:
@@ -71,35 +72,25 @@ reference:
 - title: Processar
 - contents:
   - process_sisma_export
-  - process_disa_cv
-  - process_disa_dpi
-  - process_naomi
+  - contains("process_disa")
+  - contains("naomi")
   - process_sisma_csv
 - title: Arrumar
 - contents:
-  - parse_sisma_csv
   - starts_with("parse_")
 - title: Limpar
 - contents:
-  - clean_sisma_df
-  - clean_disa_dpi
+  - starts_with("clean_")
   - clean_sisma_csv
-- title: Juntar metadados
-- contents:
-  - starts_with("attach_")
 - title: Utilitários
 - contents:
-  - setup_sismar_folder
-  - check_exact_match
-  - add_missing_vars
-  - set_language
-  - seq_vars
-  - id_check_disa
   - read_example_csv
-- title: Dados
+  - id_check_disa
+  - check_exact_match
+  - starts_with("add_")
+  - starts_with("set")
+  - seq_vars
+- title: Metadados
 - contents:
-  - data_sisma_sitelist
-  - data_disa_uid_map
-  - data_sisma_geo_sites
-  - data_sisma_geo_above_site
-
+  - starts_with("data_")
+  - starts_with("attach_")

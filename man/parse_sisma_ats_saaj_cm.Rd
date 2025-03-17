@@ -2,8 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_ats_saaj_cm}
 \alias{parse_sisma_ats_saaj_cm}
-\title{Arrumar quadros de dados para os serviços de testagem do HIV dos Serviços
-Amigos dos Adolescentes e Jovens (SAAJ)}
+\title{Arrumar: Testagem do HIV SAAJ}
 \usage{
 parse_sisma_ats_saaj_cm(df)
 }

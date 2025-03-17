@@ -1,4 +1,4 @@
-#' Função auxiliar que define a lingua dos variáveis no quadro gerado
+#' Define a lingua dos variáveis no quadro gerado
 #'
 #' @inheritParams parse_sisma_ats_auto
 #' @param language Língua desejada ("portuguese" ou "english")

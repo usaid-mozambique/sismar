@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{process_sisma_export}
 \alias{process_sisma_export}
-\title{Arrumar quadros de dados a partir de relatórios padrão SISMA em formato .csv}
+\title{Process: Dados em formato .csv do SISMA}
 \usage{
 process_sisma_export(filename, language = "portuguese")
 }
@@ -12,11 +12,10 @@ process_sisma_export(filename, language = "portuguese")
 \item{language}{Linga dos nomes das variáveis no quadro gerado (português ou inglês)}
 }
 \value{
-devolve um quadro de dados arrumado com 16 colunas de metadados da us,
-desagregações do indicador, e valores
+devolve um quadro de dados arrumado com 16 colunas de metadados da us, desagregações do indicador, e valores
 }
 \description{
-Arrumar quadros de dados a partir de relatórios padrão SISMA em formato .csv
+\code{process_sisma_export()} utiliza um caminho fornecido pelo utilizador para uma exportação SISMA csv em bruto e executa várias acções de processamento, incluindo arrumação e criação de caraterísticas de dados.
 }
 \examples{
  \dontrun{

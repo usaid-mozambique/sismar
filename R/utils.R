@@ -14,7 +14,7 @@
 NULL
 
 
-#' Função auxiliar que cria uma estrutura padrão de pastas
+#' Cria uma estrutura padrão de pastas
 #'
 #' @param folder_list lista de pastas a instalar
 #'

@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_exact_match.R
 \name{check_exact_match}
 \alias{check_exact_match}
-\title{Função auxiliar para mapear ficheiro de insumo ao modelo de processamento}
+\title{Mapear ficheiro de insumo ao modelo de processamento}
 \usage{
 check_exact_match(df_vars, template_vars)
 }
@@ -15,7 +15,7 @@ check_exact_match(df_vars, template_vars)
 matriz de correspondência
 }
 \description{
-Função auxiliar para mapear ficheiro de insumo ao modelo de processamento
+Mapear ficheiro de insumo ao modelo de processamento
 }
 \examples{
  \dontrun{

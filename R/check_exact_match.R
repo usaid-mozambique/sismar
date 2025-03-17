@@ -1,4 +1,4 @@
-#' Função auxiliar para mapear ficheiro de insumo ao modelo de processamento
+#' Mapear ficheiro de insumo ao modelo de processamento
 #'
 #' @param df_vars variáveis de dataframe
 #' @param template_vars variáveis dos modelos de referência

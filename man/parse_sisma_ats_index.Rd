@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_ats_index}
 \alias{parse_sisma_ats_index}
-\title{Arrumar quadros de dados para os serviços de testagem do HIV caso índice}
+\title{Arrumar: Testagem do HIV caso índice}
 \usage{
 parse_sisma_ats_index(df)
 }

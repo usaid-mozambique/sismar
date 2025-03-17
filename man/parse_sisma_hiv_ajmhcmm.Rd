@@ -2,8 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_hiv_ajmhcmm}
 \alias{parse_sisma_hiv_ajmhcmm}
-\title{Arrumar quadros de dados para os serviços de Adolescente joven mentor,
-homem campeão, mães mentoras}
+\title{Arrumar: Adolescente joven mentor, homem campeão, e mães mentoras}
 \usage{
 parse_sisma_hiv_ajmhcmm(df)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_example_csv.R
 \name{read_example_csv}
 \alias{read_example_csv}
-\title{Função auxiliar que lê dados de exemplo no ambiente R}
+\title{Lê dados de exemplo no ambiente R}
 \usage{
 read_example_csv(example_data)
 }
@@ -13,7 +13,7 @@ read_example_csv(example_data)
 \code{read_example_csv} Quadro de dados de exemplo
 }
 \description{
-Função auxiliar que lê dados de exemplo no ambiente R
+Lê dados de exemplo no ambiente R
 }
 \examples{
  \dontrun{

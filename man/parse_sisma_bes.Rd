@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_bes}
 \alias{parse_sisma_bes}
-\title{Arrumar quadros de dados para o Boletim Epidemiológico Semanal (BES)}
+\title{Arrumar: Boletim epidemiológico semanal (BES)}
 \usage{
 parse_sisma_bes(df)
 }

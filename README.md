@@ -11,7 +11,7 @@ Arrumar dados do MISAU
 
 ## Resumo
 
-A análise eficiente de dados rectangulares exportados dos sistemas de informação de saúde do MISAU requer acções de processamento tais como pivotagem, eliminação/coerção de variáveis e engenharia de caraterísticas de dados úteis na análise. O pacote sismar fornece um conjunto de funções que executam essas acções e preparam os quadros de dados para análise no R ou em software analítico alternativo.
+A análise eficiente de dados exportados dos sistemas de informação do MISAU tipicamente requer acções de processamento tais como pivotagem, eliminação/coerção de variáveis e engenharia de dimensões úteis para a análise. O pacote sismar fornece um conjunto de funções que executam essas acções e preparam quadros para análise no R ou em software analítico alternativo.
 
 
 ## Instalação
