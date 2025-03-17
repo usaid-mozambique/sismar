@@ -2318,6 +2318,53 @@ tibble::tribble(
   )
 
 
+data_sisma_bes_map <-
+  tibble::tribble(
+                                     ~indicator,               ~indicator_new,     ~age, ~age_coarse, ~source,
+                             "bes_colera_casos",           "BES_COLERA_CASOS",       NA,          NA,   "BES",
+                            "bes_colera_obitos",          "BES_COLERA_OBITOS",       NA,          NA,   "BES",
+                  "bes_diarreia_0_4_anos_casos",         "BES_DIARREIA_CASOS",  "00-04",       "<15",   "BES",
+                 "bes_diarreia_0_4_anos_obitos",        "BES_DIARREIA_OBITOS",  "00-04",       "<15",   "BES",
+                   "bes_diarreia_15_anos_casos",         "BES_DIARREIA_CASOS",    "15+",       "15+",   "BES",
+                  "bes_diarreia_15_anos_obitos",        "BES_DIARREIA_OBITOS",    "15+",       "15+",   "BES",
+                 "bes_diarreia_5_14_anos_casos",         "BES_DIARREIA_CASOS",    "<05",       "<15",   "BES",
+                "bes_diarreia_5_14_anos_obitos",        "BES_DIARREIA_OBITOS",    "<05",       "<15",   "BES",
+                         "bes_disenteria_casos",       "BES_DISENTERIA_CASOS",       NA,          NA,   "BES",
+                        "bes_disenteria_obitos",      "BES_DISENTERIA_OBITOS",       NA,          NA,   "BES",
+                   "bes_malaria_0_4_anos_casos",          "BES_MALARIA_CASOS",  "00-04",       "<15",   "BES",
+                  "bes_malaria_0_4_anos_obitos",         "BES_MALARIA_OBITOS",  "00-04",       "<15",   "BES",
+                     "bes_malaria_5_anos_casos",          "BES_MALARIA_CASOS",    "<05",       "<15",   "BES",
+                    "bes_malaria_5_anos_obitos",         "BES_MALARIA_OBITOS",    "<05",       "<15",   "BES",
+                 "bes_meningite_0_4_anos_casos",        "BES_MENINGITE_CASOS",  "00-04",       "<15",   "BES",
+                "bes_meningite_0_4_anos_obitos",       "BES_MENINGITE_OBITOS",  "00-04",       "<15",   "BES",
+                   "bes_meningite_5_anos_casos",        "BES_MENINGITE_CASOS",    "<05",       "<15",   "BES",
+                  "bes_meningite_5_anos_obitos",       "BES_MENINGITE_OBITOS",    "<05",       "<15",   "BES",
+                  "bes_mordeduras_animal_casos",       "BES_MORDEDURAS_CASOS",       NA,          NA,   "BES",
+                 "bes_mordeduras_animal_obitos",      "BES_MORDEDURAS_OBITOS",       NA,          NA,   "BES",
+            "bes_paralisia_flacida_aguda_casos",        "BES_PARALISIA_CASOS",       NA,          NA,   "BES",
+           "bes_paralisia_flacida_aguda_obitos",       "BES_PARALISIA_OBITOS",       NA,          NA,   "BES",
+                              "bes_peste_casos",            "BES_PESTE_CASOS",       NA,          NA,   "BES",
+                             "bes_peste_obitos",           "BES_PESTE_OBITOS",       NA,          NA,   "BES",
+                              "bes_raiva_casos",            "BES_RAIVA_CASOS",       NA,          NA,   "BES",
+                             "bes_raiva_obitos",           "BES_RAIVA_OBITOS",       NA,          NA,   "BES",
+                   "bes_sarampo_24_meses_casos",          "BES_SARAMPO_CASOS",    "<02",       "<15",   "BES",
+                  "bes_sarampo_24_meses_obitos",         "BES_SARAMPO_OBITOS",    "<02",       "<15",   "BES",
+   "bes_sarampo_9_23_meses_nao_vacinados_casos",  "BES_SARAMPO_NAO_VAC_CASOS", "09-24m",       "<15",   "BES",
+  "bes_sarampo_9_23_meses_nao_vacinados_obitos", "BES_SARAMPO_NAO_VAC_OBITOS", "09-24m",       "<15",   "BES",
+                 "bes_sarampo_9_23_meses_casos",          "BES_SARAMPO_CASOS", "09-24m",       "<15",   "BES",
+                "bes_sarampo_9_23_meses_obitos",         "BES_SARAMPO_OBITOS", "09-24m",       "<15",   "BES",
+                    "bes_sarampo_9_meses_casos",          "BES_SARAMPO_CASOS",   "<09m",       "<15",   "BES",
+                   "bes_sarampo_9_meses_obitos",         "BES_SARAMPO_OBITOS",   "<09m",       "<15",   "BES",
+           "bes_sindrome_febril_0_4_anos_casos",  "BES_SINDROME_FEBRIL_CASOS",  "00-04",       "<15",   "BES",
+          "bes_sindrome_febril_0_4_anos_obitos", "BES_SINDROME_FEBRIL_OBITOS",  "00-04",       "<15",   "BES",
+             "bes_sindrome_febril_5_anos_casos",  "BES_SINDROME_FEBRIL_CASOS",    "<05",       "<15",   "BES",
+            "bes_sindrome_febril_5_anos_obitos", "BES_SINDROME_FEBRIL_OBITOS",    "<05",       "<15",   "BES",
+              "bes_tetano_recem_nascidos_casos",        "BES_TETANO_RN_CASOS",       NA,          NA,   "BES",
+             "bes_tetano_recem_nascidos_obitos",       "BES_TETANO_RN_OBITOS",       NA,          NA,   "BES"
+  )
+
+
+
 usethis::use_data(input_templates,
                   data_sisma_smi_cpn_map,
                   data_sisma_ats_results_map,
@@ -2342,6 +2389,7 @@ usethis::use_data(input_templates,
                   data_sisma_smi_ug_map,
                   data_sisma_smi_pf_map,
                   data_sisma_smi_pf_int_saaj_ape_map,
+                  data_sisma_bes_map,
                   overwrite = TRUE,
                   internal = TRUE)
 

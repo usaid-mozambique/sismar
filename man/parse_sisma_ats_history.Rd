@@ -2,7 +2,8 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_ats_history}
 \alias{parse_sisma_ats_history}
-\title{Arrumar: Testagem do HIV em populações-chave/vulnerável e historial}
+\title{Arrumar quadros de dados para os serviços de testagem do HIV em populações-chave
+e vulneráveis e dados da historial de testagem do HIV}
 \usage{
 parse_sisma_ats_history(df)
 }

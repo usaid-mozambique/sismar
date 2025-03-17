@@ -2,7 +2,8 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_ats_results}
 \alias{parse_sisma_ats_results}
-\title{Arrumar: Testagem do HIV (Registo ATS)}
+\title{Arrumar quadros de dados para os serviços de testagem do HIV reportado a
+partir do registo ATS}
 \usage{
 parse_sisma_ats_results(df)
 }

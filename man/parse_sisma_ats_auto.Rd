@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_ats_auto}
 \alias{parse_sisma_ats_auto}
-\title{Arrumar: Auto-diagnóstico do HIV}
+\title{Arrumar quadros de dados para os serviços de auto-diagnóstico do HIV}
 \usage{
 parse_sisma_ats_auto(df)
 }

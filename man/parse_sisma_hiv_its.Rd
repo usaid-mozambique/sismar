@@ -2,7 +2,8 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_hiv_its}
 \alias{parse_sisma_hiv_its}
-\title{Arrumar: Infecções de transmissão sexual (ITS)}
+\title{Arrumar quadros de dados para os serviços de Infecções de Transmissão
+Sexual (ITS) do PNC ITS-HIV/SIDA}
 \usage{
 parse_sisma_hiv_its(df)
 }

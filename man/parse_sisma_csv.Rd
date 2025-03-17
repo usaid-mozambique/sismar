@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{parse_sisma_csv}
 \alias{parse_sisma_csv}
-\title{Arrumar dados SISMA por tipo}
+\title{Arrumar quadros de dados SISMA por tipo especificado pelo utilizador}
 \usage{
 parse_sisma_csv(data, type)
 }
@@ -34,7 +34,7 @@ com base no argumento definido pelo utilizador
 \item ATS CI: ATS Caso Indice e Ligacao, Programa de HIV
 \item ATS SAAJ: ATS Serviço Amigo Adolescente Joven
 \item ATS CCSD: Consulta da Crianca Sadia e Consulta da Crianca Doente
-\item ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)
+\item ATS SMI: ATS especifico a SMI (outros acomopanhantes na CPN, etc.)data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
 \item ATS Auto: ATS Autotestagem, Programa de HIV
 \item HIV TARV: Tratamento Antiretroviral (TARV), Programa de HIV
 \item HIV PREP: Profilaxia Pré-Exposição (PrEP), Programa de HIV
