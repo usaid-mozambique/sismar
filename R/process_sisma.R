@@ -1353,3 +1353,38 @@ parse_sisma_smi_ug <- function(df) {
   return(df)
 
 }
+
+
+#' Arrumar quadros de dados para o Boletim Epidemiológico Semanal (BES)
+#'
+#' `parse_sisma_bes` Uma função auxiliar que  gera um quadro de dados arrumado
+#' a partir  de um objecto relatório padrão introduzido por `process_sisma_export`
+#' ou `process_sisma_csv`. Variáveis úteis que são criados por esta função incluem
+#' sexo, idade, tipo de subgrupo, e outras desagregações presentes na fonte.
+#'
+#' @inheritParams parse_sisma_ats_auto
+#'
+#' @return `parse_sisma_bes` devolve um quadro de dados arrumado com 16
+#' colunas de metadados da us, desagregações do indicador, e valores
+#'
+#' @export
+#'
+#' @examples
+#'  \dontrun{
+#'
+#'  df <- parse_sisma_bes()}
+
+
+parse_sisma_bes <- function(df) {
+
+  df <- df %>%
+
+    dplyr::left_join(data_sisma_bes_map, by = "indicator") %>%
+    dplyr::filter(!is.na(value)) %>%
+    add_missing_vars() %>%
+    seq_vars()
+
+  return(df)
+
+}
+
