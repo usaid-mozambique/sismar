@@ -7,10 +7,10 @@
 recode_ine_age(df)
 }
 \arguments{
-\item{df}{}
+\item{df}{quadro de dados INE ja no ambiente R}
 }
 \value{
-df
+\code{recode_ine_age} devolve um quadro de dados com ano categorizado em faixas etárias de cinco anos
 }
 \description{
 Recodificar a idade em faixas etárias de cinco anos

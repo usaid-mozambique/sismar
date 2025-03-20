@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_sisma.R
 \name{process_sisma_export}
 \alias{process_sisma_export}
-\title{Process: Dados em formato .csv do SISMA}
+\title{Processar: Dados em formato .csv do SISMA}
 \usage{
 process_sisma_export(filename, language = "portuguese")
 }

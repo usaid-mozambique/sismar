@@ -73,19 +73,24 @@ reference:
 - contents:
   - process_sisma_export
   - contains("process_disa")
+  - process_pop_ine
   - contains("naomi")
   - process_sisma_csv
 - title: Arrumar
 - contents:
+  - parse_sisma_csv
   - starts_with("parse_")
 - title: Limpar
 - contents:
-  - starts_with("clean_")
+  - clean_disa_dpi
+  - clean_sisma_df
   - clean_sisma_csv
 - title: Utilitários
 - contents:
   - read_example_csv
   - id_check_disa
+  - load_pop_ine
+  - recode_ine_age
   - check_exact_match
   - starts_with("add_")
   - starts_with("set")

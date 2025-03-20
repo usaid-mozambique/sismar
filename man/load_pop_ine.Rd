@@ -2,20 +2,20 @@
 % Please edit documentation in R/process_pop.R
 \name{load_pop_ine}
 \alias{load_pop_ine}
-\title{Esta função lê todos os conjuntos de dados da população de uma pasta especificada}
+\title{Importar quadro de dados populacionais INE}
 \usage{
 load_pop_ine(filename, input_tabs)
 }
 \arguments{
 \item{filename}{utiliza um caminho fornecido pelo utilizador}
 
-\item{input_tabs}{folhas no ficheiro a ser processado}
+\item{input_tabs}{anos no ficheiro a ser processado}
 }
 \value{
-um conjunto de dados de todos os ficheiros e separadores
+um quadro contendo dados para os anos específicos
 }
 \description{
-Esta função lê todos os conjuntos de dados da população de uma pasta especificada
+Importar quadro de dados populacionais INE
 }
 \examples{
  \dontrun{

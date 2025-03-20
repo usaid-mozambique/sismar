@@ -2,22 +2,22 @@
 % Please edit documentation in R/process_pop.R
 \name{process_pop_ine}
 \alias{process_pop_ine}
-\title{Title}
+\title{Processar: Projecções demográficas distritais do INE}
 \usage{
 process_pop_ine(file_inventory, input_sheets, output_type = "MISAU")
 }
 \arguments{
-\item{file_inventory}{xxx}
+\item{file_inventory}{vector de ficheiros populacionais do INE em formato .xlsx}
 
-\item{input_sheets}{yyy}
+\item{input_sheets}{vector (em caracteres) dos anos do ficheiro para inclusão no processamento}
 
-\item{output_type}{zzz}
+\item{output_type}{formato do provincia (por defeito "MISAU")}
 }
 \value{
-df
+\code{process_pop_ine} devolve um quadro de dados arrumado com 9 colunas
 }
 \description{
-Title
+\code{process_pop_ine} usa um vector de ficheiros contendo projecções demográficas distritais do INE processando eles num único ficheiro arrumado
 }
 \examples{
  \dontrun{

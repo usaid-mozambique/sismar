@@ -2,6 +2,7 @@
 * migration to Portuguese documentation
 * overall improvements to function documentation
 * addition of function `parse_sisma_bes` to support feature engineering of standard SISMA BES export
+* addition of functions for tidy'ing INE district demographic projections from Excel workbooks
 
 # sismar 1.0.0
 * Addition of function `process_sisma_export` which automatically detects SISMA export type passed in by user

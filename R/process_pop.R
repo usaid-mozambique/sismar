@@ -1,10 +1,12 @@
-#' Title
+#' Processar: Projecções demográficas distritais do INE
 #'
-#' @param file_inventory xxx
-#' @param input_sheets yyy
-#' @param output_type zzz
+#' @description `process_pop_ine` usa um vector de ficheiros contendo projecções demográficas distritais do INE processando eles num único ficheiro arrumado
 #'
-#' @return df
+#' @param file_inventory vector de ficheiros populacionais do INE em formato .xlsx
+#' @param input_sheets vector (em caracteres) dos anos do ficheiro para inclusão no processamento
+#' @param output_type formato do provincia (por defeito "MISAU")
+#'
+#' @return `process_pop_ine` devolve um quadro de dados arrumado com 9 colunas
 #' @export
 #'
 #' @examples
@@ -68,12 +70,12 @@ process_pop_ine <- function(file_inventory, input_sheets, output_type = "MISAU")
 
 
 
-#' Esta função lê todos os conjuntos de dados da população de uma pasta especificada
+#' Importar quadro de dados populacionais INE
 #'
 #' @param filename utiliza um caminho fornecido pelo utilizador
-#' @param input_tabs folhas no ficheiro a ser processado
+#' @param input_tabs anos no ficheiro a ser processado
 #'
-#' @return um conjunto de dados de todos os ficheiros e separadores
+#' @return um quadro contendo dados para os anos específicos
 #' @export
 #'
 #' @examples
@@ -123,9 +125,9 @@ load_pop_ine <- function(filename, input_tabs) {
 
 #' Recodificar a idade em faixas etárias de cinco anos
 #'
-#' @param df
+#' @param df quadro de dados INE ja no ambiente R
 #'
-#' @return df
+#' @return `recode_ine_age` devolve um quadro de dados com ano categorizado em faixas etárias de cinco anos
 #' @export
 #'
 #' @examples
@@ -146,9 +148,14 @@ recode_ine_age <- function(df) {
 
   # Group by the new age_bracket, along with other grouping variables
   df <- df |>
-    group_by(periodo, age_bracket, sexo, across(starts_with("disaggregacao")), across(starts_with("provincia")), across(starts_with("distrito"))) |>
-    summarize(valor = sum(valor, na.rm = TRUE), .groups = 'drop') |>
-    filter(valor > 0)
+    dplyr::group_by(periodo,
+                    age_bracket,
+                    sexo,
+                    dplyr::across(tidyselect::starts_with("disaggregacao")),
+                    dplyr::across(tidyselect::starts_with("provincia")),
+                    dplyr::across(tidyselect::starts_with("distrito"))) |>
+    dplyr::summarize(valor = sum(valor, na.rm = TRUE), .groups = 'drop') |>
+    dplyr::filter(valor > 0)
 
   return(df)
 
