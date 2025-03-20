@@ -15,7 +15,7 @@ process_sisma_export(filename, language = "portuguese")
 devolve um quadro de dados arrumado com 16 colunas de metadados da us, desagregações do indicador, e valores
 }
 \description{
-\code{process_sisma_export()} utiliza um caminho fornecido pelo utilizador para uma exportação SISMA csv em bruto e executa várias acções de processamento, incluindo arrumação e criação de caraterísticas de dados.
+\code{process_sisma_export()} S para uma exportação SISMA csv em bruto e executa várias acções de processamento, incluindo arrumação e criação de caraterísticas de dados.
 }
 \examples{
  \dontrun{

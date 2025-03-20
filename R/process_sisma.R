@@ -62,7 +62,7 @@ clean_sisma_df <- function(df) {
 
 #' Process: Dados em formato .csv do SISMA
 #'
-#' @description `process_sisma_export()` utiliza um caminho fornecido pelo utilizador para uma exportação SISMA csv em bruto e executa várias acções de processamento, incluindo arrumação e criação de caraterísticas de dados.
+#' @description `process_sisma_export()` S para uma exportação SISMA csv em bruto e executa várias acções de processamento, incluindo arrumação e criação de caraterísticas de dados.
 #'
 #' @param filename Caminho do ficheiro .csv exportado do SISMA
 #' @param language Linga dos nomes das variáveis no quadro gerado (português ou inglês)
