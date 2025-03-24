@@ -36,6 +36,7 @@
 #'   \item{snuuid}{UID da provincia}
 #'   \item{distrito}{Distrito}
 #'   \item{psnuuid}{UID do distrito}
+#'   \item{distrito_ine}{Distrito no ficheiro INE}
 #' }
 "data_sisma_geo_above_site"
 

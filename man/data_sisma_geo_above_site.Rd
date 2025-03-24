@@ -11,6 +11,7 @@ Uma lista das variáveis incluídas no objecto de dados
 \item{snuuid}{UID da provincia}
 \item{distrito}{Distrito}
 \item{psnuuid}{UID do distrito}
+\item{distrito_ine}{Distrito no ficheiro INE}
 }
 }
 \usage{

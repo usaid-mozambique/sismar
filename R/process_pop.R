@@ -47,10 +47,9 @@ process_pop_ine <- function(file_inventory, input_sheets, output_type = "MISAU")
                   value = as.numeric(value),
                   value = tidyr::replace_na(value, 0)) |>
 
-    dplyr::left_join(map_psnu, by = "district") |>
+    dplyr::left_join(map_psnu, dplyr::join_by(district == distrito_ine)) |>
     dplyr::select(!district) |>
     dplyr::relocate(dplyr::any_of(c("provincia", "distrito", "snuuid", "psnuuid")), .before = everything()) |>
-    dplyr::select(!c("snu", "psnu")) |>
     dplyr::mutate(
       sex = dplyr::if_else(sex == "male", "Masculino", "Feminino"),
       urban_rural = dplyr::if_else(urban_rural == "urban", "Urbano", "Rural"),
