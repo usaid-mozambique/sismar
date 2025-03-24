@@ -2,15 +2,15 @@
 % Please edit documentation in R/attach_meta.R
 \name{attach_meta_pepfar_ip}
 \alias{attach_meta_pepfar_ip}
-\title{Retreive and attach partner metadata}
+\title{Anexar: Metadados do apoio dos parceiros PEPFAR}
 \usage{
 attach_meta_pepfar_ip(df)
 }
 \arguments{
-\item{df}{Dataframe cleaned via reshape_sisma}
+\item{df}{Quadro de dados limpo através de \code{process_sisma_export}}
 }
 \value{
-A dataframe containing partner metadata
+Quadro de dados contendo coluna que indica o apoio dos parceiros PEPFAR
 }
 \description{
 \code{attach_meta_pepfar_ip} Une informações sobre o apoio dos parceiros PEPFAR gravadas no pacote \code{sismar} ao objeto de dados introduzido pelo utilizador

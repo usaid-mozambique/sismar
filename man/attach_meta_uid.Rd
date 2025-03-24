@@ -2,22 +2,20 @@
 % Please edit documentation in R/attach_meta.R
 \name{attach_meta_uid}
 \alias{attach_meta_uid}
-\title{Retreive and attach province and district uid metadata}
+\title{Anexar: Metadados uid das provincias e distritos}
 \usage{
 attach_meta_uid(df, sheetname = "map_distrito_psnuuid")
 }
 \arguments{
-\item{df}{Dataframe cleaned via reshape_sisma}
+\item{df}{Quadro de dados limpo através de \code{process_sisma_export}}
 
-\item{sheetname}{Sheet name from the MISAU_Site_Map}
+\item{sheetname}{Nome da folha do MISAU_Site_Map}
 }
 \value{
-A dataframe containing site metadata
+Quadro de dados contendo colunas para metadados das provincias e distritos
 }
 \description{
-\code{attach_meta_uid} utilizes stored user credentials to access
-a GoogleSheet where province and district uid metadata is
-stored.
+\code{attach_meta_uid} Une informações dos UIDs das provincias e distritos
 }
 \examples{
  \dontrun{

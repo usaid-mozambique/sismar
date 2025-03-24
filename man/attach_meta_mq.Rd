@@ -2,7 +2,7 @@
 % Please edit documentation in R/attach_meta.R
 \name{attach_meta_mq}
 \alias{attach_meta_mq}
-\title{Anexar metadados melhoria da qualidade}
+\title{Anexar: Metadados da melhoria da qualidade}
 \usage{
 attach_meta_mq(df)
 }

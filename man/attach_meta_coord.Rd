@@ -2,7 +2,7 @@
 % Please edit documentation in R/attach_meta.R
 \name{attach_meta_coord}
 \alias{attach_meta_coord}
-\title{Anexar coordenadas geográficas}
+\title{Anexar: Coordenadas geográficas}
 \usage{
 attach_meta_coord(df, sheetname = "map_us_coord")
 }

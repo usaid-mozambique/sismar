@@ -2,17 +2,17 @@
 % Please edit documentation in R/attach_meta.R
 \name{attach_meta_partner}
 \alias{attach_meta_partner}
-\title{Anexar metadados do apoio dos parceiros}
+\title{Anexar: Metadados do apoio dos parceiros}
 \usage{
 attach_meta_partner(df, sheetname = "Alcancar")
 }
 \arguments{
-\item{df}{Dataframe limpo através de \code{process_sisma_export}}
+\item{df}{Quandro de dados limpo através de \code{process_sisma_export}}
 
 \item{sheetname}{Nome da folha do PCMD_Site_Map}
 }
 \value{
-A dataframe containing partner metadata
+Quadro de dados contendo coluna que indica o apoio dos parceiros
 }
 \description{
 \code{attach_meta_partner} Une informações sobre o apoio dos parceiros gravadas no pacote \code{sismar} ao objeto de dados introduzido pelo utilizador

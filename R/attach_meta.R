@@ -1,4 +1,4 @@
-#' Anexar coordenadas geográficas
+#' Anexar: Coordenadas geográficas
 #'
 #' `attach_meta_coord` Une as coordenadas geográficas da unidade sanitária gravadas no pacote `sismar` ao objeto de dados introduzido pelo utilizador
 #'
@@ -35,7 +35,7 @@ attach_meta_coord <- function(df, sheetname = "map_us_coord") {
 }
 
 
-#' Anexar metadados melhoria da qualidade
+#' Anexar: Metadados da melhoria da qualidade
 #'
 #' `attach_meta_mq` Une iniciativas de melhoria da qualidade gravadas no pacote `sismar` ao objeto de dados introduzido pelo utilizador
 #'
@@ -70,13 +70,13 @@ attach_meta_mq <- function(df) {
 
 }
 
-#' Anexar metadados do apoio dos parceiros
+#' Anexar: Metadados do apoio dos parceiros
 #'
 #' `attach_meta_partner` Une informações sobre o apoio dos parceiros gravadas no pacote `sismar` ao objeto de dados introduzido pelo utilizador
 #'
-#' @param df Dataframe limpo através de `process_sisma_export`
+#' @param df Quandro de dados limpo através de `process_sisma_export`
 #' @param sheetname Nome da folha do PCMD_Site_Map
-#' @return A dataframe containing partner metadata
+#' @return Quadro de dados contendo coluna que indica o apoio dos parceiros
 #' @export
 #'
 #' @examples
@@ -104,12 +104,12 @@ attach_meta_partner <- function(df, sheetname = "Alcancar") {
 }
 
 
-#' Retreive and attach partner metadata
+#' Anexar: Metadados do apoio dos parceiros PEPFAR
 #'
 #'  `attach_meta_pepfar_ip` Une informações sobre o apoio dos parceiros PEPFAR gravadas no pacote `sismar` ao objeto de dados introduzido pelo utilizador
 #'
-#' @param df Dataframe cleaned via reshape_sisma
-#' @return A dataframe containing partner metadata
+#' @param df Quadro de dados limpo através de `process_sisma_export`
+#' @return Quadro de dados contendo coluna que indica o apoio dos parceiros PEPFAR
 #' @export
 #'
 #' @examples
@@ -154,15 +154,13 @@ attach_meta_pepfar_ip <- function(df) {
 }
 
 
-#' Retreive and attach province and district uid metadata
+#' Anexar: Metadados uid das provincias e distritos
 #'
-#'  `attach_meta_uid` utilizes stored user credentials to access
-#'  a GoogleSheet where province and district uid metadata is
-#'  stored.
+#'  `attach_meta_uid` Une informações dos UIDs das provincias e distritos
 #'
-#' @param df Dataframe cleaned via reshape_sisma
-#' @param sheetname Sheet name from the MISAU_Site_Map
-#' @return A dataframe containing site metadata
+#' @param df Quadro de dados limpo através de `process_sisma_export`
+#' @param sheetname Nome da folha do MISAU_Site_Map
+#' @return Quadro de dados contendo colunas para metadados das provincias e distritos
 #' @export
 #'
 #' @examples
