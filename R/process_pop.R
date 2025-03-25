@@ -47,7 +47,7 @@ process_pop_ine <- function(file_inventory, input_sheets, output_type = "MISAU")
                   value = as.numeric(value),
                   value = tidyr::replace_na(value, 0)) |>
 
-    dplyr::left_join(map_psnu, dplyr::join_by(district == distrito_ine)) |>
+    dplyr::left_join(data_sisma_geo_above_site, dplyr::join_by(district == distrito_ine)) |>
     dplyr::select(!district) |>
     dplyr::relocate(dplyr::any_of(c("provincia", "distrito", "snuuid", "psnuuid")), .before = everything()) |>
     dplyr::mutate(
