@@ -4,6 +4,7 @@
 #'
 #' @param file_inventory vector de ficheiros populacionais do INE em formato .xlsx
 #' @param input_sheets vector (em caracteres) dos anos do ficheiro para inclusão no processamento
+#' @param age_level Nível de pormenor da idade no quadro de dados arrumado (“Exato” por defeito com opção para “Agrupado” para faixas etárias de 5 anos)
 #' @param output_type formato do provincia (por defeito "MISAU")
 #'
 #' @return `process_pop_ine` devolve um quadro de dados arrumado com 9 colunas
@@ -14,7 +15,7 @@
 #'
 #'  df <- process_pop_ine()}
 
-process_pop_ine <- function(file_inventory, input_sheets, output_type = "MISAU") {
+process_pop_ine <- function(file_inventory, input_sheets, age_level = "Exact", output_type = "MISAU") {
 
   # Process all files and sheets
   df <- purrr::map(file_inventory, .progress = TRUE, function(file) {
@@ -60,11 +61,20 @@ process_pop_ine <- function(file_inventory, input_sheets, output_type = "MISAU")
                   sexo = sex,
                   valor = value)
 
-  # Return the cleaned dataframe
-  return(df)
+  if(age_level == "Grouped"){
+
+    df <- df |>
+      recode_ine_age()
+
+    return(df)
+
+  } else {
+
+    return(df)
+
+  }
 
 }
-
 
 
 

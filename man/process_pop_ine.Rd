@@ -4,12 +4,19 @@
 \alias{process_pop_ine}
 \title{Processar: Projecções demográficas distritais do INE}
 \usage{
-process_pop_ine(file_inventory, input_sheets, output_type = "MISAU")
+process_pop_ine(
+  file_inventory,
+  input_sheets,
+  age_level = "Exact",
+  output_type = "MISAU"
+)
 }
 \arguments{
 \item{file_inventory}{vector de ficheiros populacionais do INE em formato .xlsx}
 
 \item{input_sheets}{vector (em caracteres) dos anos do ficheiro para inclusão no processamento}
+
+\item{age_level}{Nível de pormenor da idade no quadro de dados arrumado (“Exato” por defeito com opção para “Agrupado” para faixas etárias de 5 anos)}
 
 \item{output_type}{formato do provincia (por defeito "MISAU")}
 }
