@@ -50,11 +50,14 @@ process_pop_ine <- function(file_inventory, input_sheets, age_level = "Exact", o
 
     dplyr::left_join(data_sisma_geo_above_site, dplyr::join_by(district == distrito_ine)) |>
     dplyr::select(!district) |>
-    dplyr::relocate(dplyr::any_of(c("provincia", "distrito", "snuuid", "psnuuid")), .before = everything()) |>
     dplyr::mutate(
       sex = dplyr::if_else(sex == "male", "Masculino", "Feminino"),
       urban_rural = dplyr::if_else(urban_rural == "urban", "Urbano", "Rural"),
+      indicador = "POP_EST",
+      fonte = "INE"
     ) |>
+    dplyr::relocate(dplyr::any_of(c("provincia", "distrito", "snuuid", "psnuuid")), .before = everything()) |>
+    dplyr::relocate(dplyr::any_of(c("indicador", "fonte")), .after = year) |>
     dplyr::rename(periodo = year,
                   idade = age,
                   disaggregacao = urban_rural,
@@ -64,19 +67,21 @@ process_pop_ine <- function(file_inventory, input_sheets, age_level = "Exact", o
   if(age_level == "Grouped"){
 
     df <- df |>
-      recode_ine_age()
+      recode_ine_age() |>
+      dplyr::mutate(idade = as.character(idade))
 
     return(df)
 
   } else {
+
+    df <- df |>
+      dplyr::mutate(idade = as.character(idade))
 
     return(df)
 
   }
 
 }
-
-
 
 
 #' Importar quadro de dados populacionais INE
@@ -148,18 +153,26 @@ recode_ine_age <- function(df) {
 
   # Categorize idade into 5-year age brackets
   df <- df |>
-    mutate(age_bracket = cut(idade,
-                             breaks = seq(0, 80, by = 5),
-                             labels = sprintf("%02d-%02d", seq(0, 75, by = 5), seq(4, 79, by = 5)),
-                             include.lowest = TRUE,
-                             right = FALSE)) |>
-    mutate(age_bracket = ifelse(idade >= 80, "80+", as.character(age_bracket)))
+    dplyr::mutate(
+      idade = dplyr::case_when(
+        idade >= 80 ~ "80+",
+        TRUE ~ as.character(cut(
+          idade,
+          breaks = seq(0, 80, by = 5),
+          labels = sprintf("%02d-%02d", seq(0, 75, by = 5), seq(4, 79, by = 5)),
+          include.lowest = TRUE,
+          right = FALSE
+        ))
+      )
+    )
 
-  # Group by the new age_bracket, along with other grouping variables
+  # Group by the new idade, along with other grouping variables
   df <- df |>
     dplyr::group_by(periodo,
-                    age_bracket,
+                    idade,
                     sexo,
+                    indicador,
+                    fonte,
                     dplyr::across(tidyselect::starts_with("disaggregacao")),
                     dplyr::across(tidyselect::starts_with("provincia")),
                     dplyr::across(tidyselect::starts_with("distrito"))) |>
